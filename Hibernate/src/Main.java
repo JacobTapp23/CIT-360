@@ -22,6 +22,8 @@ public class Main {
 			showCountry(factory, "SUB");
 			deleteCountry(factory, "SUB");
 			showCountry(factory, "SUB");
+
+			System.exit(0);
 		}
 		catch (Exception ex) {
 			ex.printStackTrace();
