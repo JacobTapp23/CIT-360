@@ -1,3 +1,10 @@
+/* From the IntelliJ IDE, run this program. Then using a browser on the
+ * same computer where this program is running, type
+ * "localhost:8080/second" (without the quotes) into the browser's
+ * address bar and then press enter. You should see a report from this
+ * Servlet in your browser.
+ */
+
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.io.PrintWriter;
