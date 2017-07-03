@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ac0a2e74-8e46-4797-af94-59f352636e59" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Hibernate/src/Main.java" afterPath="$PROJECT_DIR$/../Hibernate/src/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Servlet/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Servlet/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Sockets/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Sockets/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -33,7 +31,7 @@
       <file leaf-file-name="TestAccount.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TestAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="748">
+            <state relative-caret-position="921">
               <caret line="160" column="0" lean-forward="true" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -343,7 +341,7 @@
       <workItem from="1498507313339" duration="3719000" />
       <workItem from="1499106791727" duration="556000" />
       <workItem from="1499107875846" duration="603000" />
-      <workItem from="1499120588976" duration="1862000" />
+      <workItem from="1499120588976" duration="1953000" />
     </task>
     <task id="LOCAL-00001" summary="Initial upload of code that demonstrates JUnit.">
       <created>1498510853075</created>
@@ -359,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499123609401</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Upload workspace.xml files even though I doubt they are needed by students.">
+      <created>1499123699200</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1499123699200</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -395,7 +400,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7394000" />
+    <option name="totallyTimeSpent" value="7485000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1160" y="0" width="1212" height="1309" extended-state="0" />
@@ -407,7 +412,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23132314" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23132314" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28080985" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -434,7 +439,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial upload of code that demonstrates JUnit." />
     <MESSAGE value="Add additional explanation of JUnit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add additional explanation of JUnit." />
+    <MESSAGE value="Upload workspace.xml files even though I doubt they are needed by students." />
+    <option name="LAST_COMMIT_MESSAGE" value="Upload workspace.xml files even though I doubt they are needed by students." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -513,7 +519,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TestAccount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
+        <state relative-caret-position="921">
           <caret line="160" column="0" lean-forward="true" selection-start-line="160" selection-start-column="0" selection-end-line="160" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />

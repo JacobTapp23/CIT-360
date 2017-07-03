@@ -1,3 +1,6 @@
+// Hibernate is a library of Java code that enables a Java program to
+// read, write, and update data in a relational database.
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -23,6 +26,7 @@ public class Main {
 			deleteCountry(factory, "SUB");
 			showCountry(factory, "SUB");
 
+			// Force this program to exit.
 			System.exit(0);
 		}
 		catch (Exception ex) {
@@ -41,32 +45,27 @@ public class Main {
 		suburbia.setPopulation(1L);
 		suburbia.setSurfaceArea(0.25);
 
-		// Add Suburbia to the database.
+		// Use Hibernate to add Suburbia to the database.
 		Session session = factory.getCurrentSession();
 		Transaction transac = session.beginTransaction();
 		session.save(suburbia);
 		transac.commit();
 	}
 
-	/** Shows one country from the world.country table. */
-	private static void showCountry(SessionFactory factory, String code) {
-		Session session = factory.getCurrentSession();
-		Transaction transac = session.beginTransaction();
-		Query query = session.createQuery("FROM Country WHERE code = :code");
-		query.setParameter("code", code);
-		Country country = (Country)query.uniqueResult();
-		transac.commit();
-		System.out.println(country);
-	}
-
 	/** Updates the population of a country in the world.country table. */
 	private static void updateCountry(
 			SessionFactory factory, String code, long population) {
+		// Use Hibernate to get from the database, the data for the
+		// country with the given code.
 		Session session = factory.getCurrentSession();
 		Transaction transac = session.beginTransaction();
 		Query query = session.createQuery("FROM Country WHERE code = :code");
 		query.setParameter("code", code);
 		Country country = (Country)query.uniqueResult();
+
+		// If that country exists in the database, change the country's
+		// population and then use Hibernate to write the new population
+		// to the database.
 		if (country != null) {
 			country.setPopulation(population);
 			session.update(country);
@@ -76,27 +75,50 @@ public class Main {
 
 	/** Deletes a country from the world.country table. */
 	private static void deleteCountry(SessionFactory factory, String code) {
+		// Use Hibernate to get from the database, the data for the
+		// country with the given code.
 		Session session = factory.getCurrentSession();
 		Transaction transac = session.beginTransaction();
 		Query query = session.createQuery("FROM Country WHERE code = :code");
 		query.setParameter("code", code);
 		Country country = (Country)query.uniqueResult();
+
+		// If that country exists in the database, use Hibernate to
+		// delete that country.
 		if (country != null) {
 			session.delete(country);
 		}
 		transac.commit();
 	}
 
+	/** Shows one country from the world.country table. */
+	private static void showCountry(SessionFactory factory, String code) {
+		// Use Hibernate to get from the database, the data for the
+		// country with the given code.
+		Session session = factory.getCurrentSession();
+		Transaction transac = session.beginTransaction();
+		Query query = session.createQuery("FROM Country WHERE code = :code");
+		query.setParameter("code", code);
+		Country country = (Country)query.uniqueResult();
+		transac.commit();
+
+		// Display the country for the user to see.
+		System.out.println(country);
+	}
+
 	/** Shows all countries in the world.country table. */
 	private static void showCountries(SessionFactory factory) {
+		// Use Hibernate to get from the database a list of all countries.
 		Session session = factory.getCurrentSession();
 		Transaction transac = session.beginTransaction();
 		Query query = session.createQuery("FROM Country");
 		List allCountries = query.list();
+		transac.commit();
+
+		// Display all the countries for the user to see.
 		for (int i = 0, size = allCountries.size();  i < size;  ++i) {
 			Country c = (Country)allCountries.get(i);
 			System.out.println(c);
 		}
-		transac.commit();
 	}
 }
