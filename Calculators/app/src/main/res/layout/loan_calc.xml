@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    tools:context="edu.byui.cit360.calculators.LoanCalc">
+
+    <TextView
+        android:id="@+id/lblAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/decAmt"
+        android:text="@string/amt" />
+
+    <EditText
+        android:id="@+id/decAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblAR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/decAR"
+        android:text="@string/ar" />
+
+    <EditText
+        android:id="@+id/decAR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblYears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/intYears"
+        android:text="@string/years" />
+
+    <EditText
+        android:id="@+id/intYears"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/lblPPY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/intPPY"
+        android:text="@string/payPY" />
+
+    <EditText
+        android:id="@+id/intPPY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onPayClick"
+        android:text="@string/pay" />
+
+    <TextView
+        android:id="@+id/txtPay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/lblPTD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:labelFor="@+id/intPTD"
+        android:text="@string/ptd" />
+
+    <EditText
+        android:id="@+id/intPTD"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="5"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btnBal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onBalClick"
+        android:text="@string/bal" />
+
+    <TextView
+        android:id="@+id/txtBal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="onResetClick"
+        android:text="@string/reset" />
+
+</GridLayout>

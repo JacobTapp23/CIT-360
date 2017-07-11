@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.byui.cit360.calculators.ComparePrices">
+
+    <TextView
+        android:id="@+id/lblProd1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/prod1" />
+
+    <TextView
+        android:id="@+id/lblPrice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblProd1"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/decPrice1"
+        android:text="@string/price" />
+
+    <EditText
+        android:id="@+id/decPrice1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice1"
+        android:layout_toEndOf="@+id/lblPrice1"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblQuant1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice1"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/decPrice1"
+        android:labelFor="@+id/decQuant1"
+        android:text="@string/quant" />
+
+    <EditText
+        android:id="@+id/decQuant1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice1"
+        android:layout_toEndOf="@+id/lblQuant1"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblPer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/decPrice1"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/txtPer1"
+        android:text="@string/per" />
+
+    <TextView
+        android:id="@+id/txtPer1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPer1"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/lblPer1"
+        android:text="" />
+
+
+    <TextView
+        android:id="@+id/lblProd2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblPer1"
+        android:layout_marginTop="10dp"
+        android:text="@string/prod2" />
+
+    <TextView
+        android:id="@+id/lblPrice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblProd2"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/decPrice2"
+        android:text="@string/price" />
+
+    <EditText
+        android:id="@+id/decPrice2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice2"
+        android:layout_toEndOf="@+id/lblPrice2"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblQuant2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice2"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/decPrice2"
+        android:labelFor="@+id/decQuant2"
+        android:text="@string/quant" />
+
+    <EditText
+        android:id="@+id/decQuant2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice2"
+        android:layout_toEndOf="@+id/lblQuant2"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblPer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/decPrice2"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/txtPer2"
+        android:text="@string/per" />
+
+    <TextView
+        android:id="@+id/txtPer2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPer2"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/lblPer2"
+        android:text="" />
+
+
+    <TextView
+        android:id="@+id/lblProd3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblPer2"
+        android:layout_marginTop="10dp"
+        android:text="@string/prod3" />
+
+    <TextView
+        android:id="@+id/lblPrice3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblProd3"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/decPrice3"
+        android:text="@string/price" />
+
+    <EditText
+        android:id="@+id/decPrice3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice3"
+        android:layout_toEndOf="@+id/lblPrice3"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblQuant3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice3"
+        android:layout_marginStart="10dp"
+        android:layout_toEndOf="@+id/decPrice3"
+        android:labelFor="@+id/decQuant3"
+        android:text="@string/quant" />
+
+    <EditText
+        android:id="@+id/decQuant3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPrice3"
+        android:layout_toEndOf="@+id/lblQuant3"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblPer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/decPrice3"
+        android:layout_marginStart="20dp"
+        android:labelFor="@+id/txtPer3"
+        android:text="@string/per" />
+
+    <TextView
+        android:id="@+id/txtPer3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblPer3"
+        android:layout_marginStart="5dp"
+        android:layout_toEndOf="@+id/lblPer3"
+        android:text="" />
+
+    <Button
+        android:id="@+id/btnCompare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/lblPer3"
+        android:onClick="onCompareClick"
+        android:text="@string/compare" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnCompare"
+        android:layout_toEndOf="@+id/btnCompare"
+        android:onClick="onClearClick"
+        android:text="@string/clear" />
+</RelativeLayout>

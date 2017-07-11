@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.byui.cit360.calculators.Calculators">
+
+    <TextView
+        android:id="@+id/lblShopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/shopping" />
+
+    <Button
+        android:id="@+id/btnComparePrices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/lblShopping"
+        android:onClick="onCompareClick"
+        android:text="@string/compPrices" />
+
+    <TextView
+        android:id="@+id/lblFinance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/btnComparePrices"
+        android:text="@string/finance" />
+
+    <Button
+        android:id="@+id/btnFV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/lblFinance"
+        android:onClick="onInvestClick"
+        android:text="@string/fv" />
+
+    <Button
+        android:id="@+id/btnLoan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/btnFV"
+        android:layout_toEndOf="@id/btnFV"
+        android:onClick="onLoanClick"
+        android:text="@string/loan" />
+
+</RelativeLayout>
