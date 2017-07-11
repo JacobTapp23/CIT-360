@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Calculators</string>
     <string name="shopping">Shopping</string>
+    <string name="cars">Cars</string>
     <string name="finance">Finance</string>
 
     <string name="compPrices">Compare Prices</string>
@@ -11,14 +12,24 @@
     <string name="quant">Quantity</string>
     <string name="per">Price per</string>
     <string name="compare">Compare</string>
-    <string name="clear">Clear</string>
+
+    <string name="tip">Tip</string>
+    <string name="cost">Cost before Tax</string>
+    <string name="twelve">12%</string>
+    <string name="fifteen">15%</string>
+    <string name="eighteen">18%</string>
+
+    <string name="distPerVol">Mileage</string>
+    <string name="begin">Begin</string>
+    <string name="end">End</string>
+    <string name="dist">Miles</string>
+    <string name="vol">Gallons</string>
 
     <string name="fv">Future Value</string>
     <string name="princ">Principal</string>
     <string name="ar">Annual Rate (ex: 4.875)</string>
     <string name="years">Number of Years</string>
     <string name="ppy">Periods per Year</string>
-    <string name="reset">Reset</string>
 
     <string name="loan">Loan</string>
     <string name="amt">Amount Borrowed</string>
@@ -26,4 +37,7 @@
     <string name="pay">Payment</string>
     <string name="bal">Balance</string>
     <string name="ptd">Payments Paid to Date</string>
+
+    <string name="clear">Clear</string>
+    <string name="reset">Reset</string>
 </resources>

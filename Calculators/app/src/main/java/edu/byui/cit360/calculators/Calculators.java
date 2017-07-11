@@ -17,6 +17,16 @@ public class Calculators extends Activity {
         startActivity(intent);
     }
 
+    public void onTipClick(View view) {
+        Intent intent = new Intent(this, Tip.class);
+        startActivity(intent);
+    }
+
+    public void onDistPerVolClick(View view) {
+        Intent intent = new Intent(this, DistPerVol.class);
+        startActivity(intent);
+    }
+
     public void onInvestClick(View view) {
         Intent intent = new Intent(this, InvestCalc.class);
         startActivity(intent);

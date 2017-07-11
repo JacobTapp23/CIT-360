@@ -16,7 +16,7 @@
         android:text="@string/shopping" />
 
     <Button
-        android:id="@+id/btnComparePrices"
+        android:id="@+id/btnCompare"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -24,12 +24,38 @@
         android:onClick="onCompareClick"
         android:text="@string/compPrices" />
 
+    <Button
+        android:id="@+id/btnTips"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnCompare"
+        android:layout_toEndOf="@+id/btnCompare"
+        android:onClick="onTipClick"
+        android:text="@string/tip" />
+
+    <TextView
+        android:id="@+id/lblCars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/btnCompare"
+        android:text="@string/cars" />
+
+    <Button
+        android:id="@+id/btnDistPerVol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/lblCars"
+        android:onClick="onDistPerVolClick"
+        android:text="@string/distPerVol" />
+
     <TextView
         android:id="@+id/lblFinance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@id/btnComparePrices"
+        android:layout_below="@id/btnDistPerVol"
         android:text="@string/finance" />
 
     <Button

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.byui.cit360.calculators.DistPerVol">
+
+    <TextView
+        android:id="@+id/lblBegin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:labelFor="@+id/decBegin"
+        android:text="@string/begin" />
+
+    <EditText
+        android:id="@+id/decBegin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblBegin"
+        android:layout_toEndOf="@+id/lblBegin"
+        android:ems="4"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblBegin"
+        android:layout_toEndOf="@+id/decBegin"
+        android:labelFor="@+id/decEnd"
+        android:text="@string/end" />
+
+    <EditText
+        android:id="@+id/decEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblBegin"
+        android:layout_toEndOf="@+id/lblEnd"
+        android:ems="4"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblDist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblBegin"
+        android:layout_toEndOf="@+id/decEnd"
+        android:labelFor="@+id/decDist"
+        android:text="@string/dist" />
+
+    <EditText
+        android:id="@+id/decDist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblDist"
+        android:layout_toEndOf="@+id/lblDist"
+        android:ems="4"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblVol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/decDist"
+        android:labelFor="@+id/decVol"
+        android:text="@string/vol" />
+
+    <EditText
+        android:id="@+id/decVol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblVol"
+        android:layout_toEndOf="@+id/lblVol"
+        android:ems="4"
+        android:inputType="numberDecimal" />
+
+    <Button
+        android:id="@+id/btnDistPerVol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/decVol"
+        android:onClick="onDistPerVolClick"
+        android:text="@string/distPerVol" />
+
+    <TextView
+        android:id="@+id/numDistPerVol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnDistPerVol"
+        android:layout_toEndOf="@+id/btnDistPerVol" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnDistPerVol"
+        android:onClick="onClearClick"
+        android:text="@string/clear" />
+
+</RelativeLayout>

@@ -11,7 +11,7 @@ import java.text.ParseException;
 
 public class LoanCalc extends Activity {
     private EditText decAmt, decAR, intYears, intPPY, intPTD;
-    private TextView txtPay, txtBal;
+    private TextView curPay, curBal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,19 +22,19 @@ public class LoanCalc extends Activity {
         decAR = (EditText)findViewById(R.id.decAR);
         intYears = (EditText)findViewById(R.id.intYears);
         intPPY = (EditText)findViewById(R.id.intPPY);
-        txtPay = (TextView)findViewById(R.id.txtPay);
+        curPay = (TextView)findViewById(R.id.txtPay);
         intPTD = (EditText)findViewById(R.id.intPTD);
-        txtBal = (TextView)findViewById(R.id.txtBal);
+        curBal = (TextView)findViewById(R.id.txtBal);
     }
 
     public void onPayClick(View view) {
         try {
-            double a = getDec(decAmt);
+            double a = getCur(decAmt);
             double ar = getDec(decAR) / 100.0;
             int y = getInt(intYears);
             int ppy = getInt(intPPY);
             double p = computePayment(a, ar, y, ppy);
-            txtPay.setText(currFmtr.format(p));
+            curPay.setText(curFmtr.format(p));
         }
         catch (Exception ex) {
         }
@@ -42,13 +42,13 @@ public class LoanCalc extends Activity {
 
     public void onBalClick(View view) {
         try {
-            double a = getDec(decAmt);
+            double a = getCur(decAmt);
             double ar = getDec(decAR) / 100.0;
             int y = getInt(intYears);
             int ppy = getInt(intPPY);
             int ptd = getInt(intPTD);
             double b = computeBalance(a, ar, y, ppy, ptd);
-            txtBal.setText(currFmtr.format(b));
+            curBal.setText(curFmtr.format(b));
         }
         catch (Exception ex) {
         }
@@ -59,9 +59,9 @@ public class LoanCalc extends Activity {
         decAR.setText("");
         intYears.setText("");
         intPPY.setText("");
-        txtPay.setText("");
+        curPay.setText("");
         intPTD.setText("");
-        txtBal.setText("");
+        curBal.setText("");
     }
 
 
@@ -83,15 +83,48 @@ public class LoanCalc extends Activity {
     }
 
 
-    static NumberFormat currFmtr = NumberFormat.getCurrencyInstance();
+    static NumberFormat curFmtr = NumberFormat.getCurrencyInstance();
     static NumberFormat intFmtr = NumberFormat.getIntegerInstance();
     static NumberFormat decFmtr = NumberFormat.getInstance();
 
     static int getInt(EditText text) throws ParseException {
-        return intFmtr.parse(text.getText().toString()).intValue();
+        Number val = null;
+        String s = text.getText().toString();
+        try {
+            val = intFmtr.parse(s);
+        }
+        catch (Exception ex) {
+            val = Double.parseDouble(s);
+        }
+        return val.intValue();
     }
 
     static double getDec(EditText text) throws ParseException {
-        return decFmtr.parse(text.getText().toString()).doubleValue();
+        Number val = null;
+        String s = text.getText().toString();
+        try {
+            val = decFmtr.parse(s);
+        }
+        catch (Exception ex) {
+            val = Double.parseDouble(s);
+        }
+        return val.doubleValue();
+    }
+
+    static double getCur(EditText text) throws ParseException {
+        Number val = null;
+        String s = text.getText().toString();
+        try {
+            val = curFmtr.parse(s);
+        }
+        catch (Exception ex) {
+            try {
+                val = decFmtr.parse(s);
+            }
+            catch (Exception ex2) {
+                val = Double.parseDouble(s);
+            }
+        }
+        return val.doubleValue();
     }
 }

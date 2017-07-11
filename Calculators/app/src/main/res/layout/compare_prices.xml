@@ -22,17 +22,18 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/lblProd1"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/decPrice1"
+        android:labelFor="@+id/curPrice1"
         android:text="@string/price" />
 
     <EditText
-        android:id="@+id/decPrice1"
+        android:id="@+id/curPrice1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice1"
         android:layout_toEndOf="@+id/lblPrice1"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="textEnd" />
 
     <TextView
         android:id="@+id/lblQuant1"
@@ -40,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice1"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/decPrice1"
+        android:layout_toEndOf="@+id/curPrice1"
         android:labelFor="@+id/decQuant1"
         android:text="@string/quant" />
 
@@ -51,20 +52,21 @@
         android:layout_alignBaseline="@+id/lblPrice1"
         android:layout_toEndOf="@+id/lblQuant1"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="textEnd" />
 
     <TextView
         android:id="@+id/lblPer1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/decPrice1"
+        android:layout_below="@+id/curPrice1"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/txtPer1"
+        android:labelFor="@+id/curPer1"
         android:text="@string/per" />
 
     <TextView
-        android:id="@+id/txtPer1"
+        android:id="@+id/curPer1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPer1"
@@ -89,17 +91,18 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/lblProd2"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/decPrice2"
+        android:labelFor="@+id/curPrice2"
         android:text="@string/price" />
 
     <EditText
-        android:id="@+id/decPrice2"
+        android:id="@+id/curPrice2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice2"
         android:layout_toEndOf="@+id/lblPrice2"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="textEnd" />
 
     <TextView
         android:id="@+id/lblQuant2"
@@ -107,7 +110,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice2"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/decPrice2"
+        android:layout_toEndOf="@+id/curPrice2"
         android:labelFor="@+id/decQuant2"
         android:text="@string/quant" />
 
@@ -118,20 +121,21 @@
         android:layout_alignBaseline="@+id/lblPrice2"
         android:layout_toEndOf="@+id/lblQuant2"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="textEnd" />
 
     <TextView
         android:id="@+id/lblPer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/decPrice2"
+        android:layout_below="@+id/curPrice2"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/txtPer2"
+        android:labelFor="@+id/curPer2"
         android:text="@string/per" />
 
     <TextView
-        android:id="@+id/txtPer2"
+        android:id="@+id/curPer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPer2"
@@ -156,17 +160,18 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/lblProd3"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/decPrice3"
+        android:labelFor="@+id/curPrice3"
         android:text="@string/price" />
 
     <EditText
-        android:id="@+id/decPrice3"
+        android:id="@+id/curPrice3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice3"
         android:layout_toEndOf="@+id/lblPrice3"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="textEnd" />
 
     <TextView
         android:id="@+id/lblQuant3"
@@ -174,7 +179,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice3"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/decPrice3"
+        android:layout_toEndOf="@+id/curPrice3"
         android:labelFor="@+id/decQuant3"
         android:text="@string/quant" />
 
@@ -185,20 +190,21 @@
         android:layout_alignBaseline="@+id/lblPrice3"
         android:layout_toEndOf="@+id/lblQuant3"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="textEnd" />
 
     <TextView
         android:id="@+id/lblPer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/decPrice3"
+        android:layout_below="@+id/curPrice3"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/txtPer3"
+        android:labelFor="@+id/curPer3"
         android:text="@string/per" />
 
     <TextView
-        android:id="@+id/txtPer3"
+        android:id="@+id/curPer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPer3"

@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 public class ComparePrices extends Activity {
     private static class Compare {
-        EditText decPrice, decQuant;
-        TextView txtPer;
+        EditText curPrice, decQuant;
+        TextView curPer;
     }
 
     private Compare[] compares;
@@ -24,17 +24,17 @@ public class ComparePrices extends Activity {
             compares[i] = new Compare();
         }
         Compare comp = compares[0];
-        comp.decPrice = (EditText)findViewById(R.id.decPrice1);
+        comp.curPrice = (EditText)findViewById(R.id.curPrice1);
         comp.decQuant = (EditText)findViewById(R.id.decQuant1);
-        comp.txtPer = (TextView)findViewById(R.id.txtPer1);
+        comp.curPer = (TextView)findViewById(R.id.curPer1);
         comp = compares[1];
-        comp.decPrice = (EditText)findViewById(R.id.decPrice2);
+        comp.curPrice = (EditText)findViewById(R.id.curPrice2);
         comp.decQuant = (EditText)findViewById(R.id.decQuant2);
-        comp.txtPer = (TextView)findViewById(R.id.txtPer2);
+        comp.curPer = (TextView)findViewById(R.id.curPer2);
         comp = compares[2];
-        comp.decPrice = (EditText)findViewById(R.id.decPrice3);
+        comp.curPrice = (EditText)findViewById(R.id.curPrice3);
         comp.decQuant = (EditText)findViewById(R.id.decQuant3);
-        comp.txtPer = (TextView)findViewById(R.id.txtPer3);
+        comp.curPer = (TextView)findViewById(R.id.curPer3);
     }
 
     public void onCompareClick(View view) {
@@ -45,10 +45,10 @@ public class ComparePrices extends Activity {
         for (int i = 0;  i < compares.length;  ++i) {
             try {
                 Compare comp = compares[i];
-                double price = LoanCalc.getDec(comp.decPrice);
+                double price = LoanCalc.getCur(comp.curPrice);
                 double quant = LoanCalc.getDec(comp.decQuant);
                 double per = price / quant;
-                comp.txtPer.setText(LoanCalc.currFmtr.format(per));
+                comp.curPer.setText(LoanCalc.curFmtr.format(per));
                 if (per < min) {
                     min = per;
                     index = i;
@@ -60,14 +60,14 @@ public class ComparePrices extends Activity {
 
         if (index != -1) {
             Compare comp = compares[index];
-            comp.txtPer.setBackgroundColor(getResources().getColor(R.color.colorBest, null));
+            comp.curPer.setBackgroundColor(getResources().getColor(R.color.colorBest, null));
         }
     }
 
     public void onClearClick(View view) {
         for (int i = 0;  i < compares.length;  ++i) {
             Compare comp = compares[i];
-            comp.decPrice.setText("");
+            comp.curPrice.setText("");
             comp.decQuant.setText("");
         }
         clearResults(view);
@@ -76,8 +76,8 @@ public class ComparePrices extends Activity {
     private void clearResults(View view) {
         for (int i = 0;  i < compares.length;  ++i) {
             Compare comp = compares[i];
-            comp.txtPer.setText("");
-            comp.txtPer.setBackground(null);
+            comp.curPer.setText("");
+            comp.curPer.setBackground(null);
         }
     }
 }
