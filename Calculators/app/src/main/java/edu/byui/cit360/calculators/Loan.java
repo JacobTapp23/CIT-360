@@ -9,14 +9,14 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 import java.text.ParseException;
 
-public class LoanCalc extends Activity {
+public class Loan extends Activity {
     private EditText decAmt, decAR, intYears, intPPY, intPTD;
     private TextView curPay, curBal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.loan_calc);
+        setContentView(R.layout.loan);
 
         decAmt = (EditText)findViewById(R.id.decAmt);
         decAR = (EditText)findViewById(R.id.decAR);

@@ -6,14 +6,14 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class InvestCalc extends Activity {
+public class Invest extends Activity {
     private EditText numPrinc, numAR, numYears, numPPY;
     private TextView curFV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.invest_calc);
+        setContentView(R.layout.invest);
 
         numPrinc = (EditText)findViewById(R.id.numPrinc);
         numAR = (EditText)findViewById(R.id.numAR);
@@ -24,15 +24,15 @@ public class InvestCalc extends Activity {
 
     public void onFVClick(View view) {
         try {
-            double a = LoanCalc.getCur(numPrinc);
-            double ar = LoanCalc.getDec(numAR) / 100.0;
-            int y = LoanCalc.getInt(numYears);
-            int ppy = LoanCalc.getInt(numPPY);
+            double a = Loan.getCur(numPrinc);
+            double ar = Loan.getDec(numAR) / 100.0;
+            int y = Loan.getInt(numYears);
+            int ppy = Loan.getInt(numPPY);
             double r = ar / ppy;
             int n = y * ppy;
             double fv = a * Math.pow(1 + r, n);
             fv = Math.round(fv * 100.0) / 100.0;
-            curFV.setText(LoanCalc.curFmtr.format(fv));
+            curFV.setText(Loan.curFmtr.format(fv));
         }
         catch (Exception ex) {
         }

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:columnCount="2"
-    tools:context="edu.byui.cit360.calculators.InvestCalc">
+    tools:context="edu.byui.cit360.calculators.Invest">
 
     <TextView
         android:id="@+id/lblPrinc"

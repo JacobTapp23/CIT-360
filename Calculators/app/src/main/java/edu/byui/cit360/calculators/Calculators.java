@@ -28,12 +28,17 @@ public class Calculators extends Activity {
     }
 
     public void onInvestClick(View view) {
-        Intent intent = new Intent(this, InvestCalc.class);
+        Intent intent = new Intent(this, Invest.class);
         startActivity(intent);
     }
 
     public void onLoanClick(View view) {
-        Intent intent = new Intent(this, LoanCalc.class);
+        Intent intent = new Intent(this, Loan.class);
+        startActivity(intent);
+    }
+
+    public void onOhmsLawClick(View view) {
+        Intent intent = new Intent(this, OhmsLaw.class);
         startActivity(intent);
     }
 }

@@ -26,26 +26,26 @@ public class DistPerVol extends Activity {
 
     public void onDistPerVolClick(View view) {
         try {
-            NumberFormat fmtr = LoanCalc.decFmtr;
+            NumberFormat fmtr = Loan.decFmtr;
             double dist;
             if (decDist.getText().toString().trim().length() > 0) {
                 decBegin.setText("");
                 decEnd.setText("");
-                dist = LoanCalc.getDec(decDist);
+                dist = Loan.getDec(decDist);
             }
             else {
-                double begin = LoanCalc.getDec(decBegin);
-                double end = LoanCalc.getDec(decEnd);
+                double begin = Loan.getDec(decBegin);
+                double end = Loan.getDec(decEnd);
                 dist = Math.abs(end - begin);
                 fmtr.setMinimumFractionDigits(0);
                 fmtr.setMaximumFractionDigits(1);
                 decDist.setText(fmtr.format(dist));
             }
-            double vol = LoanCalc.getDec(decVol);
+            double vol = Loan.getDec(decVol);
             double distPerVol = dist / vol;
             fmtr.setMinimumFractionDigits(1);
             fmtr.setMaximumFractionDigits(1);
-            numDistPerVol.setText(LoanCalc.decFmtr.format(distPerVol));
+            numDistPerVol.setText(Loan.decFmtr.format(distPerVol));
         }
         catch (Exception ex) {
         }

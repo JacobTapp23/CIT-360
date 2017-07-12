@@ -40,4 +40,6 @@
 
     <string name="clear">Clear</string>
     <string name="reset">Reset</string>
+    <string name="electricity">Electricity</string>
+    <string name="ohmsLaw">Ohm\'s Law</string>
 </resources>

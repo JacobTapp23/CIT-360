@@ -45,10 +45,10 @@ public class ComparePrices extends Activity {
         for (int i = 0;  i < compares.length;  ++i) {
             try {
                 Compare comp = compares[i];
-                double price = LoanCalc.getCur(comp.curPrice);
-                double quant = LoanCalc.getDec(comp.decQuant);
+                double price = Loan.getCur(comp.curPrice);
+                double quant = Loan.getDec(comp.decQuant);
                 double per = price / quant;
-                comp.curPer.setText(LoanCalc.curFmtr.format(per));
+                comp.curPer.setText(Loan.curFmtr.format(per));
                 if (per < min) {
                     min = per;
                     index = i;

@@ -25,11 +25,11 @@ public class Tip extends Activity {
 
     public void onTipClick(View view) {
         try {
-            double cost = LoanCalc.getCur(decCost);
+            double cost = Loan.getCur(decCost);
             double t12 = cost * 0.12;
             double t15 = cost * 0.15;
             double t18 = cost * 0.18;
-            NumberFormat fmtr = LoanCalc.curFmtr;
+            NumberFormat fmtr = Loan.curFmtr;
             num12.setText(fmtr.format(t12));
             num15.setText(fmtr.format(t15));
             num18.setText(fmtr.format(t18));

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.byui.cit360.calculators.OhmsLaw">
+
+    <EditText
+        android:id="@+id/decVolt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/decVolt"
+        android:layout_toEndOf="@+id/decVolt"
+        android:layout_alignStart="@+id/lblEqual"
+        android:layout_alignEnd="@+id/lblEqual" />
+
+    <EditText
+        android:id="@+id/decCur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/decVolt"
+        android:layout_toEndOf="@+id/lblEmpty"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/decResist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/decVolt"
+        android:layout_toEndOf="@+id/decCur"
+        android:ems="5"
+        android:inputType="numberDecimal" />
+
+    <TextView
+        android:id="@+id/lblVolt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/decVolt"
+        android:layout_alignStart="@+id/decVolt"
+        android:layout_alignEnd="@+id/decVolt"
+        android:text="V"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/lblEqual"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblVolt"
+        android:layout_toEndOf="@+id/lblVolt"
+        android:text="=" />
+
+    <TextView
+        android:id="@+id/lblCur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblVolt"
+        android:layout_alignStart="@+id/decCur"
+        android:layout_alignEnd="@+id/decCur"
+        android:text="I"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/lblResist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/lblVolt"
+        android:layout_alignEnd="@+id/decResist"
+        android:layout_alignStart="@+id/decResist"
+        android:layout_centerHorizontal="false"
+        android:layout_centerInParent="false"
+        android:text="R"
+        android:textAlignment="center" />
+
+    <Button
+        android:id="@+id/btnCalc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lblVolt"
+        android:layout_alignStart="@+id/lblEqual"
+        android:text="Calculate" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnCalc"
+        android:layout_toEndOf="@+id/btnCalc"
+        android:onClick="onClearClick"
+        android:text="@string/clear" />
+</RelativeLayout>
