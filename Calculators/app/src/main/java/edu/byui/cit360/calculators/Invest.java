@@ -38,7 +38,7 @@ public class Invest extends Activity {
         }
     }
 
-    public void onResetClick(View view) {
+    public void onClearClick(View view) {
         numPrinc.setText("");
         numAR.setText("");
         numYears.setText("");

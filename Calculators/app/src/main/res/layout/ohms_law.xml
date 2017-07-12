@@ -13,7 +13,8 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/lblEmpty"
@@ -31,7 +32,8 @@
         android:layout_alignBaseline="@+id/decVolt"
         android:layout_toEndOf="@+id/lblEmpty"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
 
     <EditText
         android:id="@+id/decResist"
@@ -40,16 +42,18 @@
         android:layout_alignBaseline="@+id/decVolt"
         android:layout_toEndOf="@+id/decCur"
         android:ems="5"
-        android:inputType="numberDecimal" />
+        android:inputType="numberDecimal"
+        android:textAlignment="center" />
 
     <TextView
         android:id="@+id/lblVolt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/decVolt"
-        android:layout_alignStart="@+id/decVolt"
         android:layout_alignEnd="@+id/decVolt"
-        android:text="V"
+        android:layout_alignStart="@+id/decVolt"
+        android:layout_below="@+id/decVolt"
+        android:labelFor="@+id/decVolt"
+        android:text="@string/voltage"
         android:textAlignment="center" />
 
     <TextView
@@ -58,16 +62,17 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblVolt"
         android:layout_toEndOf="@+id/lblVolt"
-        android:text="=" />
+        android:text="@string/equal" />
 
     <TextView
         android:id="@+id/lblCur"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblVolt"
-        android:layout_alignStart="@+id/decCur"
         android:layout_alignEnd="@+id/decCur"
-        android:text="I"
+        android:layout_alignStart="@+id/decCur"
+        android:labelFor="@+id/decCur"
+        android:text="@string/current"
         android:textAlignment="center" />
 
     <TextView
@@ -77,18 +82,18 @@
         android:layout_alignBaseline="@+id/lblVolt"
         android:layout_alignEnd="@+id/decResist"
         android:layout_alignStart="@+id/decResist"
-        android:layout_centerHorizontal="false"
-        android:layout_centerInParent="false"
-        android:text="R"
+        android:labelFor="@+id/decResist"
+        android:text="@string/resistance"
         android:textAlignment="center" />
 
     <Button
         android:id="@+id/btnCalc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/lblVolt"
         android:layout_alignStart="@+id/lblEqual"
-        android:text="Calculate" />
+        android:layout_below="@+id/lblVolt"
+        android:onClick="onCalcClick"
+        android:text="@string/calc" />
 
     <Button
         android:id="@+id/btnClear"

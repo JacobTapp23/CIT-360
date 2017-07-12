@@ -85,10 +85,10 @@
         android:textAlignment="textEnd" />
 
     <Button
-        android:id="@+id/btnReset"
+        android:id="@+id/btnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onResetClick"
-        android:text="@string/reset" />
+        android:onClick="onClearClick"
+        android:text="@string/clear" />
 
 </GridLayout>

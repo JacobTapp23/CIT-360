@@ -14,7 +14,7 @@ public class OhmsLaw extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.dist_per_vol);
+        setContentView(R.layout.ohms_law);
 
         decVolt = (EditText)findViewById(R.id.decVolt);
         decCur = (EditText)findViewById(R.id.decCur);

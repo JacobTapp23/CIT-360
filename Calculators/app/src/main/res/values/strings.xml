@@ -3,6 +3,7 @@
     <string name="shopping">Shopping</string>
     <string name="cars">Cars</string>
     <string name="finance">Finance</string>
+    <string name="electricity">Electricity</string>
 
     <string name="compPrices">Compare Prices</string>
     <string name="prod1">Product 1</string>
@@ -11,7 +12,6 @@
     <string name="price">Price</string>
     <string name="quant">Quantity</string>
     <string name="per">Price per</string>
-    <string name="compare">Compare</string>
 
     <string name="tip">Tip</string>
     <string name="cost">Cost before Tax</string>
@@ -38,8 +38,13 @@
     <string name="bal">Balance</string>
     <string name="ptd">Payments Paid to Date</string>
 
-    <string name="clear">Clear</string>
-    <string name="reset">Reset</string>
-    <string name="electricity">Electricity</string>
     <string name="ohmsLaw">Ohm\'s Law</string>
+    <string name="voltage">V</string>
+    <string name="equal">=</string>
+    <string name="current">I</string>
+    <string name="resistance">R</string>
+
+    <string name="calc">Calculate</string>
+    <string name="clear">Clear</string>
+    <string name="compare">Compare</string>
 </resources>

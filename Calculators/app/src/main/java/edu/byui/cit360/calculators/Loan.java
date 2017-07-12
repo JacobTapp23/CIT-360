@@ -54,7 +54,7 @@ public class Loan extends Activity {
         }
     }
 
-    public void onResetClick(View view) {
+    public void onClearClick(View view) {
         decAmt.setText("");
         decAR.setText("");
         intYears.setText("");
