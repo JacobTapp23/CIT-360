@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <GridLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
     android:columnCount="2"
     tools:context="edu.byui.cit360.calculators.Loan">
 
@@ -72,7 +73,6 @@
         android:id="@+id/btnPay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onPayClick"
         android:text="@string/pay" />
 
     <TextView
@@ -99,7 +99,6 @@
         android:id="@+id/btnBal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onBalClick"
         android:text="@string/bal" />
 
     <TextView
@@ -111,7 +110,6 @@
         android:id="@+id/btnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="onClearClick"
         android:text="@string/clear" />
 
 </GridLayout>

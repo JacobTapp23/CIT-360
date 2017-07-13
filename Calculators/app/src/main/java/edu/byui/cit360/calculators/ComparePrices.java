@@ -1,83 +1,100 @@
 package edu.byui.cit360.calculators;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class ComparePrices extends Activity {
-    private static class Compare {
+public class ComparePrices extends CalcFragment {
+    private static class Product {
         EditText curPrice, decQuant;
         TextView curPer;
     }
 
-    private Compare[] compares;
+    private Product[] products;
+
+    public ComparePrices() {
+        // Required empty public constructor
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.compare_prices);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.compare_prices, container, false);
 
-        compares = new Compare[3];
-        for (int i = 0;  i < compares.length;  ++i) {
-            compares[i] = new Compare();
+        products = new Product[3];
+        for (int i = 0; i < products.length; ++i) {
+            products[i] = new Product();
         }
-        Compare comp = compares[0];
-        comp.curPrice = (EditText)findViewById(R.id.curPrice1);
-        comp.decQuant = (EditText)findViewById(R.id.decQuant1);
-        comp.curPer = (TextView)findViewById(R.id.curPer1);
-        comp = compares[1];
-        comp.curPrice = (EditText)findViewById(R.id.curPrice2);
-        comp.decQuant = (EditText)findViewById(R.id.decQuant2);
-        comp.curPer = (TextView)findViewById(R.id.curPer2);
-        comp = compares[2];
-        comp.curPrice = (EditText)findViewById(R.id.curPrice3);
-        comp.decQuant = (EditText)findViewById(R.id.decQuant3);
-        comp.curPer = (TextView)findViewById(R.id.curPer3);
+        Product prod = products[0];
+        prod.curPrice = (EditText)view.findViewById(R.id.curPrice1);
+        prod.decQuant = (EditText)view.findViewById(R.id.decQuant1);
+        prod.curPer = (TextView)view.findViewById(R.id.curPer1);
+        prod = products[1];
+        prod.curPrice = (EditText)view.findViewById(R.id.curPrice2);
+        prod.decQuant = (EditText)view.findViewById(R.id.decQuant2);
+        prod.curPer = (TextView)view.findViewById(R.id.curPer2);
+        prod = products[2];
+        prod.curPrice = (EditText)view.findViewById(R.id.curPrice3);
+        prod.decQuant = (EditText)view.findViewById(R.id.decQuant3);
+        prod.curPer = (TextView)view.findViewById(R.id.curPer3);
+        view.findViewById(R.id.btnCompute).setOnClickListener(new Compare());
+        view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+        return view;
     }
 
-    public void onCompareClick(View view) {
-        clearResults(view);
+    private class Compare implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            clearResults(view);
 
-        double min = Double.MAX_VALUE;
-        int index = -1;
-        for (int i = 0;  i < compares.length;  ++i) {
-            try {
-                Compare comp = compares[i];
-                double price = Loan.getCur(comp.curPrice);
-                double quant = Loan.getDec(comp.decQuant);
-                double per = price / quant;
-                comp.curPer.setText(Loan.curFmtr.format(per));
-                if (per < min) {
-                    min = per;
-                    index = i;
+            double min = Double.MAX_VALUE;
+            int index = -1;
+            for (int i = 0; i < products.length; ++i) {
+                try {
+                    Product prod = products[i];
+                    double price = Calculators.getCur(prod.curPrice);
+                    double quant = Calculators.getDec(prod.decQuant);
+                    double per = price / quant;
+                    prod.curPer.setText(Calculators.curFmtr.format(per));
+                    if (per < min) {
+                        min = per;
+                        index = i;
+                    }
+                }
+                catch (Exception ex) {
+                    String name = getResources().getString(R.string.appName);
+                    Log.e(name, "exception", ex);
                 }
             }
-            catch (Exception ex) {
-            }
-        }
 
-        if (index != -1) {
-            Compare comp = compares[index];
-            comp.curPer.setBackgroundColor(getResources().getColor(R.color.colorBest, null));
+            if (index != -1) {
+                Product prod = products[index];
+                prod.curPer.setBackgroundColor(getResources().getColor(R.color.colorBest, null));
+            }
         }
     }
 
-    public void onClearClick(View view) {
-        for (int i = 0;  i < compares.length;  ++i) {
-            Compare comp = compares[i];
-            comp.curPrice.setText("");
-            comp.decQuant.setText("");
+    private class Clear implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            for (Product prod : products) {
+                prod.curPrice.setText("");
+                prod.decQuant.setText("");
+            }
+            clearResults(view);
         }
-        clearResults(view);
     }
 
     private void clearResults(View view) {
-        for (int i = 0;  i < compares.length;  ++i) {
-            Compare comp = compares[i];
-            comp.curPer.setText("");
-            comp.curPer.setBackground(null);
+        for (Product prod : products) {
+            prod.curPer.setText("");
+            prod.curPer.setBackground(null);
         }
     }
 }

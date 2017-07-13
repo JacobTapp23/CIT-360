@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.byui.cit360.calculators.OhmsLaw">
+    android:background="@android:color/white"
+    android:clickable="true"
+    tools:context="edu.byui.cit360.calculators.ShoeSize">
 
     <EditText
         android:id="@+id/decVolt"
@@ -87,20 +89,18 @@
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/btnCalc"
+        android:id="@+id/btnCompute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/lblEqual"
         android:layout_below="@+id/lblVolt"
-        android:onClick="onCalcClick"
-        android:text="@string/calc" />
+        android:text="@string/compute" />
 
     <Button
         android:id="@+id/btnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnCalc"
-        android:layout_toEndOf="@+id/btnCalc"
-        android:onClick="onClearClick"
+        android:layout_alignBaseline="@+id/btnCompute"
+        android:layout_toEndOf="@+id/btnCompute"
         android:text="@string/clear" />
 </RelativeLayout>

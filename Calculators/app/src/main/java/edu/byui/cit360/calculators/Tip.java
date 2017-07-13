@@ -1,47 +1,66 @@
 package edu.byui.cit360.calculators;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.NumberFormat;
 
-public class Tip extends Activity {
+public class Tip extends CalcFragment {
     private EditText decCost;
     private TextView num12, num15, num18;
 
+    public Tip() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.tip);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.tip, container, false);
 
-        decCost = (EditText)findViewById(R.id.curCost);
-        num12 = (TextView)findViewById(R.id.cur12);
-        num15 = (TextView)findViewById(R.id.cur15);
-        num18 = (TextView)findViewById(R.id.cur18);
+        decCost = (EditText)view.findViewById(R.id.curCost);
+        num12 = (TextView)view.findViewById(R.id.cur12);
+        num15 = (TextView)view.findViewById(R.id.cur15);
+        num18 = (TextView)view.findViewById(R.id.cur18);
+        view.findViewById(R.id.btnCompute).setOnClickListener(new Compute());
+        view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+        return view;
     }
 
-    public void onTipClick(View view) {
-        try {
-            double cost = Loan.getCur(decCost);
-            double t12 = cost * 0.12;
-            double t15 = cost * 0.15;
-            double t18 = cost * 0.18;
-            NumberFormat fmtr = Loan.curFmtr;
-            num12.setText(fmtr.format(t12));
-            num15.setText(fmtr.format(t15));
-            num18.setText(fmtr.format(t18));
-        }
-        catch (Exception ex) {
+    private class Compute implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            try {
+                double cost = Calculators.getCur(decCost);
+                double t12 = cost * 0.12;
+                double t15 = cost * 0.15;
+                double t18 = cost * 0.18;
+                NumberFormat fmtr = Calculators.curFmtr;
+                num12.setText(fmtr.format(t12));
+                num15.setText(fmtr.format(t15));
+                num18.setText(fmtr.format(t18));
+            }
+            catch (Exception ex) {
+                String name = getResources().getString(R.string.appName);
+                Log.e(name, "exception", ex);
+            }
         }
     }
 
-    private void onClearClick(View view) {
-        decCost.setText("");
-        num12.setText("");
-        num15.setText("");
-        num18.setText("");
+    private class Clear implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            decCost.setText("");
+            num12.setText("");
+            num15.setText("");
+            num18.setText("");
+        }
     }
 }

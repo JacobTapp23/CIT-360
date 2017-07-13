@@ -1,107 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="edu.byui.cit360.calculators.Calculators">
 
-    <TextView
-        android:id="@+id/lblShopping"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/shopping" />
+    <FrameLayout
+        android:id="@+id/frag_cont"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnCompare"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onCompareClick"
-            android:text="@string/compPrices" />
-
-        <Button
-            android:id="@+id/btnTips"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:onClick="onTipClick"
-            android:text="@string/tip" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/lblCars"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cars" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnDistPerVol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onDistPerVolClick"
-            android:text="@string/distPerVol" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/lblFinance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/finance" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnFV"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onInvestClick"
-            android:text="@string/fv" />
-
-        <Button
-            android:id="@+id/btnLoan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onLoanClick"
-            android:text="@string/loan" />
-
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/lblElectricity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/electricity" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btnOhmsLaw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onOhmsLawClick"
-            android:text="@string/ohmsLaw" />
-
-    </LinearLayout>
-
-</LinearLayout>
+    </FrameLayout>
+</FrameLayout>

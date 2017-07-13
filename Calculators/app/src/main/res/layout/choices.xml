@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:orientation="vertical"
+    tools:context="edu.byui.cit360.calculators.Choices">
+
+    <TextView
+        android:id="@+id/lblShopping"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/shopping" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnCompare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/compPrices" />
+
+        <Button
+            android:id="@+id/btnTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tip" />
+
+        <Button
+            android:id="@+id/btnShoeSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/shoeSize" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblCars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cars" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnDistPerVol"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/distPerVol" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblFinance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/finance" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnInvest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/fv" />
+
+        <Button
+            android:id="@+id/btnLoan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loan" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lblElectricity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/electricity" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnOhmsLaw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ohmsLaw" />
+
+    </LinearLayout>
+
+</LinearLayout>

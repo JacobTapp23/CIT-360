@@ -1,48 +1,67 @@
 package edu.byui.cit360.calculators;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class Invest extends Activity {
+public class Invest extends CalcFragment {
     private EditText numPrinc, numAR, numYears, numPPY;
     private TextView curFV;
 
+    public Invest() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.invest);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.invest, container, false);
 
-        numPrinc = (EditText)findViewById(R.id.numPrinc);
-        numAR = (EditText)findViewById(R.id.numAR);
-        numYears = (EditText)findViewById(R.id.numYears);
-        numPPY = (EditText)findViewById(R.id.numPPY);
-        curFV = (TextView)findViewById(R.id.txtFV);
+        numPrinc = (EditText)view.findViewById(R.id.numPrinc);
+        numAR = (EditText)view.findViewById(R.id.numAR);
+        numYears = (EditText)view.findViewById(R.id.numYears);
+        numPPY = (EditText)view.findViewById(R.id.numPPY);
+        curFV = (TextView)view.findViewById(R.id.txtFV);
+        view.findViewById(R.id.btnCompute).setOnClickListener(new Compute());
+        view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+        return view;
     }
 
-    public void onFVClick(View view) {
-        try {
-            double a = Loan.getCur(numPrinc);
-            double ar = Loan.getDec(numAR) / 100.0;
-            int y = Loan.getInt(numYears);
-            int ppy = Loan.getInt(numPPY);
-            double r = ar / ppy;
-            int n = y * ppy;
-            double fv = a * Math.pow(1 + r, n);
-            fv = Math.round(fv * 100.0) / 100.0;
-            curFV.setText(Loan.curFmtr.format(fv));
-        }
-        catch (Exception ex) {
+    private class Compute implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            try {
+                double a = Calculators.getCur(numPrinc);
+                double ar = Calculators.getDec(numAR) / 100.0;
+                int y = Calculators.getInt(numYears);
+                int ppy = Calculators.getInt(numPPY);
+                double r = ar / ppy;
+                int n = y * ppy;
+                double fv = a * Math.pow(1 + r, n);
+                fv = Math.round(fv * 100.0) / 100.0;
+                curFV.setText(Calculators.curFmtr.format(fv));
+            }
+            catch (Exception ex) {
+                String name = getResources().getString(R.string.appName);
+                Log.e(name, "exception", ex);
+            }
         }
     }
 
-    public void onClearClick(View view) {
-        numPrinc.setText("");
-        numAR.setText("");
-        numYears.setText("");
-        numPPY.setText("");
-        curFV.setText("");
+    private class Clear implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            numPrinc.setText("");
+            numAR.setText("");
+            numYears.setText("");
+            numPPY.setText("");
+            curFV.setText("");
+        }
     }
 }

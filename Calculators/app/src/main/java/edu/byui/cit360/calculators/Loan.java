@@ -1,79 +1,95 @@
 package edu.byui.cit360.calculators;
 
-import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
-
-public class Loan extends Activity {
+public class Loan extends CalcFragment {
     private EditText decAmt, decAR, intYears, intPPY, intPTD;
     private TextView curPay, curBal;
 
+    public Loan() {
+        // Required empty public constructor
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.loan);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.loan, container, false);
 
-        decAmt = (EditText)findViewById(R.id.decAmt);
-        decAR = (EditText)findViewById(R.id.decAR);
-        intYears = (EditText)findViewById(R.id.intYears);
-        intPPY = (EditText)findViewById(R.id.intPPY);
-        curPay = (TextView)findViewById(R.id.txtPay);
-        intPTD = (EditText)findViewById(R.id.intPTD);
-        curBal = (TextView)findViewById(R.id.txtBal);
+        decAmt = (EditText)view.findViewById(R.id.decAmt);
+        decAR = (EditText)view.findViewById(R.id.decAR);
+        intYears = (EditText)view.findViewById(R.id.intYears);
+        intPPY = (EditText)view.findViewById(R.id.intPPY);
+        curPay = (TextView)view.findViewById(R.id.txtPay);
+        intPTD = (EditText)view.findViewById(R.id.intPTD);
+        curBal = (TextView)view.findViewById(R.id.txtBal);
+
+        view.findViewById(R.id.btnPay).setOnClickListener(new Payment());
+        view.findViewById(R.id.btnBal).setOnClickListener(new Balance());
+        view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+        return view;
+
     }
 
-    public void onPayClick(View view) {
-        try {
-            double a = getCur(decAmt);
-            double ar = getDec(decAR) / 100.0;
-            int y = getInt(intYears);
-            int ppy = getInt(intPPY);
-            double p = computePayment(a, ar, y, ppy);
-            curPay.setText(curFmtr.format(p));
-        }
-        catch (Exception ex) {
-        }
-    }
-
-    public void onBalClick(View view) {
-        try {
-            double a = getCur(decAmt);
-            double ar = getDec(decAR) / 100.0;
-            int y = getInt(intYears);
-            int ppy = getInt(intPPY);
-            int ptd = getInt(intPTD);
-            double b = computeBalance(a, ar, y, ppy, ptd);
-            curBal.setText(curFmtr.format(b));
-        }
-        catch (Exception ex) {
+    private class Payment implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            try {
+                double a = Calculators.getCur(decAmt);
+                double ar = Calculators.getDec(decAR) / 100.0;
+                int y = Calculators.getInt(intYears);
+                int ppy = Calculators.getInt(intPPY);
+                double p = computePayment(a, ar, y, ppy);
+                curPay.setText(Calculators.curFmtr.format(p));
+            }
+            catch (Exception ex) {
+                String name = getResources().getString(R.string.appName);
+                Log.e(name, "exception", ex);
+            }
         }
     }
 
-    public void onClearClick(View view) {
-        decAmt.setText("");
-        decAR.setText("");
-        intYears.setText("");
-        intPPY.setText("");
-        curPay.setText("");
-        intPTD.setText("");
-        curBal.setText("");
+    private class Balance implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            try {
+                double a = Calculators.getCur(decAmt);
+                double ar = Calculators.getDec(decAR) / 100.0;
+                int y = Calculators.getInt(intYears);
+                int ppy = Calculators.getInt(intPPY);
+                int ptd = Calculators.getInt(intPTD);
+                double b = computeBalance(a, ar, y, ppy, ptd);
+                curBal.setText(Calculators.curFmtr.format(b));
+            }
+            catch (Exception ex) {
+                String name = getResources().getString(R.string.appName);
+                Log.e(name, "exception", ex);
+            }
+        }
+    }
+
+    private class Clear implements OnClickListener {
+        @Override
+        public void onClick(View view) {
+            decAmt.setText("");
+            decAR.setText("");
+            intYears.setText("");
+            intPPY.setText("");
+            curPay.setText("");
+            intPTD.setText("");
+            curBal.setText("");
+        }
     }
 
 
-    private double computePayment(double a, double ar, int y, int ppy) {
-        double r = ar / ppy;
-        int n = y * ppy;
-        double p = a * r / (1 - Math.pow(1 + r, -n));
-        p = Math.round(p * 100.0) / 100.0;
-        return p;
-    }
-
-    private double computeBalance(double a, double ar, int y, int ppy, int ptd) {
+    private static double computeBalance(double a, double ar, int y, int ppy, int ptd) {
         double p = computePayment(a, ar, y, ppy);
         double r = ar / ppy;
         double pow = Math.pow(1 + r, ptd);
@@ -82,49 +98,11 @@ public class Loan extends Activity {
         return b;
     }
 
-
-    static NumberFormat curFmtr = NumberFormat.getCurrencyInstance();
-    static NumberFormat intFmtr = NumberFormat.getIntegerInstance();
-    static NumberFormat decFmtr = NumberFormat.getInstance();
-
-    static int getInt(EditText text) throws ParseException {
-        Number val = null;
-        String s = text.getText().toString();
-        try {
-            val = intFmtr.parse(s);
-        }
-        catch (Exception ex) {
-            val = Double.parseDouble(s);
-        }
-        return val.intValue();
-    }
-
-    static double getDec(EditText text) throws ParseException {
-        Number val = null;
-        String s = text.getText().toString();
-        try {
-            val = decFmtr.parse(s);
-        }
-        catch (Exception ex) {
-            val = Double.parseDouble(s);
-        }
-        return val.doubleValue();
-    }
-
-    static double getCur(EditText text) throws ParseException {
-        Number val = null;
-        String s = text.getText().toString();
-        try {
-            val = curFmtr.parse(s);
-        }
-        catch (Exception ex) {
-            try {
-                val = decFmtr.parse(s);
-            }
-            catch (Exception ex2) {
-                val = Double.parseDouble(s);
-            }
-        }
-        return val.doubleValue();
+    private static double computePayment(double a, double ar, int y, int ppy) {
+        double r = ar / ppy;
+        int n = y * ppy;
+        double p = a * r / (1 - Math.pow(1 + r, -n));
+        p = Math.round(p * 100.0) / 100.0;
+        return p;
     }
 }

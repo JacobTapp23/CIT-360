@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
     tools:context="edu.byui.cit360.calculators.DistPerVol">
 
     <TextView
@@ -79,28 +81,26 @@
         android:inputType="numberDecimal" />
 
     <Button
-        android:id="@+id/btnDistPerVol"
+        android:id="@+id/btnCompute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/decVol"
-        android:onClick="onDistPerVolClick"
         android:text="@string/distPerVol" />
 
     <TextView
         android:id="@+id/numDistPerVol"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnDistPerVol"
-        android:layout_toEndOf="@+id/btnDistPerVol" />
+        android:layout_alignBaseline="@+id/btnCompute"
+        android:layout_toEndOf="@+id/btnCompute" />
 
     <Button
         android:id="@+id/btnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnDistPerVol"
-        android:onClick="onClearClick"
+        android:layout_below="@+id/btnCompute"
         android:text="@string/clear" />
 
 </RelativeLayout>

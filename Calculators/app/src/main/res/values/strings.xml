@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Calculators</string>
+    <string name="appName">Calculators</string>
     <string name="shopping">Shopping</string>
     <string name="cars">Cars</string>
     <string name="finance">Finance</string>
@@ -18,6 +18,9 @@
     <string name="twelve">12%</string>
     <string name="fifteen">15%</string>
     <string name="eighteen">18%</string>
+
+    <string name="usa">USA</string>
+    <string name="metric">Metric</string>
 
     <string name="distPerVol">Mileage</string>
     <string name="begin">Begin</string>
@@ -44,7 +47,9 @@
     <string name="current">I</string>
     <string name="resistance">R</string>
 
-    <string name="calc">Calculate</string>
+    <string name="calculate">Calculate</string>
     <string name="clear">Clear</string>
     <string name="compare">Compare</string>
+    <string name="compute">Compute</string>
+    <string name="shoeSize">Shoe Size</string>
 </resources>

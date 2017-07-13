@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
     tools:context="edu.byui.cit360.calculators.ComparePrices">
 
     <TextView
@@ -213,20 +214,18 @@
         android:text="" />
 
     <Button
-        android:id="@+id/btnCompare"
+        android:id="@+id/btnCompute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/lblPer3"
-        android:onClick="onCompareClick"
         android:text="@string/compare" />
 
     <Button
         android:id="@+id/btnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnCompare"
-        android:layout_toEndOf="@+id/btnCompare"
-        android:onClick="onClearClick"
+        android:layout_alignBaseline="@+id/btnCompute"
+        android:layout_toEndOf="@+id/btnCompute"
         android:text="@string/clear" />
 </RelativeLayout>

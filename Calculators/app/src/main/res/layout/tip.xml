@@ -2,8 +2,11 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:clickable="true"
+    android:orientation="vertical"
     tools:context="edu.byui.cit360.calculators.Tip">
 
     <LinearLayout
@@ -29,11 +32,10 @@
             android:textAlignment="textEnd" />
 
         <Button
-            android:id="@+id/btnTip"
+            android:id="@+id/btnCompute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onTipClick"
             android:text="@string/tip" />
     </LinearLayout>
 
@@ -84,4 +86,10 @@
             android:layout_height="wrap_content"
             android:textAlignment="textEnd" />
     </GridLayout>
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/clear" />
 </LinearLayout>
