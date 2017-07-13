@@ -11,69 +11,99 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 
 public class Calculators extends Activity {
-    public static NumberFormat decFmtr = NumberFormat.getInstance();
-    public static NumberFormat curFmtr = NumberFormat.getCurrencyInstance();
-    public static NumberFormat intFmtr = NumberFormat.getIntegerInstance();
+	public static int backgrndColor;
 
-    public static int getInt(EditText text) throws ParseException {
-        Number val = null;
-        String s = text.getText().toString();
-        try {
-            val = intFmtr.parse(s);
-        }
-        catch (Exception ex) {
-            val = Double.parseDouble(s);
-        }
-        return val.intValue();
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.calculators);
 
-    public static double getDec(EditText text) throws ParseException {
-        Number val = null;
-        String s = text.getText().toString();
-        try {
-            val = decFmtr.parse(s);
-        }
-        catch (Exception ex) {
-            val = Double.parseDouble(s);
-        }
-        return val.doubleValue();
-    }
+		// Get the background color so that it can be used by the fragments.
+		TypedArray array = getTheme().obtainStyledAttributes(
+				new int[] { android.R.attr.windowBackground });
+		backgrndColor = array.getColor(0, 0xff00ff);
+		array.recycle();
 
-    public static double getCur(EditText text) throws ParseException {
-        Number val = null;
-        String s = text.getText().toString();
-        try {
-            val = curFmtr.parse(s);
-        }
-        catch (Exception ex) {
-            try {
-                val = decFmtr.parse(s);
-            }
-            catch (Exception ex2) {
-                val = Double.parseDouble(s);
-            }
-        }
-        return val.doubleValue();
-    }
+		// Add Choices as the first fragment.
+		Fragment fragment = new Choices();
+		FragmentTransaction trans = getFragmentManager().beginTransaction();
+		trans.add(R.id.frag_cont, fragment);
+		trans.commit();
+	}
 
-    public static int backgrndColor;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.calculators);
+	private static NumberFormat intFmtr = NumberFormat.getIntegerInstance();
+	private static NumberFormat curFmtr = NumberFormat.getCurrencyInstance();
+	private static NumberFormat perFmtr = NumberFormat.getPercentInstance();
+	private static NumberFormat decFmtr = NumberFormat.getInstance();
 
-        // Get the background color so that
-        // it can be used by the fragments.
-        TypedArray array = getTheme().obtainStyledAttributes(
-                new int[] { android.R.attr.windowBackground });
-        backgrndColor = array.getColor(0, 0xff00ff);
-        array.recycle();
+	public static int getInt(EditText text) throws ParseException {
+		return getInt(text.getText().toString());
+	}
 
-        // Add Choices as the first fragment
-        Fragment fragment = new Choices();
-        FragmentTransaction trans = getFragmentManager().beginTransaction();
-        trans.add(R.id.frag_cont, fragment);
-        trans.commit();
-    }
+	public static double getCur(EditText text) throws ParseException {
+		return getCur(text.getText().toString());
+	}
+
+	public static double getPerc(EditText text) throws ParseException {
+		return getPerc(text.getText().toString());
+	}
+
+	public static double getDec(EditText text) throws ParseException {
+		return getDec(text.getText().toString());
+	}
+
+	public static int getInt(String s) throws ParseException {
+		Number val;
+		try {
+			val = intFmtr.parse(s);
+		}
+		catch (Exception ex) {
+			val = Double.parseDouble(s);
+		}
+		return val.intValue();
+	}
+
+	public static double getCur(String s) throws ParseException {
+		Number val;
+		try {
+			val = curFmtr.parse(s);
+		}
+		catch (Exception ex) {
+			try {
+				val = decFmtr.parse(s);
+			}
+			catch (Exception ex2) {
+				val = Double.parseDouble(s);
+			}
+		}
+		return val.doubleValue();
+	}
+
+	public static double getPerc(String s) throws ParseException {
+		Number val;
+		try {
+			val = perFmtr.parse(s);
+		}
+		catch (Exception ex) {
+			try {
+				val = decFmtr.parse(s);
+			}
+			catch (Exception ex2) {
+				val = Double.parseDouble(s);
+			}
+		}
+		return val.doubleValue();
+	}
+
+	public static double getDec(String s) throws ParseException {
+		Number val;
+		try {
+			val = decFmtr.parse(s);
+		}
+		catch (Exception ex) {
+			val = Double.parseDouble(s);
+		}
+		return val.doubleValue();
+	}
 }

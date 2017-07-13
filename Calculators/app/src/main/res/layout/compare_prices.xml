@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice1"
         android:layout_toEndOf="@+id/lblQuant1"
-        android:ems="5"
+        android:ems="4"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice2"
         android:layout_toEndOf="@+id/lblQuant2"
-        android:ems="5"
+        android:ems="4"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 
@@ -190,7 +190,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/lblPrice3"
         android:layout_toEndOf="@+id/lblQuant3"
-        android:ems="5"
+        android:ems="4"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 

@@ -9,92 +9,109 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.lang.reflect.Field;
+import java.text.NumberFormat;
+
 public class ComparePrices extends CalcFragment {
-    private static class Product {
-        EditText curPrice, decQuant;
-        TextView curPer;
-    }
+	private static class Product {
+		EditText curPrice, decQuant;
+		TextView curPer;
+	}
 
-    private Product[] products;
+	private Product[] products;
+	private NumberFormat curFmtr;
 
-    public ComparePrices() {
-        // Required empty public constructor
-    }
+	public ComparePrices() {
+		// Required empty public constructor
+	}
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.compare_prices, container, false);
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		products = new Product[3];
+		for (int i = 0;  i < products.length;  ++i) {
+			products[i] = new Product();
+		}
+		curFmtr = NumberFormat.getCurrencyInstance();
+	}
 
-        products = new Product[3];
-        for (int i = 0; i < products.length; ++i) {
-            products[i] = new Product();
-        }
-        Product prod = products[0];
-        prod.curPrice = (EditText)view.findViewById(R.id.curPrice1);
-        prod.decQuant = (EditText)view.findViewById(R.id.decQuant1);
-        prod.curPer = (TextView)view.findViewById(R.id.curPer1);
-        prod = products[1];
-        prod.curPrice = (EditText)view.findViewById(R.id.curPrice2);
-        prod.decQuant = (EditText)view.findViewById(R.id.decQuant2);
-        prod.curPer = (TextView)view.findViewById(R.id.curPer2);
-        prod = products[2];
-        prod.curPrice = (EditText)view.findViewById(R.id.curPrice3);
-        prod.decQuant = (EditText)view.findViewById(R.id.decQuant3);
-        prod.curPer = (TextView)view.findViewById(R.id.curPer3);
-        view.findViewById(R.id.btnCompute).setOnClickListener(new Compare());
-        view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
-        return view;
-    }
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+							 Bundle savedInstanceState) {
+		// Inflate the layout for this fragment
+		View view = inflater.inflate(R.layout.compare_prices, container, false);
 
-    private class Compare implements OnClickListener {
-        @Override
-        public void onClick(View view) {
-            clearResults(view);
+		for (int i = 0;  i < products.length;  ++i) {
+			Product prod = products[i];
+			int which = i + 1;
+			try {
+				prod.curPrice = (EditText)view.findViewById(getID("curPrice" + which));
+				prod.decQuant = (EditText)view.findViewById(getID("decQuant" + which));
+				prod.curPer = (TextView)view.findViewById(getID("curPer" + which));
+			}
+			catch (Exception ex) {
+				String name = getResources().getString(R.string.appName);
+				Log.e(name, "exception", ex);
+			}
+		}
 
-            double min = Double.MAX_VALUE;
-            int index = -1;
-            for (int i = 0; i < products.length; ++i) {
-                try {
-                    Product prod = products[i];
-                    double price = Calculators.getCur(prod.curPrice);
-                    double quant = Calculators.getDec(prod.decQuant);
-                    double per = price / quant;
-                    prod.curPer.setText(Calculators.curFmtr.format(per));
-                    if (per < min) {
-                        min = per;
-                        index = i;
-                    }
-                }
-                catch (Exception ex) {
-                    String name = getResources().getString(R.string.appName);
-                    Log.e(name, "exception", ex);
-                }
-            }
+		view.findViewById(R.id.btnCompute).setOnClickListener(new Compare());
+		view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+		return view;
+	}
 
-            if (index != -1) {
-                Product prod = products[index];
-                prod.curPer.setBackgroundColor(getResources().getColor(R.color.colorBest, null));
-            }
-        }
-    }
+	// Uses reflection to get an id from R.id
+	private int getID(String name) throws NoSuchFieldException, IllegalAccessException {
+		Field field = R.id.class.getDeclaredField(name);
+		return field.getInt(null);
+	}
 
-    private class Clear implements OnClickListener {
-        @Override
-        public void onClick(View view) {
-            for (Product prod : products) {
-                prod.curPrice.setText("");
-                prod.decQuant.setText("");
-            }
-            clearResults(view);
-        }
-    }
+	private class Compare implements OnClickListener {
+		@Override
+		public void onClick(View view) {
+			clearResults(view);
 
-    private void clearResults(View view) {
-        for (Product prod : products) {
-            prod.curPer.setText("");
-            prod.curPer.setBackground(null);
-        }
-    }
+			double min = Double.MAX_VALUE;
+			Product best = null;
+			for (Product prod : products) {
+				try {
+					double price = Calculators.getCur(prod.curPrice);
+					double quant = Calculators.getDec(prod.decQuant);
+					double per = price / quant;
+					prod.curPer.setText(curFmtr.format(per));
+					if (per < min) {
+						min = per;
+						best = prod;
+					}
+				}
+				catch (Exception ex) {
+					String name = getResources().getString(R.string.appName);
+					Log.e(name, "exception", ex);
+				}
+			}
+
+			if (best != null) {
+				int color = getResources().getColor(R.color.colorBest, null);
+				best.curPer.setBackgroundColor(color);
+			}
+		}
+	}
+
+	private class Clear implements OnClickListener {
+		@Override
+		public void onClick(View view) {
+			for (Product prod : products) {
+				prod.curPrice.getText().clear();
+				prod.decQuant.getText().clear();
+			}
+			clearResults(view);
+		}
+	}
+
+	private void clearResults(View view) {
+		for (Product prod : products) {
+			prod.curPer.setText("");
+			prod.curPer.setBackground(null);
+		}
+	}
 }

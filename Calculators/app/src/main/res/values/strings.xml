@@ -28,6 +28,7 @@
     <string name="dist">Miles</string>
     <string name="vol">Gallons</string>
 
+    <string name="invest">Investment</string>
     <string name="fv">Future Value</string>
     <string name="princ">Principal</string>
     <string name="ar">Annual Rate (ex: 4.875)</string>
