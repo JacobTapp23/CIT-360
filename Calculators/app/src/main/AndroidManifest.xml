@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:versionCode="1"
+    android:versionName="0.6"
+    android:installLocation="auto"
     package="edu.byui.cit360.calculators">
 
     <application
         android:allowBackup="false"
+        android:description="@string/appDescr"
         android:label="@string/appName"
-        android:icon="@mipmap/ic_launcher"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/byui_calc"
+        android:roundIcon="@mipmap/byui_calc_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 

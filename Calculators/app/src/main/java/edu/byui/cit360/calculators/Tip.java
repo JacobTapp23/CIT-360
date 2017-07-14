@@ -12,8 +12,8 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 
 public class Tip extends CalcFragment {
-	private EditText decCost;
-	private TextView num12, num15, num18;
+	private EditText curCost;
+	private TextView cur12, cur15, cur18;
 	private NumberFormat curFmtr;
 
 	public Tip() {
@@ -32,30 +32,35 @@ public class Tip extends CalcFragment {
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.tip, container, false);
 
-		decCost = (EditText)view.findViewById(R.id.curCost);
-		num12 = (TextView)view.findViewById(R.id.cur12);
-		num15 = (TextView)view.findViewById(R.id.cur15);
-		num18 = (TextView)view.findViewById(R.id.cur18);
-		view.findViewById(R.id.btnCompute).setOnClickListener(new Compute());
-		view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+		curCost = (EditText)view.findViewById(R.id.tipCurCost);
+		cur12 = (TextView)view.findViewById(R.id.tipCur12);
+		cur15 = (TextView)view.findViewById(R.id.tipCur15);
+		cur18 = (TextView)view.findViewById(R.id.tipCur18);
+		view.findViewById(R.id.tipBtnCompute).setOnClickListener(new Compute());
+		view.findViewById(R.id.tipBtnClear).setOnClickListener(new Clear());
 		return view;
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		curCost.requestFocus();
 	}
 
 	private class Compute implements OnClickListener {
 		@Override
 		public void onClick(View view) {
 			try {
-				double cost = Calculators.getCur(decCost);
+				double cost = Calculators.getCur(curCost);
 				double t12 = cost * 0.12;
 				double t15 = cost * 0.15;
 				double t18 = cost * 0.18;
-				num12.setText(curFmtr.format(t12));
-				num15.setText(curFmtr.format(t15));
-				num18.setText(curFmtr.format(t18));
+				cur12.setText(curFmtr.format(t12));
+				cur15.setText(curFmtr.format(t15));
+				cur18.setText(curFmtr.format(t18));
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 	}
@@ -63,10 +68,10 @@ public class Tip extends CalcFragment {
 	private class Clear implements OnClickListener {
 		@Override
 		public void onClick(View view) {
-			decCost.getText().clear();
-			num12.setText("");
-			num15.setText("");
-			num18.setText("");
+			curCost.getText().clear();
+			cur12.setText("");
+			cur15.setText("");
+			cur18.setText("");
 		}
 	}
 }

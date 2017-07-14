@@ -32,19 +32,25 @@ public class Loan extends CalcFragment {
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.loan, container, false);
 
-		decAmt = (EditText)view.findViewById(R.id.decAmt);
-		decAR = (EditText)view.findViewById(R.id.decAR);
-		intYears = (EditText)view.findViewById(R.id.intYears);
-		intPPY = (EditText)view.findViewById(R.id.intPPY);
-		curPay = (TextView)view.findViewById(R.id.txtPay);
-		intPTD = (EditText)view.findViewById(R.id.intPTD);
-		curBal = (TextView)view.findViewById(R.id.txtBal);
+		decAmt = (EditText)view.findViewById(R.id.loanCurAmt);
+		decAR = (EditText)view.findViewById(R.id.loanDecAR);
+		intYears = (EditText)view.findViewById(R.id.loanIntYears);
+		intPPY = (EditText)view.findViewById(R.id.loanIntPPY);
+		curPay = (TextView)view.findViewById(R.id.loanDecPay);
+		intPTD = (EditText)view.findViewById(R.id.loanIntPTD);
+		curBal = (TextView)view.findViewById(R.id.loanCurBal);
 
-		view.findViewById(R.id.btnPay).setOnClickListener(new Payment());
-		view.findViewById(R.id.btnBal).setOnClickListener(new Balance());
-		view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+		view.findViewById(R.id.loanBtnPay).setOnClickListener(new Payment());
+		view.findViewById(R.id.loanBtnBal).setOnClickListener(new Balance());
+		view.findViewById(R.id.loanBtnClear).setOnClickListener(new Clear());
 		return view;
 
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		decAmt.requestFocus();
 	}
 
 	private class Payment implements OnClickListener {
@@ -59,8 +65,7 @@ public class Loan extends CalcFragment {
 				curPay.setText(curFmtr.format(p));
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 	}
@@ -78,8 +83,7 @@ public class Loan extends CalcFragment {
 				curBal.setText(curFmtr.format(b));
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 	}

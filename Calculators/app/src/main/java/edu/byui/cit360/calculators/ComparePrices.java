@@ -45,18 +45,17 @@ public class ComparePrices extends CalcFragment {
 			Product prod = products[i];
 			int which = i + 1;
 			try {
-				prod.curPrice = (EditText)view.findViewById(getID("curPrice" + which));
-				prod.decQuant = (EditText)view.findViewById(getID("decQuant" + which));
-				prod.curPer = (TextView)view.findViewById(getID("curPer" + which));
+				prod.curPrice = (EditText)view.findViewById(getID("cmpCurPrice" + which));
+				prod.decQuant = (EditText)view.findViewById(getID("cmpDecQuant" + which));
+				prod.curPer = (TextView)view.findViewById(getID("cmpCurPer" + which));
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 
-		view.findViewById(R.id.btnCompute).setOnClickListener(new Compare());
-		view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+		view.findViewById(R.id.cmpBtnCompute).setOnClickListener(new Compare());
+		view.findViewById(R.id.cmpBtnClear).setOnClickListener(new Clear());
 		return view;
 	}
 
@@ -64,6 +63,12 @@ public class ComparePrices extends CalcFragment {
 	private int getID(String name) throws NoSuchFieldException, IllegalAccessException {
 		Field field = R.id.class.getDeclaredField(name);
 		return field.getInt(null);
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		products[0].curPrice.requestFocus();
 	}
 
 	private class Compare implements OnClickListener {
@@ -85,8 +90,7 @@ public class ComparePrices extends CalcFragment {
 					}
 				}
 				catch (Exception ex) {
-					String name = getResources().getString(R.string.appName);
-					Log.e(name, "exception", ex);
+					Log.e(Calculators.TAG, "exception", ex);
 				}
 			}
 

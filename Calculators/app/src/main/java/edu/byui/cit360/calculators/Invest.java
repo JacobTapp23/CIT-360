@@ -12,7 +12,7 @@ import android.widget.TextView;
 import java.text.NumberFormat;
 
 public class Invest extends CalcFragment {
-	private EditText numPrinc, numAR, numYears, numPPY;
+	private EditText curPrinc, decAR, intYears, intPPY;
 	private TextView curFV;
 	private NumberFormat curFmtr;
 
@@ -32,24 +32,30 @@ public class Invest extends CalcFragment {
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.invest, container, false);
 
-		numPrinc = (EditText)view.findViewById(R.id.numPrinc);
-		numAR = (EditText)view.findViewById(R.id.numAR);
-		numYears = (EditText)view.findViewById(R.id.numYears);
-		numPPY = (EditText)view.findViewById(R.id.numPPY);
-		curFV = (TextView)view.findViewById(R.id.txtFV);
-		view.findViewById(R.id.btnCompute).setOnClickListener(new Compute());
-		view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+		curPrinc = (EditText)view.findViewById(R.id.invCurPrinc);
+		decAR = (EditText)view.findViewById(R.id.invDecAR);
+		intYears = (EditText)view.findViewById(R.id.invIntYears);
+		intPPY = (EditText)view.findViewById(R.id.invIntPPY);
+		curFV = (TextView)view.findViewById(R.id.invCurFV);
+		view.findViewById(R.id.invBtnFV).setOnClickListener(new Compute());
+		view.findViewById(R.id.invBtnClear).setOnClickListener(new Clear());
 		return view;
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		curPrinc.requestFocus();
 	}
 
 	private class Compute implements OnClickListener {
 		@Override
 		public void onClick(View view) {
 			try {
-				double a = Calculators.getCur(numPrinc);
-				double ar = Calculators.getDec(numAR) / 100.0;
-				int y = Calculators.getInt(numYears);
-				int ppy = Calculators.getInt(numPPY);
+				double a = Calculators.getCur(curPrinc);
+				double ar = Calculators.getDec(decAR) / 100.0;
+				int y = Calculators.getInt(intYears);
+				int ppy = Calculators.getInt(intPPY);
 				double r = ar / ppy;
 				int n = y * ppy;
 				double fv = a * Math.pow(1 + r, n);
@@ -57,8 +63,7 @@ public class Invest extends CalcFragment {
 				curFV.setText(curFmtr.format(fv));
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 	}
@@ -66,10 +71,10 @@ public class Invest extends CalcFragment {
 	private class Clear implements OnClickListener {
 		@Override
 		public void onClick(View view) {
-			numPrinc.getText().clear();
-			numAR.getText().clear();
-			numYears.getText().clear();
-			numPPY.getText().clear();
+			curPrinc.getText().clear();
+			decAR.getText().clear();
+			intYears.getText().clear();
+			intPPY.getText().clear();
 			curFV.setText("");
 		}
 	}

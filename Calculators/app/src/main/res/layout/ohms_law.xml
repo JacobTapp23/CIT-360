@@ -1,114 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:clickable="true"
-    tools:context="edu.byui.cit360.calculators.ShoeSize">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	android:clickable="true"
+	tools:context="edu.byui.cit360.calculators.ShoeSize">
 
-    <EditText
-        android:id="@+id/decVolt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:ems="5"
-        android:inputType="numberDecimal"
-        android:textAlignment="center" />
+	<EditText
+		android:id="@+id/ohmDecVolt"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentStart="true"
+		android:layout_alignParentTop="true"
+		android:ems="5"
+		android:inputType="numberDecimal"
+		android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/lblEmpty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/decVolt"
-        android:layout_toEndOf="@+id/decVolt"
-        android:layout_alignStart="@+id/lblEqual"
-        android:layout_alignEnd="@+id/lblEqual" />
+	<EditText
+		android:id="@+id/ohmDecCur"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/ohmDecVolt"
+		android:layout_toEndOf="@+id/ohmLblEqual"
+		android:ems="5"
+		android:inputType="numberDecimal"
+		android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/decCur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/decVolt"
-        android:layout_toEndOf="@+id/lblEmpty"
-        android:ems="5"
-        android:inputType="numberDecimal"
-        android:textAlignment="center" />
+	<EditText
+		android:id="@+id/ohmDecResist"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/ohmDecVolt"
+		android:layout_toEndOf="@+id/ohmDecCur"
+		android:ems="5"
+		android:inputType="numberDecimal"
+		android:textAlignment="center" />
 
-    <EditText
-        android:id="@+id/decResist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/decVolt"
-        android:layout_toEndOf="@+id/decCur"
-        android:ems="5"
-        android:inputType="numberDecimal"
-        android:textAlignment="center" />
+	<TextView
+		android:id="@+id/ohmLblVolt"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignEnd="@+id/ohmDecVolt"
+		android:layout_alignStart="@+id/ohmDecVolt"
+		android:layout_below="@+id/ohmDecVolt"
+		android:labelFor="@+id/ohmDecVolt"
+		android:text="@string/voltage"
+		android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/lblVolt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/decVolt"
-        android:layout_alignStart="@+id/decVolt"
-        android:layout_below="@+id/decVolt"
-        android:labelFor="@+id/decVolt"
-        android:text="@string/voltage"
-        android:textAlignment="center" />
+	<TextView
+		android:id="@+id/ohmLblEqual"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/ohmLblVolt"
+		android:layout_toEndOf="@+id/ohmLblVolt"
+		android:text="@string/equal" />
 
-    <TextView
-        android:id="@+id/lblEqual"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblVolt"
-        android:layout_toEndOf="@+id/lblVolt"
-        android:text="@string/equal" />
+	<TextView
+		android:id="@+id/ohmLblCur"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/ohmLblVolt"
+		android:layout_alignEnd="@+id/ohmDecCur"
+		android:layout_alignStart="@+id/ohmDecCur"
+		android:labelFor="@+id/ohmDecCur"
+		android:text="@string/current"
+		android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/lblCur"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblVolt"
-        android:layout_alignEnd="@+id/decCur"
-        android:layout_alignStart="@+id/decCur"
-        android:labelFor="@+id/decCur"
-        android:text="@string/current"
-        android:textAlignment="center" />
+	<TextView
+		android:id="@+id/ohmLblResist"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/ohmLblVolt"
+		android:layout_alignEnd="@+id/ohmDecResist"
+		android:layout_alignStart="@+id/ohmDecResist"
+		android:labelFor="@+id/ohmDecResist"
+		android:text="@string/resistance"
+		android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/lblResist"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblVolt"
-        android:layout_alignEnd="@+id/decResist"
-        android:layout_alignStart="@+id/decResist"
-        android:labelFor="@+id/decResist"
-        android:text="@string/resistance"
-        android:textAlignment="center" />
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/ohmLblVolt"
+		android:layout_alignStart="@+id/ohmDecVolt"
+		android:layout_alignEnd="@+id/ohmDecResist"
+		android:orientation="horizontal"
+		android:gravity="center">
 
+		<Button
+			android:id="@+id/ohmBtnCompute"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/compute" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lblVolt"
-        android:layout_alignStart="@+id/decVolt"
-        android:layout_alignEnd="@+id/decResist"
-        android:orientation="horizontal"
-        android:gravity="center">
+		<Button
+			android:id="@+id/ohmBtnClear"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/clear" />
+	</LinearLayout>
 
-        <Button
-            android:id="@+id/btnCompute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/compute" />
-
-        <Button
-            android:id="@+id/btnClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clear" />
-
-    </LinearLayout>
 </RelativeLayout>

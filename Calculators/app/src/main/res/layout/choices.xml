@@ -10,7 +10,7 @@
     tools:context="edu.byui.cit360.calculators.Choices">
 
     <TextView
-        android:id="@+id/lblShopping"
+        android:id="@+id/chcLblShopping"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/shopping" />
@@ -21,30 +21,20 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCompare"
+            android:id="@+id/chcBtnCompPrices"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/compPrices" />
+            android:text="@string/cmpPrices" />
 
         <Button
-            android:id="@+id/btnTip"
+            android:id="@+id/chcBtnTip"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/tip" />
-
-        <Button
-            android:id="@+id/btnShoeSize"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/shoeSize" />
-
     </LinearLayout>
 
     <TextView
-        android:id="@+id/lblCars"
+        android:id="@+id/chcLblCars"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/cars" />
@@ -55,15 +45,14 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnDistPerVol"
+            android:id="@+id/chcBtnDistPerVol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/distPerVol" />
-
+            android:text="@string/dpv" />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/lblFinance"
+        android:id="@+id/chcLblFinance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/finance" />
@@ -74,21 +63,20 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnInvest"
+            android:id="@+id/chcBtnInvest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/invest" />
 
         <Button
-            android:id="@+id/btnLoan"
+            android:id="@+id/chcBtnLoan"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/loan" />
-
     </LinearLayout>
 
     <TextView
-        android:id="@+id/lblElectricity"
+        android:id="@+id/chcLblElectricity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/electricity" />
@@ -99,11 +87,10 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnOhmsLaw"
+            android:id="@+id/chcBtnOhmsLaw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/ohmsLaw" />
-
     </LinearLayout>
 
 </LinearLayout>

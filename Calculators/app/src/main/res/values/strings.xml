@@ -1,56 +1,66 @@
 <resources>
-    <string name="appName">Calculators</string>
-    <string name="shopping">Shopping</string>
-    <string name="cars">Cars</string>
-    <string name="finance">Finance</string>
-    <string name="electricity">Electricity</string>
+	<string name="appName">Calculators</string>
 
-    <string name="compPrices">Compare Prices</string>
-    <string name="prod1">Product 1</string>
-    <string name="prod2">Product 2</string>
-    <string name="prod3">Product 3</string>
-    <string name="price">Price</string>
-    <string name="quant">Quantity</string>
-    <string name="per">Price per</string>
+	<string name="appDescr">A collection of easy to use
+		calculators designed, written, and maintained by
+		students at Brigham Young University - Idaho</string>
 
-    <string name="tip">Tip</string>
-    <string name="cost">Cost before Tax</string>
-    <string name="twelve">12%</string>
-    <string name="fifteen">15%</string>
-    <string name="eighteen">18%</string>
+	<string name="eula">To the fullest extent allowed by law, this software
+		comes with no warranty, either express or implied. By installing
+		and/or using this software you agree to hold harmless Brigham Young
+		University - Idaho, its sponsors, its employees, and its students.</string>
 
-    <string name="usa">USA</string>
-    <string name="metric">Metric</string>
+	<string name="shopping">Shopping</string>
+	<string name="cars">Cars</string>
+	<string name="finance">Finance</string>
+	<string name="electricity">Electricity</string>
 
-    <string name="distPerVol">Mileage</string>
-    <string name="begin">Begin</string>
-    <string name="end">End</string>
-    <string name="dist">Miles</string>
-    <string name="vol">Gallons</string>
+	<string name="cmpPrices">Compare Prices</string>
+	<string name="prod1">Product 1</string>
+	<string name="prod2">Product 2</string>
+	<string name="prod3">Product 3</string>
+	<string name="price">Price</string>
+	<string name="quant">Quantity</string>
+	<string name="per">Price per</string>
 
-    <string name="invest">Investment</string>
-    <string name="fv">Future Value</string>
-    <string name="princ">Principal</string>
-    <string name="ar">Annual Rate (ex: 4.875)</string>
-    <string name="years">Number of Years</string>
-    <string name="ppy">Periods per Year</string>
+	<string name="tip">Tip</string>
+	<string name="cost">Cost before Tax</string>
+	<string name="twelve">12%</string>
+	<string name="fifteen">15%</string>
+	<string name="eighteen">18%</string>
 
-    <string name="loan">Loan</string>
-    <string name="amt">Amount Borrowed</string>
-    <string name="payPY">Payments per Year</string>
-    <string name="pay">Payment</string>
-    <string name="bal">Balance</string>
-    <string name="ptd">Payments Paid to Date</string>
+	<string name="usa">USA</string>
+	<string name="euro">Europe</string>
+	<string name="shoeSize">Shoe Size</string>
 
-    <string name="ohmsLaw">Ohm\'s Law</string>
-    <string name="voltage">V</string>
-    <string name="equal">=</string>
-    <string name="current">I</string>
-    <string name="resistance">R</string>
+	<string name="dpv">Mileage</string>
+	<string name="begin">Begin</string>
+	<string name="end">End</string>
+	<string name="dist">Miles</string>
+	<string name="vol">Gallons</string>
 
-    <string name="calculate">Calculate</string>
-    <string name="clear">Clear</string>
-    <string name="compare">Compare</string>
-    <string name="compute">Compute</string>
-    <string name="shoeSize">Shoe Size</string>
+	<string name="invest">Investment</string>
+	<string name="fv">Future Value</string>
+	<string name="princ">Principal</string>
+	<string name="annRate">Annual Rate (ex: 4.875)</string>
+	<string name="years">Number of Years</string>
+	<string name="ppy">Periods per Year</string>
+
+	<string name="loan">Loan</string>
+	<string name="amt">Amount Borrowed</string>
+	<string name="payPY">Payments per Year</string>
+	<string name="pay">Payment</string>
+	<string name="bal">Balance</string>
+	<string name="ptd">Payments Paid to Date</string>
+
+	<string name="ohmsLaw">Ohm\'s Law</string>
+	<string name="voltage">V</string>
+	<string name="equal">=</string>
+	<string name="current">I</string>
+	<string name="resistance">R</string>
+
+	<string name="calculate">Calculate</string>
+	<string name="clear">Clear</string>
+	<string name="compare">Compare</string>
+	<string name="compute">Compute</string>
 </resources>

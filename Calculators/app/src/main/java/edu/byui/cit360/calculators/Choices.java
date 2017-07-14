@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 public class Choices extends CalcFragment {
 	private final int[] buttonIDs = {
-			R.id.btnCompare, R.id.btnTip, R.id.btnShoeSize,
-			R.id.btnDistPerVol,
-			R.id.btnInvest, R.id.btnLoan,
-			R.id.btnOhmsLaw
+			R.id.chcBtnCompPrices, R.id.chcBtnTip,
+			R.id.chcBtnDistPerVol,
+			R.id.chcBtnInvest, R.id.chcBtnLoan,
+			R.id.chcBtnOhmsLaw
 	};
 	private Click[] clickListeners;
 
@@ -27,7 +27,6 @@ public class Choices extends CalcFragment {
 		clickListeners = new Click[] {
 				new ComparePricesClick(),
 				new TipClick(),
-				new ShoeSizeClick(),
 				new DistPerVolClick(),
 				new InvestClick(),
 				new LoanClick(),
@@ -80,16 +79,6 @@ public class Choices extends CalcFragment {
 		public void onClick(View view) {
 			if (fragment == null) {
 				fragment = new Tip();
-			}
-			switchFragment(fragment);
-		}
-	}
-
-	private class ShoeSizeClick extends Click {
-	   @Override
-		public void onClick(View view) {
-			if (fragment == null) {
-				fragment = new ShoeSize();
 			}
 			switchFragment(fragment);
 		}

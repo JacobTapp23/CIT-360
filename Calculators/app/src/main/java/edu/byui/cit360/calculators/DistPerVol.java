@@ -16,7 +16,7 @@ import java.text.NumberFormat;
 public class DistPerVol extends CalcFragment {
 	private NumberFormat distFmtr, dpvFmtr;
 	private EditText decBegin, decEnd, decDist, decVol;
-	private TextView numDistPerVol;
+	private TextView decDPV;
 
 	public DistPerVol() {
 		// Required empty public constructor
@@ -39,18 +39,18 @@ public class DistPerVol extends CalcFragment {
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.dist_per_vol, container, false);
 
-		decBegin = (EditText)view.findViewById(R.id.decBegin);
-		decEnd = (EditText)view.findViewById(R.id.decEnd);
-		decDist = (EditText)view.findViewById(R.id.decDist);
-		decVol = (EditText)view.findViewById(R.id.decVol);
-		numDistPerVol = (TextView)view.findViewById(R.id.numDistPerVol);
+		decBegin = (EditText)view.findViewById(R.id.dpvDecBegin);
+		decEnd = (EditText)view.findViewById(R.id.dpvDecEnd);
+		decDist = (EditText)view.findViewById(R.id.dpvDecDist);
+		decVol = (EditText)view.findViewById(R.id.dpvDecVol);
+		decDPV = (TextView)view.findViewById(R.id.dpvDecResult);
 
 		TextWatcher watcher = new Distance();
 		decBegin.addTextChangedListener(watcher);
 		decEnd.addTextChangedListener(watcher);
 
-		view.findViewById(R.id.btnCompute).setOnClickListener(new Compute());
-		view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+		view.findViewById(R.id.dpvBtnCompute).setOnClickListener(new Compute());
+		view.findViewById(R.id.dpvBtnClear).setOnClickListener(new Clear());
 		return view;
 	}
 
@@ -82,8 +82,7 @@ public class DistPerVol extends CalcFragment {
 				}
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 	}
@@ -106,11 +105,10 @@ public class DistPerVol extends CalcFragment {
 				}
 				double vol = Calculators.getDec(decVol);
 				double distPerVol = dist / vol;
-				numDistPerVol.setText(dpvFmtr.format(distPerVol));
+				decDPV.setText(dpvFmtr.format(distPerVol));
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 	}
@@ -123,7 +121,7 @@ public class DistPerVol extends CalcFragment {
 			decEnd.getText().clear();
 			decDist.getText().clear();
 			decVol.getText().clear();
-			numDistPerVol.setText("");
+			decDPV.setText("");
 		}
 	}
 }

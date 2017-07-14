@@ -30,12 +30,18 @@ public class OhmsLaw extends CalcFragment {
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.ohms_law, container, false);
 
-		decVolt = (EditText)view.findViewById(R.id.decVolt);
-		decCur = (EditText)view.findViewById(R.id.decCur);
-		decResist = (EditText)view.findViewById(R.id.decResist);
-		view.findViewById(R.id.btnCompute).setOnClickListener(new Compute());
-		view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+		decVolt = (EditText)view.findViewById(R.id.ohmDecVolt);
+		decCur = (EditText)view.findViewById(R.id.ohmDecCur);
+		decResist = (EditText)view.findViewById(R.id.ohmDecResist);
+		view.findViewById(R.id.ohmBtnCompute).setOnClickListener(new Compute());
+		view.findViewById(R.id.ohmBtnClear).setOnClickListener(new Clear());
 		return view;
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		decVolt.requestFocus();
 	}
 
 	private class Compute implements OnClickListener {
@@ -69,8 +75,7 @@ public class OhmsLaw extends CalcFragment {
 				}
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 	}

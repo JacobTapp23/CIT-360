@@ -9,7 +9,7 @@
     tools:context="edu.byui.cit360.calculators.ComparePrices">
 
     <TextView
-        android:id="@+id/lblProd1"
+        android:id="@+id/cmpLblProd1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -17,215 +17,215 @@
         android:text="@string/prod1" />
 
     <TextView
-        android:id="@+id/lblPrice1"
+        android:id="@+id/cmpLblPrice1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/lblProd1"
+        android:layout_below="@+id/cmpLblProd1"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/curPrice1"
+        android:labelFor="@+id/cmpCurPrice1"
         android:text="@string/price" />
 
     <EditText
-        android:id="@+id/curPrice1"
+        android:id="@+id/cmpCurPrice1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice1"
-        android:layout_toEndOf="@+id/lblPrice1"
+        android:layout_alignBaseline="@+id/cmpLblPrice1"
+        android:layout_toEndOf="@+id/cmpLblPrice1"
         android:ems="5"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 
     <TextView
-        android:id="@+id/lblQuant1"
+        android:id="@+id/cmpLblQuant1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice1"
+        android:layout_alignBaseline="@+id/cmpLblPrice1"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/curPrice1"
-        android:labelFor="@+id/decQuant1"
+        android:layout_toEndOf="@+id/cmpCurPrice1"
+        android:labelFor="@+id/cmpDecQuant1"
         android:text="@string/quant" />
 
     <EditText
-        android:id="@+id/decQuant1"
+        android:id="@+id/cmpDecQuant1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice1"
-        android:layout_toEndOf="@+id/lblQuant1"
+        android:layout_alignBaseline="@+id/cmpLblPrice1"
+        android:layout_toEndOf="@+id/cmpLblQuant1"
         android:ems="4"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 
     <TextView
-        android:id="@+id/lblPer1"
+        android:id="@+id/cmpLblPer1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/curPrice1"
+        android:layout_below="@+id/cmpCurPrice1"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/curPer1"
+        android:labelFor="@+id/cmpCurPer1"
         android:text="@string/per" />
 
     <TextView
-        android:id="@+id/curPer1"
+        android:id="@+id/cmpCurPer1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPer1"
+        android:layout_alignBaseline="@+id/cmpLblPer1"
         android:layout_marginStart="5dp"
-        android:layout_toEndOf="@+id/lblPer1"
+        android:layout_toEndOf="@+id/cmpLblPer1"
         android:text="" />
 
 
     <TextView
-        android:id="@+id/lblProd2"
+        android:id="@+id/cmpLblProd2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/lblPer1"
+        android:layout_below="@+id/cmpLblPer1"
         android:layout_marginTop="10dp"
         android:text="@string/prod2" />
 
     <TextView
-        android:id="@+id/lblPrice2"
+        android:id="@+id/cmpLblPrice2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/lblProd2"
+        android:layout_below="@+id/cmpLblProd2"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/curPrice2"
+        android:labelFor="@+id/cmpCurPrice2"
         android:text="@string/price" />
 
     <EditText
-        android:id="@+id/curPrice2"
+        android:id="@+id/cmpCurPrice2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice2"
-        android:layout_toEndOf="@+id/lblPrice2"
+        android:layout_alignBaseline="@+id/cmpLblPrice2"
+        android:layout_toEndOf="@+id/cmpLblPrice2"
         android:ems="5"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 
     <TextView
-        android:id="@+id/lblQuant2"
+        android:id="@+id/cmpLblQuant2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice2"
+        android:layout_alignBaseline="@+id/cmpLblPrice2"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/curPrice2"
-        android:labelFor="@+id/decQuant2"
+        android:layout_toEndOf="@+id/cmpCurPrice2"
+        android:labelFor="@+id/cmpDecQuant2"
         android:text="@string/quant" />
 
     <EditText
-        android:id="@+id/decQuant2"
+        android:id="@+id/cmpDecQuant2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice2"
-        android:layout_toEndOf="@+id/lblQuant2"
+        android:layout_alignBaseline="@+id/cmpLblPrice2"
+        android:layout_toEndOf="@+id/cmpLblQuant2"
         android:ems="4"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 
     <TextView
-        android:id="@+id/lblPer2"
+        android:id="@+id/cmpLblPer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/curPrice2"
+        android:layout_below="@+id/cmpCurPrice2"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/curPer2"
+        android:labelFor="@+id/cmpCurPer2"
         android:text="@string/per" />
 
     <TextView
-        android:id="@+id/curPer2"
+        android:id="@+id/cmpCurPer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPer2"
+        android:layout_alignBaseline="@+id/cmpLblPer2"
         android:layout_marginStart="5dp"
-        android:layout_toEndOf="@+id/lblPer2"
+        android:layout_toEndOf="@+id/cmpLblPer2"
         android:text="" />
 
 
     <TextView
-        android:id="@+id/lblProd3"
+        android:id="@+id/cmpLblProd3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/lblPer2"
+        android:layout_below="@+id/cmpLblPer2"
         android:layout_marginTop="10dp"
         android:text="@string/prod3" />
 
     <TextView
-        android:id="@+id/lblPrice3"
+        android:id="@+id/cmpLblPrice3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/lblProd3"
+        android:layout_below="@+id/cmpLblProd3"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/curPrice3"
+        android:labelFor="@+id/cmpCurPrice3"
         android:text="@string/price" />
 
     <EditText
-        android:id="@+id/curPrice3"
+        android:id="@+id/cmpCurPrice3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice3"
-        android:layout_toEndOf="@+id/lblPrice3"
+        android:layout_alignBaseline="@+id/cmpLblPrice3"
+        android:layout_toEndOf="@+id/cmpLblPrice3"
         android:ems="5"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 
     <TextView
-        android:id="@+id/lblQuant3"
+        android:id="@+id/cmpLblQuant3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice3"
+        android:layout_alignBaseline="@+id/cmpLblPrice3"
         android:layout_marginStart="10dp"
-        android:layout_toEndOf="@+id/curPrice3"
-        android:labelFor="@+id/decQuant3"
+        android:layout_toEndOf="@+id/cmpCurPrice3"
+        android:labelFor="@+id/cmpDecQuant3"
         android:text="@string/quant" />
 
     <EditText
-        android:id="@+id/decQuant3"
+        android:id="@+id/cmpDecQuant3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPrice3"
-        android:layout_toEndOf="@+id/lblQuant3"
+        android:layout_alignBaseline="@+id/cmpLblPrice3"
+        android:layout_toEndOf="@+id/cmpLblQuant3"
         android:ems="4"
         android:inputType="numberDecimal"
         android:textAlignment="textEnd" />
 
     <TextView
-        android:id="@+id/lblPer3"
+        android:id="@+id/cmpLblPer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/curPrice3"
+        android:layout_below="@+id/cmpCurPrice3"
         android:layout_marginStart="20dp"
-        android:labelFor="@+id/curPer3"
+        android:labelFor="@+id/cmpCurPer3"
         android:text="@string/per" />
 
     <TextView
-        android:id="@+id/curPer3"
+        android:id="@+id/cmpCurPer3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblPer3"
+        android:layout_alignBaseline="@+id/cmpLblPer3"
         android:layout_marginStart="5dp"
-        android:layout_toEndOf="@+id/lblPer3"
+        android:layout_toEndOf="@+id/cmpLblPer3"
         android:text="" />
 
     <Button
-        android:id="@+id/btnCompute"
+        android:id="@+id/cmpBtnCompute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/lblPer3"
+        android:layout_below="@+id/cmpLblPer3"
         android:text="@string/compare" />
 
     <Button
-        android:id="@+id/btnClear"
+        android:id="@+id/cmpBtnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnCompute"
-        android:layout_toEndOf="@+id/btnCompute"
+        android:layout_alignBaseline="@+id/cmpBtnCompute"
+        android:layout_toEndOf="@+id/cmpBtnCompute"
         android:text="@string/clear" />
 </RelativeLayout>

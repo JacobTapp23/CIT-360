@@ -15,14 +15,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/lblBegin"
+            android:id="@+id/dpvLblBegin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@+id/decBegin"
+            android:labelFor="@+id/dpvDecBegin"
             android:text="@string/begin" />
 
         <EditText
-            android:id="@+id/decBegin"
+            android:id="@+id/dpvDecBegin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="4"
@@ -30,15 +30,15 @@
             android:textAlignment="textEnd" />
 
         <TextView
-            android:id="@+id/lblEnd"
+            android:id="@+id/dpvLblEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
-            android:labelFor="@+id/decEnd"
+            android:labelFor="@+id/dpvDecEnd"
             android:text="@string/end" />
 
         <EditText
-            android:id="@+id/decEnd"
+            android:id="@+id/dpvDecEnd"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="4"
@@ -52,14 +52,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/lblDist"
+            android:id="@+id/dpvLblDist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@+id/decDist"
+            android:labelFor="@+id/dpvDecDist"
             android:text="@string/dist" />
 
         <EditText
-            android:id="@+id/decDist"
+            android:id="@+id/dpvDecDist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="4"
@@ -73,14 +73,14 @@
         android:orientation="horizontal">
 
         <TextView
-            android:id="@+id/lblVol"
+            android:id="@+id/dpvLblVol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:labelFor="@+id/decVol"
+            android:labelFor="@+id/dpvDecVol"
             android:text="@string/vol" />
 
         <EditText
-            android:id="@+id/decVol"
+            android:id="@+id/dpvDecVol"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="4"
@@ -94,19 +94,19 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnCompute"
+            android:id="@+id/dpvBtnCompute"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/distPerVol" />
+            android:text="@string/dpv" />
 
         <TextView
-            android:id="@+id/numDistPerVol"
+            android:id="@+id/dpvDecResult"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnClear"
+        android:id="@+id/dpvBtnClear"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/clear" />

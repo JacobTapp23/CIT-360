@@ -13,8 +13,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ShoeSize extends CalcFragment {
-	private Map<Float, Float> inchesFromUSA;
 	private EditText decUSA, decMetric;
+	private Map<Float, Float> inchesFromUSA;
 	private NumberFormat decFmtr;
 
 	public ShoeSize() {
@@ -54,11 +54,17 @@ public class ShoeSize extends CalcFragment {
 		// Inflate the layout for this fragment
 		View view = inflater.inflate(R.layout.shoe_size, container, false);
 
-		decUSA = (EditText) view.findViewById(R.id.decUSA);
-		decMetric = (EditText) view.findViewById(R.id.decMetric);
-		view.findViewById(R.id.btnCompute).setOnClickListener(new Compute());
-		view.findViewById(R.id.btnClear).setOnClickListener(new Clear());
+		decUSA = (EditText)view.findViewById(R.id.shoeDecUSA);
+		decMetric = (EditText)view.findViewById(R.id.shoeDecMetric);
+		view.findViewById(R.id.shoeBtnCompute).setOnClickListener(new Compute());
+		view.findViewById(R.id.shoeBtnClear).setOnClickListener(new Clear());
 		return view;
+	}
+
+	@Override
+	public void onStart() {
+		super.onStart();
+		decUSA.requestFocus();
 	}
 
 	private class Compute implements OnClickListener {
@@ -70,7 +76,7 @@ public class ShoeSize extends CalcFragment {
 				if (usa.length() > 0) {
 					float u = (float) Calculators.getDec(decUSA);
 					float inches = inchesFromUSA.get(u);
-					float millis = inches * 2.54F;
+					float millis = inches * 2.54F * 1.5F;
 					decMetric.setText(decFmtr.format(millis));
 				}
 				else if (metric.length() > 0) {
@@ -78,8 +84,7 @@ public class ShoeSize extends CalcFragment {
 				}
 			}
 			catch (Exception ex) {
-				String name = getResources().getString(R.string.appName);
-				Log.e(name, "exception", ex);
+				Log.e(Calculators.TAG, "exception", ex);
 			}
 		}
 	}

@@ -1,67 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:clickable="true"
-    tools:context="edu.byui.cit360.calculators.ShoeSize">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	android:clickable="true"
+	tools:context="edu.byui.cit360.calculators.ShoeSize">
 
-    <EditText
-        android:id="@+id/decUSA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:ems="4"
-        android:inputType="numberDecimal" />
+	<EditText
+		android:id="@+id/shoeDecUSA"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentStart="true"
+		android:ems="4"
+		android:inputType="numberDecimal" />
 
-    <Button
-        android:id="@+id/btnCompute"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/decUSA"
-        android:layout_toEndOf="@+id/decUSA"
-        android:text="@string/equal" />
+	<Button
+		android:id="@+id/shoeBtnCompute"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/shoeDecUSA"
+		android:layout_toEndOf="@+id/shoeDecUSA"
+		android:text="@string/equal" />
 
-    <EditText
-        android:id="@+id/decMetric"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/decUSA"
-        android:layout_toEndOf="@+id/btnCompute"
-        android:ems="4"
-        android:inputType="numberDecimal" />
+	<EditText
+		android:id="@+id/shoeDecMetric"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/shoeDecUSA"
+		android:layout_toEndOf="@+id/shoeBtnCompute"
+		android:ems="4"
+		android:inputType="numberDecimal" />
 
-    <TextView
-        android:id="@+id/lblUSA"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/decUSA"
-        android:layout_alignStart="@+id/decUSA"
-        android:layout_alignEnd="@+id/decUSA"
-        android:labelFor="@+id/decUSA"
-        android:text="@string/usa"
-        android:textAlignment="center" />
+	<TextView
+		android:id="@+id/shoeLblUSA"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/shoeDecUSA"
+		android:layout_alignStart="@+id/shoeDecUSA"
+		android:layout_alignEnd="@+id/shoeDecUSA"
+		android:labelFor="@+id/shoeDecUSA"
+		android:text="@string/usa"
+		android:textAlignment="center" />
 
-    <TextView
-        android:id="@+id/lblMetric"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/lblUSA"
-        android:layout_alignStart="@+id/decMetric"
-        android:layout_alignEnd="@+id/decMetric"
-        android:labelFor="@+id/decMetric"
-        android:text="@string/metric"
-        android:textAlignment="center" />
+	<TextView
+		android:id="@+id/shoeLblMetric"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_alignBaseline="@+id/shoeLblUSA"
+		android:layout_alignStart="@+id/shoeDecMetric"
+		android:layout_alignEnd="@+id/shoeDecMetric"
+		android:labelFor="@+id/shoeDecMetric"
+		android:text="@string/euro"
+		android:textAlignment="center" />
 
-    <Button
-        android:id="@+id/btnClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lblUSA"
-        android:layout_alignParentStart="true"
-        android:text="@string/clear" />
+	<Button
+		android:id="@+id/shoeBtnClear"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/shoeLblUSA"
+		android:layout_alignParentStart="true"
+		android:text="@string/clear" />
 
 </RelativeLayout>
