@@ -250,10 +250,12 @@ public class ComparePrices extends CalcFragment {
 					}
 				}
 
-				// Select the units to use for comparison.
-				Collections.sort(unitsList);
-				int index = (unitsList.size() - 1) / 2;
-				general = unitsList.get(index);
+				if (unitsList.size() > 0) {
+					// Select the units to use for comparison.
+					Collections.sort(unitsList);
+					int index = (unitsList.size() - 1) / 2;
+					general = unitsList.get(index);
+				}
 			}
 
 			Product best = null;
