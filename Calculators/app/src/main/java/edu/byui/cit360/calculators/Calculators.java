@@ -109,4 +109,25 @@ public class Calculators extends Activity {
 		}
 		return val.doubleValue();
 	}
+
+
+//	public static String camelFromPhrase(String phrase) {
+//		int len = phrase.length();
+//		StringBuilder camel = new StringBuilder(len);
+//		boolean end = false;
+//		for (int i = 0;  i < len;  ++i) {
+//			char c = phrase.charAt(i);
+//			if (Character.isWhitespace(c)) {
+//				end = true;
+//			}
+//			else {
+//				if (end) {
+//					c = Character.toUpperCase(c);
+//				}
+//				camel.append(c);
+//				end = false;
+//			}
+//		}
+//		return camel.toString();
+//	}
 }

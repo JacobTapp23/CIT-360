@@ -10,18 +10,20 @@
 		and/or using this software you agree to hold harmless Brigham Young
 		University - Idaho, its sponsors, its employees, and its students.</string>
 
+	<!-- Calculator Categories -->
 	<string name="shopping">Shopping</string>
 	<string name="cars">Cars</string>
 	<string name="finance">Finance</string>
 	<string name="electricity">Electricity</string>
 
 	<string name="cmpPrices">Compare Prices</string>
+	<string name="unitType">Type of Units</string>
 	<string name="prod1">Product 1</string>
 	<string name="prod2">Product 2</string>
 	<string name="prod3">Product 3</string>
 	<string name="price">Price</string>
 	<string name="quant">Quantity</string>
-	<string name="per">Price per</string>
+	<string name="per">per</string>
 
 	<string name="tip">Tip</string>
 	<string name="cost">Cost before Tax</string>
@@ -54,10 +56,10 @@
 	<string name="ptd">Payments Paid to Date</string>
 
 	<string name="ohmsLaw">Ohm\'s Law</string>
-	<string name="voltage">V</string>
+	<string name="ohmsVoltage">V</string>
 	<string name="equal">=</string>
-	<string name="current">I</string>
-	<string name="resistance">R</string>
+	<string name="ohmsCurrent">I</string>
+	<string name="ohmsResistance">R</string>
 
 	<string name="calculate">Calculate</string>
 	<string name="clear">Clear</string>

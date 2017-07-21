@@ -1,0 +1,290 @@
+<resources>
+	<!-- Unit Systems -->
+	<string name="customary">U.S. Customary</string>
+	<string name="metric">International System of Units (SI)</string>
+
+	<!-- Base Quantities -->
+	<string name="length">length</string>
+	<string name="mass">mass</string>
+	<string name="time">time</string>
+	<string name="current">current</string>
+	<string name="temperature">temperature</string>
+	<string name="luminosity">luminosity</string>
+
+	<!-- Derived Quantities -->
+	<string name="area">area</string>
+	<string name="volume">volume</string>
+
+	<string name="frequency">frequency</string>
+	<string name="angle">angle</string>
+
+	<string name="voltage">voltage</string>
+	<string name="resistance">resistance</string>
+
+	<string name="pressure">pressure</string>
+
+	<string name="energy">energy</string>
+	<string name="power">power</string>
+	<string name="fuelUsage">fuel usage</string>
+
+	<string name="speed">speed</string>
+	<string name="acceleration">acceleration</string>
+	<string name="force">force</string>
+
+	<!-- Supported Quantities -->
+	<string-array name="supportedQuantities">
+		<item>length</item>
+		<item>mass</item>
+		<item>time</item>
+		<item>area</item>
+		<item>volume</item>
+	</string-array>
+
+
+	<!-- Units of Length -->
+	<string-array name="length">
+		<item>inch</item>
+		<item>foot</item>
+		<item>yard</item>
+		<item>rod</item>
+		<item>mile</item>
+		<item>millimeter</item>
+		<item>centimeter</item>
+		<item>meter</item>
+		<item>kilometer</item>
+	</string-array>
+
+	<plurals name="inch">
+		<item quantity="one">inch</item>
+		<item quantity="many">inches</item>
+	</plurals>
+	<plurals name="foot">
+		<item quantity="one">foot</item>
+		<item quantity="many">feet</item>
+	</plurals>
+	<plurals name="yard">
+		<item quantity="one">yard</item>
+		<item quantity="many">yards</item>
+	</plurals>
+	<plurals name="rod">
+		<item quantity="one">rod</item>
+		<item quantity="many">rods</item>
+	</plurals>
+	<plurals name="mile">
+		<item quantity="one">mile</item>
+		<item quantity="many">miles</item>
+	</plurals>
+
+	<plurals name="millimeter">
+		<item quantity="one">millimeter</item>
+		<item quantity="many">millimeters</item>
+	</plurals>
+	<plurals name="centimeter">
+		<item quantity="one">centimeter</item>
+		<item quantity="many">centimeters</item>
+	</plurals>
+	<plurals name="meter">
+		<item quantity="one">meter</item>
+		<item quantity="many">meters</item>
+	</plurals>
+	<plurals name="kilometer">
+		<item quantity="one">kilometer</item>
+		<item quantity="many">kilometers</item>
+	</plurals>
+
+	<!-- Units of Mass -->
+	<string-array name="mass">
+		<item>grain</item>
+		<item>ounce</item>
+		<item>pound</item>
+		<item>stone</item>
+		<item>shortTon</item>
+		<item>longTon</item>
+		<item>gram</item>
+		<item>kilogram</item>
+		<item>metricTon</item>
+	</string-array>
+
+	<plurals name="grain">
+		<item quantity="one">grain</item>
+		<item quantity="many">grains</item>
+	</plurals>
+	<plurals name="ounce">
+		<item quantity="one">ounce</item>
+		<item quantity="many">ounces</item>
+	</plurals>
+	<plurals name="pound">
+		<item quantity="one">pound</item>
+		<item quantity="many">pounds</item>
+	</plurals>
+	<plurals name="stone">
+		<item quantity="one">stone</item>
+		<item quantity="many">stones</item>
+	</plurals>
+	<plurals name="shortTon">
+		<item quantity="one">short (US) ton</item>
+		<item quantity="many">short (US) tons</item>
+	</plurals>
+	<plurals name="longTon">
+		<item quantity="one">long (UK) ton</item>
+		<item quantity="many">long (UK) tons</item>
+	</plurals>
+
+	<plurals name="gram">
+		<item quantity="one">gram</item>
+		<item quantity="many">grams</item>
+	</plurals>
+	<plurals name="kilogram">
+		<item quantity="one">kilogram</item>
+		<item quantity="many">kilograms</item>
+	</plurals>
+	<plurals name="metricTon">
+		<item quantity="one">metric ton</item>
+		<item quantity="many">metric tons</item>
+	</plurals>
+
+	<!-- Units of Time -->
+	<string-array name="time">
+		<item>second</item>
+		<item>minute</item>
+		<item>hour</item>
+		<item>day</item>
+		<item>week</item>
+	</string-array>
+
+	<plurals name="second">
+		<item quantity="one">second</item>
+		<item quantity="many">seconds</item>
+	</plurals>
+	<plurals name="minute">
+		<item quantity="one">minute</item>
+		<item quantity="many">minutes</item>
+	</plurals>
+	<plurals name="hour">
+		<item quantity="one">hour</item>
+		<item quantity="many">hours</item>
+	</plurals>
+	<plurals name="day">
+		<item quantity="one">day</item>
+		<item quantity="many">days</item>
+	</plurals>
+	<plurals name="week">
+		<item quantity="one">week</item>
+		<item quantity="many">weeks</item>
+	</plurals>
+
+	<!-- Units of Area -->
+	<string-array name="area">
+		<item>squareInch</item>
+		<item>squareFoot</item>
+		<item>squareYard</item>
+		<item>acre</item>
+		<item>squareMile</item>
+		<item>squareCentimeter</item>
+		<item>squareMeter</item>
+		<item>hectare</item>
+		<item>squareKilometer</item>
+	</string-array>
+
+	<plurals name="squareInch">
+		<item quantity="one">square inch</item>
+		<item quantity="many">square inches</item>
+	</plurals>
+	<plurals name="squareFoot">
+		<item quantity="one">square foot</item>
+		<item quantity="many">square feet</item>
+	</plurals>
+	<plurals name="squareYard">
+		<item quantity="one">square yard</item>
+		<item quantity="many">square yards</item>
+	</plurals>
+	<plurals name="acre">
+		<item quantity="one">acre</item>
+		<item quantity="many">acres</item>
+	</plurals>
+	<plurals name="squareMile">
+		<item quantity="one">square mile</item>
+		<item quantity="many">square miles</item>
+	</plurals>
+	<plurals name="squareCentimeter">
+		<item quantity="one">square centimeter</item>
+		<item quantity="many">square centimeters</item>
+	</plurals>
+	<plurals name="squareMeter">
+		<item quantity="one">square meter</item>
+		<item quantity="many">square meters</item>
+	</plurals>
+	<plurals name="hectare">
+		<item quantity="one">hectare</item>
+		<item quantity="many">hectares</item>
+	</plurals>
+	<plurals name="squareKilometer">
+		<item quantity="one">square kilometer</item>
+		<item quantity="many">square kilometers</item>
+	</plurals>
+
+	<!-- Units of Volume -->
+	<string-array name="volume">
+		<item>teaspoon</item>
+		<item>tablespoon</item>
+		<item>fluidOunce</item>
+		<item>cup</item>
+		<item>pint</item>
+		<item>quart</item>
+		<item>gallon</item>
+		<item>cubicInch</item>
+		<item>cubicFoot</item>
+		<item>milliliter</item>
+		<item>liter</item>
+		<item>cubicMeter</item>
+	</string-array>
+
+	<plurals name="teaspoon">
+		<item quantity="one">teaspoon</item>
+		<item quantity="many">teaspoons</item>
+	</plurals>
+	<plurals name="tablespoon">
+		<item quantity="one">tablespoon</item>
+		<item quantity="many">tablespoons</item>
+	</plurals>
+	<plurals name="fluidOunce">
+		<item quantity="one">fluid ounce</item>
+		<item quantity="many">fluid ounces</item>
+	</plurals>
+	<plurals name="cup">
+		<item quantity="one">cup</item>
+		<item quantity="many">cups</item>
+	</plurals>
+	<plurals name="pint">
+		<item quantity="one">pint</item>
+		<item quantity="many">pints</item>
+	</plurals>
+	<plurals name="quart">
+		<item quantity="one">quart</item>
+		<item quantity="many">quarts</item>
+	</plurals>
+	<plurals name="gallon">
+		<item quantity="one">gallon</item>
+		<item quantity="many">gallons</item>
+	</plurals>
+	<plurals name="cubicInch">
+		<item quantity="one">cubic inch</item>
+		<item quantity="many">cubic inches</item>
+	</plurals>
+	<plurals name="cubicFoot">
+		<item quantity="one">cubic foot</item>
+		<item quantity="many">cubic foots</item>
+	</plurals>
+	<plurals name="milliliter">
+		<item quantity="one">milliliter</item>
+		<item quantity="many">milliliters</item>
+	</plurals>
+	<plurals name="liter">
+		<item quantity="one">liter</item>
+		<item quantity="many">liters</item>
+	</plurals>
+	<plurals name="cubicMeter">
+		<item quantity="one">cubic meter</item>
+		<item quantity="many">cubic meters</item>
+	</plurals>
+</resources>

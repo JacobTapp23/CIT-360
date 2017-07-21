@@ -46,7 +46,7 @@
 		android:layout_alignStart="@+id/ohmDecVolt"
 		android:layout_below="@+id/ohmDecVolt"
 		android:labelFor="@+id/ohmDecVolt"
-		android:text="@string/voltage"
+		android:text="@string/ohmsVoltage"
 		android:textAlignment="center" />
 
 	<TextView
@@ -65,7 +65,7 @@
 		android:layout_alignEnd="@+id/ohmDecCur"
 		android:layout_alignStart="@+id/ohmDecCur"
 		android:labelFor="@+id/ohmDecCur"
-		android:text="@string/current"
+		android:text="@string/ohmsCurrent"
 		android:textAlignment="center" />
 
 	<TextView
@@ -76,7 +76,7 @@
 		android:layout_alignEnd="@+id/ohmDecResist"
 		android:layout_alignStart="@+id/ohmDecResist"
 		android:labelFor="@+id/ohmDecResist"
-		android:text="@string/resistance"
+		android:text="@string/ohmsResistance"
 		android:textAlignment="center" />
 
 	<LinearLayout
