@@ -15,6 +15,7 @@
 	<string name="cars">Cars</string>
 	<string name="finance">Finance</string>
 	<string name="electricity">Electricity</string>
+	<string name="events">Events</string>
 
 	<string name="cmpPrices">Compare Prices</string>
 	<string name="unitType">Type of Units</string>
@@ -61,8 +62,17 @@
 	<string name="ohmsCurrent">I</string>
 	<string name="ohmsResistance">R</string>
 
+	<string name="plusOne">+1</string>
+	<string name="plusTwo">+2</string>
+	<string name="plusThree">+3</string>
+	<string name="plusFive">+5</string>
+	<string name="plusTen">+10</string>
+	<string name="minusOne">-1</string>
+	<string name="minusTwo">-2</string>
+
 	<string name="calculate">Calculate</string>
 	<string name="clear">Clear</string>
 	<string name="compare">Compare</string>
 	<string name="compute">Compute</string>
+	<string name="count">Count</string>
 </resources>

@@ -1,96 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:clickable="true"
-    android:orientation="vertical"
-    tools:context="edu.byui.cit360.calculators.Choices">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	android:clickable="true"
+	android:orientation="vertical"
+	tools:context="edu.byui.cit360.calculators.Choices">
 
-    <TextView
-        android:id="@+id/chcLblShopping"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/shopping" />
+	<TextView
+		android:id="@+id/chcLblShopping"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/shopping" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/chcBtnCompPrices"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cmpPrices" />
+		<Button
+			android:id="@+id/chcBtnCompPrices"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/cmpPrices" />
 
-        <Button
-            android:id="@+id/chcBtnTip"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/tip" />
-    </LinearLayout>
+		<Button
+			android:id="@+id/chcBtnTip"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/tip" />
+	</LinearLayout>
 
-    <TextView
-        android:id="@+id/chcLblCars"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/cars" />
+	<TextView
+		android:id="@+id/chcLblCars"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/cars" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/chcBtnDistPerVol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dpv" />
-    </LinearLayout>
+		<Button
+			android:id="@+id/chcBtnDistPerVol"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/dpv" />
+	</LinearLayout>
 
-    <TextView
-        android:id="@+id/chcLblFinance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/finance" />
+	<TextView
+		android:id="@+id/chcLblFinance"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/finance" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/chcBtnInvest"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/invest" />
+		<Button
+			android:id="@+id/chcBtnInvest"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/invest" />
 
-        <Button
-            android:id="@+id/chcBtnLoan"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/loan" />
-    </LinearLayout>
+		<Button
+			android:id="@+id/chcBtnLoan"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/loan" />
+	</LinearLayout>
 
-    <TextView
-        android:id="@+id/chcLblElectricity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/electricity" />
+	<TextView
+		android:id="@+id/chcLblElectricity"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/electricity" />
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/chcBtnOhmsLaw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/ohmsLaw" />
-    </LinearLayout>
+		<Button
+			android:id="@+id/chcBtnOhmsLaw"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/ohmsLaw"/>
+	</LinearLayout>
 
+	<TextView
+		android:id="@+id/chcLblEvents"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/events"/>
+
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<Button
+			android:id="@+id/chcBtnCount"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/count"/>
+	</LinearLayout>
 </LinearLayout>

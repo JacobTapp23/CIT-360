@@ -41,14 +41,10 @@ public class World extends Container<Quantity> {
 					volt = "voltage",
 					resis = "resistance",
 
-					fuel = "fuel usage",
+					fuel = "fuelUsage",
 					speed = "speed",
 					accel = "acceleration",
 					force = "force";
-
-				final String
-					customary = "customary",
-					metric = "metric";
 
 				final double mm = 1609344;
 				Quantity quant = new Quantity("length");
