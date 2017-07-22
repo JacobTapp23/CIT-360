@@ -1,115 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:clickable="true"
-    android:columnCount="2"
-    tools:context="edu.byui.cit360.calculators.Loan">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	android:clickable="true"
+	android:columnCount="2"
+	tools:context="edu.byui.cit360.calculators.Loan">
 
-    <TextView
-        android:id="@+id/loanLblAmt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/loanCurAmt"
-        android:text="@string/amt" />
+	<TextView
+		android:id="@+id/loanLblAmt"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:labelFor="@+id/loanCurAmt"
+		android:text="@string/amt" />
 
-    <EditText
-        android:id="@+id/loanCurAmt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="numberDecimal"
-        android:textAlignment="textEnd" />
+	<EditText
+		android:id="@+id/loanCurAmt"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:ems="5"
+		android:inputType="numberDecimal"
+		android:textAlignment="textEnd" />
 
-    <TextView
-        android:id="@+id/loanLblAR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/loanDecAR"
-        android:text="@string/annRate" />
+	<TextView
+		android:id="@+id/loanLblAR"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:labelFor="@+id/loanDecAR"
+		android:text="@string/annRate" />
 
-    <EditText
-        android:id="@+id/loanDecAR"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="numberDecimal"
-        android:textAlignment="textEnd" />
+	<EditText
+		android:id="@+id/loanDecAR"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:ems="5"
+		android:inputType="numberDecimal"
+		android:textAlignment="textEnd" />
 
-    <TextView
-        android:id="@+id/loanLblYears"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/loanIntYears"
-        android:text="@string/years" />
+	<TextView
+		android:id="@+id/loanLblYears"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:labelFor="@+id/loanIntYears"
+		android:text="@string/years" />
 
-    <EditText
-        android:id="@+id/loanIntYears"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="number"
-        android:textAlignment="textEnd" />
+	<EditText
+		android:id="@+id/loanIntYears"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:ems="5"
+		android:inputType="number"
+		android:textAlignment="textEnd" />
 
-    <TextView
-        android:id="@+id/loanLblPPY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/loanIntPPY"
-        android:text="@string/payPY" />
+	<TextView
+		android:id="@+id/loanLblPPY"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:labelFor="@+id/loanIntPPY"
+		android:text="@string/payPY" />
 
-    <EditText
-        android:id="@+id/loanIntPPY"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="number"
-        android:textAlignment="textEnd" />
+	<EditText
+		android:id="@+id/loanIntPPY"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:ems="5"
+		android:inputType="number"
+		android:textAlignment="textEnd" />
 
-    <Button
-        android:id="@+id/loanBtnPay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/pay" />
+	<Button
+		android:id="@+id/loanBtnPay"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/pay" />
 
-    <TextView
-        android:id="@+id/loanDecPay"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+	<TextView
+		android:id="@+id/loanDecPay"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
 
-    <TextView
-        android:id="@+id/loanLblPTD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:labelFor="@+id/loanIntPTD"
-        android:text="@string/ptd" />
+	<TextView
+		android:id="@+id/loanLblPTD"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:labelFor="@+id/loanIntPTD"
+		android:text="@string/ptd" />
 
-    <EditText
-        android:id="@+id/loanIntPTD"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="5"
-        android:inputType="number"
-        android:textAlignment="textEnd" />
+	<EditText
+		android:id="@+id/loanIntPTD"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:ems="5"
+		android:inputType="number"
+		android:textAlignment="textEnd" />
 
-    <Button
-        android:id="@+id/loanBtnBal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/bal" />
+	<Button
+		android:id="@+id/loanBtnBal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/bal" />
 
-    <TextView
-        android:id="@+id/loanCurBal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+	<TextView
+		android:id="@+id/loanCurBal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/loanBtnClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/clear" />
+	<Button
+		android:id="@+id/loanBtnClear"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/clear" />
 
 </GridLayout>

@@ -1,265 +1,265 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:clickable="true"
-    tools:context="edu.byui.cit360.calculators.ComparePrices">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	android:clickable="true"
+	tools:context="edu.byui.cit360.calculators.ComparePrices">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/unitType"/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/unitType"/>
 
-        <Spinner
-            android:id="@+id/cmpSpinUnitsType"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+		<Spinner
+			android:id="@+id/cmpSpinUnitsType"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp">
 
-        <TextView
-            android:id="@+id/cmpLblProd1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/prod1"/>
+		<TextView
+			android:id="@+id/cmpLblProd1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentStart="true"
+			android:layout_alignParentTop="true"
+			android:text="@string/prod1"/>
 
-        <EditText
-            android:id="@+id/cmpCurPrice1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/cmpSpinUnits1"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:ems="5"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd"/>
+		<EditText
+			android:id="@+id/cmpCurPrice1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/cmpSpinUnits1"
+			android:layout_alignParentStart="true"
+			android:layout_marginStart="20dp"
+			android:ems="5"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd"/>
 
-        <TextView
-            android:id="@+id/cmpLblPrice1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/cmpCurPrice1"
-            android:layout_alignStart="@+id/cmpCurPrice1"
-            android:layout_below="@+id/cmpCurPrice1"
-            android:labelFor="@+id/cmpCurPrice1"
-            android:text="@string/price"
-            android:textAlignment="center"/>
+		<TextView
+			android:id="@+id/cmpLblPrice1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignEnd="@+id/cmpCurPrice1"
+			android:layout_alignStart="@+id/cmpCurPrice1"
+			android:layout_below="@+id/cmpCurPrice1"
+			android:labelFor="@+id/cmpCurPrice1"
+			android:text="@string/price"
+			android:textAlignment="center"/>
 
-        <EditText
-            android:id="@+id/cmpDecQuant1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/cmpSpinUnits1"
-            android:layout_toEndOf="@+id/cmpCurPrice1"
-            android:ems="4"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd"/>
+		<EditText
+			android:id="@+id/cmpDecQuant1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/cmpSpinUnits1"
+			android:layout_toEndOf="@+id/cmpCurPrice1"
+			android:ems="4"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd"/>
 
-        <TextView
-            android:id="@+id/cmpLblQuant1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignEnd="@+id/cmpDecQuant1"
-            android:layout_alignStart="@+id/cmpDecQuant1"
-            android:layout_below="@+id/cmpDecQuant1"
-            android:labelFor="@+id/cmpDecQuant1"
-            android:text="@string/quant"
-            android:textAlignment="center"/>
+		<TextView
+			android:id="@+id/cmpLblQuant1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignEnd="@+id/cmpDecQuant1"
+			android:layout_alignStart="@+id/cmpDecQuant1"
+			android:layout_below="@+id/cmpDecQuant1"
+			android:labelFor="@+id/cmpDecQuant1"
+			android:text="@string/quant"
+			android:textAlignment="center"/>
 
-        <Spinner
-            android:id="@+id/cmpSpinUnits1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpLblProd1"
-            android:layout_toEndOf="@+id/cmpDecQuant1"/>
+		<Spinner
+			android:id="@+id/cmpSpinUnits1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpLblProd1"
+			android:layout_toEndOf="@+id/cmpDecQuant1"/>
 
-        <TextView
-            android:id="@+id/cmpTxtPer1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpLblPrice1"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:text="" />
-    </RelativeLayout>
+		<TextView
+			android:id="@+id/cmpTxtPer1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpLblPrice1"
+			android:layout_alignParentStart="true"
+			android:layout_marginStart="20dp"
+			android:text="" />
+	</RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp">
 
-        <TextView
-            android:id="@+id/cmpLblProd2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/prod2" />
+		<TextView
+			android:id="@+id/cmpLblProd2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentStart="true"
+			android:layout_alignParentTop="true"
+			android:text="@string/prod2" />
 
-        <EditText
-            android:id="@+id/cmpCurPrice2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/cmpSpinUnits2"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:ems="5"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd" />
+		<EditText
+			android:id="@+id/cmpCurPrice2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/cmpSpinUnits2"
+			android:layout_alignParentStart="true"
+			android:layout_marginStart="20dp"
+			android:ems="5"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd" />
 
-        <TextView
-            android:id="@+id/cmpLblPrice2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpCurPrice2"
-            android:layout_alignStart="@+id/cmpCurPrice2"
-            android:layout_alignEnd="@+id/cmpCurPrice2"
-            android:labelFor="@+id/cmpCurPrice2"
-            android:textAlignment="center"
-            android:text="@string/price" />
+		<TextView
+			android:id="@+id/cmpLblPrice2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpCurPrice2"
+			android:layout_alignStart="@+id/cmpCurPrice2"
+			android:layout_alignEnd="@+id/cmpCurPrice2"
+			android:labelFor="@+id/cmpCurPrice2"
+			android:textAlignment="center"
+			android:text="@string/price" />
 
-        <EditText
-            android:id="@+id/cmpDecQuant2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/cmpSpinUnits2"
-            android:layout_toEndOf="@+id/cmpCurPrice2"
-            android:ems="4"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd" />
+		<EditText
+			android:id="@+id/cmpDecQuant2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/cmpSpinUnits2"
+			android:layout_toEndOf="@+id/cmpCurPrice2"
+			android:ems="4"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd" />
 
-        <TextView
-            android:id="@+id/cmpLblQuant2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpDecQuant2"
-            android:layout_alignStart="@+id/cmpDecQuant2"
-            android:layout_alignEnd="@+id/cmpDecQuant2"
-            android:labelFor="@+id/cmpDecQuant2"
-            android:textAlignment="center"
-            android:text="@string/quant" />
+		<TextView
+			android:id="@+id/cmpLblQuant2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpDecQuant2"
+			android:layout_alignStart="@+id/cmpDecQuant2"
+			android:layout_alignEnd="@+id/cmpDecQuant2"
+			android:labelFor="@+id/cmpDecQuant2"
+			android:textAlignment="center"
+			android:text="@string/quant" />
 
-        <Spinner
-            android:id="@+id/cmpSpinUnits2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpLblProd2"
-            android:layout_toEndOf="@+id/cmpDecQuant2" />
+		<Spinner
+			android:id="@+id/cmpSpinUnits2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpLblProd2"
+			android:layout_toEndOf="@+id/cmpDecQuant2" />
 
-        <TextView
-            android:id="@+id/cmpTxtPer2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpLblPrice2"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:text="" />
-    </RelativeLayout>
+		<TextView
+			android:id="@+id/cmpTxtPer2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpLblPrice2"
+			android:layout_alignParentStart="true"
+			android:layout_marginStart="20dp"
+			android:text="" />
+	</RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+	<RelativeLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp">
 
-        <TextView
-            android:id="@+id/cmpLblProd3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/prod3" />
+		<TextView
+			android:id="@+id/cmpLblProd3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentStart="true"
+			android:layout_alignParentTop="true"
+			android:text="@string/prod3" />
 
-        <EditText
-            android:id="@+id/cmpCurPrice3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/cmpSpinUnits3"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:ems="5"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd" />
+		<EditText
+			android:id="@+id/cmpCurPrice3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/cmpSpinUnits3"
+			android:layout_alignParentStart="true"
+			android:layout_marginStart="20dp"
+			android:ems="5"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd" />
 
-        <TextView
-            android:id="@+id/cmpLblPrice3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpCurPrice3"
-            android:layout_alignStart="@+id/cmpCurPrice3"
-            android:layout_alignEnd="@+id/cmpCurPrice3"
-            android:labelFor="@+id/cmpCurPrice3"
-            android:textAlignment="center"
-            android:text="@string/price" />
+		<TextView
+			android:id="@+id/cmpLblPrice3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpCurPrice3"
+			android:layout_alignStart="@+id/cmpCurPrice3"
+			android:layout_alignEnd="@+id/cmpCurPrice3"
+			android:labelFor="@+id/cmpCurPrice3"
+			android:textAlignment="center"
+			android:text="@string/price" />
 
-        <EditText
-            android:id="@+id/cmpDecQuant3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignBaseline="@+id/cmpSpinUnits3"
-            android:layout_toEndOf="@+id/cmpCurPrice3"
-            android:ems="4"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd" />
+		<EditText
+			android:id="@+id/cmpDecQuant3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignBaseline="@+id/cmpSpinUnits3"
+			android:layout_toEndOf="@+id/cmpCurPrice3"
+			android:ems="4"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd" />
 
-        <TextView
-            android:id="@+id/cmpLblQuant3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpDecQuant3"
-            android:layout_alignStart="@+id/cmpDecQuant3"
-            android:layout_alignEnd="@+id/cmpDecQuant3"
-            android:labelFor="@+id/cmpDecQuant3"
-            android:textAlignment="center"
-            android:text="@string/quant" />
+		<TextView
+			android:id="@+id/cmpLblQuant3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpDecQuant3"
+			android:layout_alignStart="@+id/cmpDecQuant3"
+			android:layout_alignEnd="@+id/cmpDecQuant3"
+			android:labelFor="@+id/cmpDecQuant3"
+			android:textAlignment="center"
+			android:text="@string/quant" />
 
-        <Spinner
-            android:id="@+id/cmpSpinUnits3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpLblProd3"
-            android:layout_toEndOf="@+id/cmpDecQuant3" />
+		<Spinner
+			android:id="@+id/cmpSpinUnits3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpLblProd3"
+			android:layout_toEndOf="@+id/cmpDecQuant3" />
 
-        <TextView
-            android:id="@+id/cmpTxtPer3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/cmpLblPrice3"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="20dp"
-            android:text="" />
-    </RelativeLayout>
+		<TextView
+			android:id="@+id/cmpTxtPer3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/cmpLblPrice3"
+			android:layout_alignParentStart="true"
+			android:layout_marginStart="20dp"
+			android:text="" />
+	</RelativeLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/cmpBtnCompute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/compare" />
+		<Button
+			android:id="@+id/cmpBtnCompute"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/compare" />
 
-        <Button
-            android:id="@+id/cmpBtnClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/clear" />
-    </LinearLayout>
+		<Button
+			android:id="@+id/cmpBtnClear"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/clear" />
+	</LinearLayout>
 </LinearLayout>

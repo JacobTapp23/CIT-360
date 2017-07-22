@@ -1,114 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@android:color/white"
-    android:clickable="true"
-    android:orientation="vertical"
-    tools:context="edu.byui.cit360.calculators.DistPerVol">
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@android:color/white"
+	android:clickable="true"
+	android:orientation="vertical"
+	tools:context="edu.byui.cit360.calculators.DistPerVol">
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/dpvLblBegin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:labelFor="@+id/dpvDecBegin"
-            android:text="@string/begin" />
+		<TextView
+			android:id="@+id/dpvLblBegin"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:labelFor="@+id/dpvDecBegin"
+			android:text="@string/begin" />
 
-        <EditText
-            android:id="@+id/dpvDecBegin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="4"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd" />
+		<EditText
+			android:id="@+id/dpvDecBegin"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:ems="4"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd" />
 
-        <TextView
-            android:id="@+id/dpvLblEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:labelFor="@+id/dpvDecEnd"
-            android:text="@string/end" />
+		<TextView
+			android:id="@+id/dpvLblEnd"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"
+			android:labelFor="@+id/dpvDecEnd"
+			android:text="@string/end" />
 
-        <EditText
-            android:id="@+id/dpvDecEnd"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="4"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd" />
-    </LinearLayout>
+		<EditText
+			android:id="@+id/dpvDecEnd"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:ems="4"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd" />
+	</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/dpvLblDist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:labelFor="@+id/dpvDecDist"
-            android:text="@string/dist" />
+		<TextView
+			android:id="@+id/dpvLblDist"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:labelFor="@+id/dpvDecDist"
+			android:text="@string/dist" />
 
-        <EditText
-            android:id="@+id/dpvDecDist"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="4"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd" />
-    </LinearLayout>
+		<EditText
+			android:id="@+id/dpvDecDist"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:ems="4"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd" />
+	</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/dpvLblVol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:labelFor="@+id/dpvDecVol"
-            android:text="@string/vol" />
+		<TextView
+			android:id="@+id/dpvLblVol"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:labelFor="@+id/dpvDecVol"
+			android:text="@string/vol" />
 
-        <EditText
-            android:id="@+id/dpvDecVol"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="4"
-            android:inputType="numberDecimal"
-            android:textAlignment="textEnd" />
-    </LinearLayout>
+		<EditText
+			android:id="@+id/dpvDecVol"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:ems="4"
+			android:inputType="numberDecimal"
+			android:textAlignment="textEnd" />
+	</LinearLayout>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+	<LinearLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/dpvBtnCompute"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/dpv" />
+		<Button
+			android:id="@+id/dpvBtnCompute"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/dpv" />
 
-        <TextView
-            android:id="@+id/dpvDecResult"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+		<TextView
+			android:id="@+id/dpvDecResult"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content" />
+	</LinearLayout>
 
-    <Button
-        android:id="@+id/dpvBtnClear"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/clear" />
+	<Button
+		android:id="@+id/dpvBtnClear"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/clear" />
 
 </LinearLayout>
