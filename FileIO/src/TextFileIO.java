@@ -2,14 +2,12 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class TextFileIO {
-	/* In Java there are two categories of objects that can read from
-	 * files.
+	/* In Java there are two categories of objects that can read from files.
 	 * 1. Streams write to and read from binary files, such as .png or
 	 * .jpg files.
 	 * 2. Writers and Readers write to and read from text files.
 	 *
-	 * This program demonstrates how to write to and read from a text
-	 * file.
+	 * This program demonstrates how to write to and read from a text file.
 	 */
 	public static void main(String[] args) {
 		// Make a local variable to print to the console. This is a
@@ -48,11 +46,11 @@ public class TextFileIO {
 	public static void writeText(File file, String[] text) throws IOException {
 		/* When writing to a file, it is common to wrap writer objects
 		 * inside other writer objects. In this example, the PrintWriter
-		 * object contains the a method named println which
-		 * automatcially adds a newline character at the end of each
-		 * line. The BufferedWriter object maintains an in memory
-		 * buffer. The FileWriter object actually writes characters to a
-		 * file. These three objects work together like this:
+		 * object contains the method named println which automatically
+		 * adds a newline character at the end of each line. The
+		 * BufferedWriter object maintains an in memory buffer. The
+		 * FileWriter object actually writes characters to a file. These
+		 * three objects work together like this:
 		 *
 		 * 1. When the computer executes pw.println(line), the
 		 * PrintWriter object sends the characters in the line string
@@ -114,18 +112,22 @@ public class TextFileIO {
 
 
 	public static String[] readText(File file) throws IOException {
+		// Create an ArrayList to hold the lines of text from the file.
 		ArrayList<String> text = new ArrayList<>();
 
 		BufferedReader br = null;
 		FileReader fr = new FileReader(file);
 		try {
 			br = new BufferedReader(fr);
+
+			// Read each line from the file and add each line to the ArrayList.
 			String line;
 			while ((line = br.readLine()) != null) {
 				text.add(line);
 			}
 		}
 		finally {
+			// Close the outermost reader that was successfully opened.
 			if (br != null) {
 				br.close();
 			}
