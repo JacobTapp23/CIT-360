@@ -1,9 +1,11 @@
 /* From the IntelliJ IDE, run this program. Then using a browser on the
  * same computer where this program is running, type
- * "localhost:8080/second" (without the quotes) into the browser's
+ * "localhost:8080/Third" (without the quotes) into the browser's
  * address bar and then press enter. You should see a report from this
  * Servlet in your browser.
  */
+package edu.byui.cit360;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 
@@ -12,8 +14,8 @@ import java.io.PrintWriter;
 import java.util.Enumeration;
 
 
-@WebServlet(name = "Second")
-public class Second extends HttpServlet {
+@WebServlet(name = "Third")
+public class Third extends HttpServlet {
     private static final String
             doctype = "<!DOCTYPE HTML>\n",
             html = "<html lang=\"en-us\">\n",
@@ -21,7 +23,7 @@ public class Second extends HttpServlet {
             head = "<head>\n",
             _head = "</head>\n",
             charset = "<meta charset=\"utf-8\">\n",
-            author = "<meta name=\"author\" content=\"Second Servlet\">\n",
+            author = "<meta name=\"author\" content=\"Third Servlet\">\n",
             title = "<title>",
             _title = "</title>\n",
             body = "<body>\n",
@@ -48,11 +50,11 @@ public class Second extends HttpServlet {
         out.print(head);
         out.print(charset);
         out.print(author);
-        out.print(title + "Second Servlet" + _title);
+        out.print(title + "Third Servlet" + _title);
         out.print(_head);
 
         out.print(body);
-        out.print(h1 + "Second Servlet" + _h1);
+        out.print(h1 + "Third Servlet" + _h1);
 
         out.print(h2 + "User Principal" + _h2);
         out.print(div + req.getUserPrincipal() + _div);
