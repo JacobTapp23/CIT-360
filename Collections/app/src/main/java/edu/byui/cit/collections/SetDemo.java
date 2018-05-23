@@ -1,3 +1,5 @@
+package edu.byui.cit.collections;
+
 import java.io.PrintStream;
 
 import java.util.HashSet;
@@ -58,7 +60,7 @@ public class SetDemo {
 	}
 
 
-	public static String choose(String[] array) {
+	private static String choose(String[] array) {
 		int length = array.length;
 		int index = (int)Math.floor(Math.random() * length);
 		return array[index];

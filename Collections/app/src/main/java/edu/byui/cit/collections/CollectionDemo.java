@@ -1,3 +1,5 @@
+package edu.byui.cit.collections;
+
 import java.io.PrintStream;
 import java.util.*;
 
