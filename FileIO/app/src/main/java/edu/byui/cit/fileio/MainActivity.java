@@ -1,31 +1,85 @@
-import java.io.*;
+package edu.byui.cit.fileio;
+
+import android.content.Context;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.widget.TextView;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
-public class TextFileIO {
-	/* In Java there are two categories of objects that can read from files.
-	 * 1. Streams write to and read from binary files, such as .png or
-	 * .jpg files.
-	 * 2. Writers and Readers write to and read from text files.
-	 *
-	 * This program demonstrates how to write to and read from a text file.
-	 */
-	public static void main(String[] args) {
-		// Make a local variable to print to the console. This is a
-		// shortcut, so that I can type "out" instead of "System.out".
-		PrintStream out = System.out;
 
-		// Create a File object that refers to a local text file.
-		File file = new File("out.txt");
+public class MainActivity extends AppCompatActivity {
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.main_activity);
+		TextView console = findViewById(R.id.console);
+		System.setOut(new PrintStream(new TextViewWriter(console)));
+	}
 
+	private static final class TextViewWriter extends OutputStream {
+		private final StringBuilder buffer;
+		private final TextView console;
+
+		TextViewWriter(TextView console) {
+			this.buffer = new StringBuilder();
+			this.console = console;
+		}
+
+		@Override
+		public void write(int b) {
+			buffer.append(b);
+			console.setText(buffer);
+		}
+
+		@Override
+		public void write(@NotNull byte[] b, int offs, int len) {
+			buffer.append(new String(b, offs, len));
+			console.setText(buffer);
+		}
+	}
+
+	@Override
+	protected void onStart() {
+		super.onStart();
+		main();
+	}
+
+
+	private void main() {
+		/* In Java there are two categories of objects that can read from files.
+		 * 1. Streams write to and read from binary files, such as .png or
+		 * .jpg files.
+		 * 2. Writers and Readers write to and read from text files.
+		 *
+		 * This program demonstrates how to write to and read from a text file.
+		 */
+		String filename = "preamble.txt";
 		String[] text = {
 				"We the People of the United States, in Order to form a more",
 				"perfect Union, establish Justice, insure domestic Tranquility,",
-				"provide for the common defence, promote the general Welfare, and",
-				"secure the Blessings of Liberty to ourselves and our Posterity,",
-				"do ordain and establish this Constitution for the United States",
-				"of America."
+				"provide for the common defence, promote the general Welfare,",
+				"and secure the Blessings of Liberty to ourselves and our",
+				"Posterity, do ordain and establish this Constitution for the",
+				"United States of America."
 		};
 		try {
+			// Create a File object that refers to a local text file.
+			Context ctx = getApplicationContext();
+			File dir = ctx.getFilesDir();
+			File file = new File(dir, filename);
+
 			// Write the text to a text file.
 			writeText(file, text);
 
@@ -34,11 +88,11 @@ public class TextFileIO {
 
 			// Print the text that was read from the text file.
 			for (String line : read) {
-				out.println(line);
+				System.out.println(line);
 			}
 		}
-		catch (IOException e) {
-			e.printStackTrace();
+		catch (Exception ex) {
+			ex.printStackTrace();
 		}
 	}
 

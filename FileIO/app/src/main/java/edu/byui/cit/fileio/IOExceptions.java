@@ -1,3 +1,5 @@
+package edu.byui.cit.fileio;
+
 import java.io.*;
 
 /** Demonstrates several exceptions that may happen while trying to
