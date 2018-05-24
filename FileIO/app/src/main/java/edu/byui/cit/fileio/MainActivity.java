@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.PrintWriter;
@@ -65,16 +67,28 @@ public class MainActivity extends AppCompatActivity {
 		 *
 		 * This program demonstrates how to write to and read from a text file.
 		 */
-		String filename = "preamble.txt";
-		String[] text = {
-				"We the People of the United States, in Order to form a more",
-				"perfect Union, establish Justice, insure domestic Tranquility,",
-				"provide for the common defence, promote the general Welfare,",
-				"and secure the Blessings of Liberty to ourselves and our",
-				"Posterity, do ordain and establish this Constitution for the",
-				"United States of America."
-		};
+
 		try {
+			// Read an existing file from the assets folder.
+			String[] read = readFromAssets("declaration.txt");
+
+			// Print the text that was read from the text file.
+			for (String line : read) {
+				System.out.println(line);
+			}
+
+			// Write a text file to internal storage. Then
+			// read that same file from internal storage.
+			String filename = "preamble.txt";
+			String[] text = {
+					"We the People of the United States, in Order to form a more",
+					"perfect Union, establish Justice, insure domestic Tranquility,",
+					"provide for the common defence, promote the general Welfare,",
+					"and secure the Blessings of Liberty to ourselves and our",
+					"Posterity, do ordain and establish this Constitution for the",
+					"United States of America."
+			};
+
 			// Create a File object that refers to a local text file.
 			Context ctx = getApplicationContext();
 			File dir = ctx.getFilesDir();
@@ -84,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 			writeText(file, text);
 
 			// Read the text from the text file.
-			String[] read = readText(file);
+			read = readText(file);
 
 			// Print the text that was read from the text file.
 			for (String line : read) {
@@ -94,6 +108,45 @@ public class MainActivity extends AppCompatActivity {
 		catch (Exception ex) {
 			ex.printStackTrace();
 		}
+	}
+
+
+	public String[] readFromAssets(String filename) throws IOException {
+		// Create an ArrayList to hold the lines of text from the file.
+		ArrayList<String> text = new ArrayList<>();
+
+		BufferedReader br = null;
+		InputStreamReader ir = null;
+		InputStream is = getAssets().open(filename);
+		try {
+			ir = new InputStreamReader(is);
+			br = new BufferedReader(ir);
+
+			// Read each line from the file and add each line to the ArrayList.
+			String line;
+			while ((line = br.readLine()) != null) {
+				text.add(line);
+			}
+		}
+		finally {
+			// Close the outermost reader that was successfully opened.
+			if (br != null) {
+				br.close();
+			}
+			else if (ir != null) {
+				ir.close();
+			}
+			else {
+				is.close();
+			}
+		}
+
+		// Create an array large enough to hold all the lines of text
+		// from the text file. Copy the text from the ArrayList into the
+		// array and return the array.
+		int size = text.size();
+		String[] array = new String[size];
+		return text.toArray(array);
 	}
 
 
