@@ -1,3 +1,5 @@
+package edu.byui.cit.basicjava;
+
 import static java.lang.System.out;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
@@ -6,7 +8,7 @@ import java.util.Date;
 import java.util.Random;
 
 public class Methods {
-	public static void main(String[] args) throws NoSuchAlgorithmException {
+	public static void main(String[] args) {
 		{	// Pseudo random integer between min and max
 			int min = 5, max = 11;
 			int i = min + (int)(Math.random() * (max - min));
@@ -24,6 +26,7 @@ public class Methods {
 			out.println(i);
 		}
 
+		try
 		{	// Pseudo random integer between min and max
 			int min = 5, max = 11;
 
@@ -33,6 +36,9 @@ public class Methods {
 			// Executed each time another pseudo random number is needed.
 			int i = min + rnd.nextInt(max - min);
 			out.println(i);
+		}
+		catch (NoSuchAlgorithmException ex) {
+			ex.printStackTrace();
 		}
 
 		boolean result = isEven(8);

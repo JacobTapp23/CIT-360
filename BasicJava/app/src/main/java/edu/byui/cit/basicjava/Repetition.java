@@ -1,11 +1,11 @@
+package edu.byui.cit.basicjava;
+
 import static java.lang.System.out;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
-
-import javax.swing.JOptionPane;
 
 
 public class Repetition {
@@ -212,8 +212,7 @@ public class Repetition {
 							" is too high. Please enter another integer.";
 				}
 			} while (guess != answer);
-			JOptionPane.showMessageDialog(
-					null, guess + " is correct!");
+			out.println(guess + " is correct!");
 		}
 
 		scanner.close();

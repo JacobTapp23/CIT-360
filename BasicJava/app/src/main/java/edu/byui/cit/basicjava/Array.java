@@ -1,3 +1,5 @@
+package edu.byui.cit.basicjava;
+
 import java.io.PrintStream;
 import java.util.Arrays;
 import java.util.Comparator;

@@ -1,3 +1,5 @@
+package edu.byui.cit.basicjava;
+
 import java.io.PrintStream;
 
 public class Arithmetic {

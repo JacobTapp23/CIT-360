@@ -1,3 +1,5 @@
+package edu.byui.cit.basicjava;
+
 public class FirstProgram {
 	/* The computer always begins executing a Java application in a static
 	 * method named main. The main method must always have this header:

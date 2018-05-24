@@ -1,4 +1,5 @@
-import javax.swing.JOptionPane;
+package edu.byui.cit.basicjava;
+
 import java.io.PrintStream;
 
 public class Selection {
@@ -59,8 +60,7 @@ public class Selection {
 			case 'N':  registerDate = "Nov 6";   break;
 			default:
 				registerDate = "none";
-				JOptionPane.showMessageDialog(null,
-						"unknown class standing");
+				out.println("unknown class standing");
 				break;
 			}
 			out.println("registration date " + registerDate);
