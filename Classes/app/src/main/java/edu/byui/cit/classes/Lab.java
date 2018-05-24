@@ -1,3 +1,5 @@
+package edu.byui.cit.classes;
+
 /* This file contains classes that demonstrate inheritance, method
  * overriding, and creating objects. For the complete set of student
  * instructions, see the file instructions.txt

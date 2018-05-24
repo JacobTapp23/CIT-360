@@ -6,63 +6,63 @@
     </shared>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a740bbb-6ec5-4563-ae7b-495dba4fca0e" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/caches/build_file_checksums.ser" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/codeStyles/Project.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/codeStyles/codeStyleConfig.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/gradle.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/misc.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/modules.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/runConfigurations.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/.idea/workspace.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/build.gradle" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/proguard-rules.pro" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/AndroidManifest.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/java/edu/byui/cit/classes/MainActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/drawable/ic_launcher_background.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/layout/main_activity.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/values/colors.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/values/strings.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/values/styles.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/build.gradle" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/gradle.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/gradle/wrapper/gradle-wrapper.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/gradle/wrapper/gradle-wrapper.properties" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/gradlew" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/gradlew.bat" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/../Classes/settings.gradle" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/../Classes/src/Lab.java" afterPath="$PROJECT_DIR$/../Classes/app/src/main/java/edu/byui/cit/classes/Lab.java" />
+    <list default="true" id="76aa12d4-6384-45d4-be66-e0018970f37a" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/gradle.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/build.gradle" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/proguard-rules.pro" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/MainActivity.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/main_activity.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gradle.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gradlew" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/gradlew.bat" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/settings.gradle" />
+      <change beforePath="$PROJECT_DIR$/../BasicJava/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../BasicJava/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/src/Lab.java" afterPath="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/Lab.java" />
       <change beforePath="$PROJECT_DIR$/../FileIO/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../FileIO/.idea/workspace.xml" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,61 +86,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="main_activity.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/main_activity.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+            <state relative-caret-position="147">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java">
+      <file leaf-file-name="Lab.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/Lab.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Methods.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Methods.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-              <folding>
-                <element signature="e#2758#2759#0" expanded="true" />
-                <element signature="e#2788#2789#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Repetition.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Repetition.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+            <state relative-caret-position="42">
+              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -167,14 +127,14 @@
         <entry>
           <key>
             <ExternalProjectPojo>
-              <option name="name" value="BasicJava" />
+              <option name="name" value="Classes" />
               <option name="path" value="$PROJECT_DIR$" />
             </ExternalProjectPojo>
           </key>
           <value>
             <list>
               <ExternalProjectPojo>
-                <option name="name" value="BasicJava" />
+                <option name="name" value="Classes" />
                 <option name="path" value="$PROJECT_DIR$" />
               </ExternalProjectPojo>
               <ExternalProjectPojo>
@@ -192,7 +152,7 @@
           <value>
             <list>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the sub-projects of root project 'BasicJava'." />
+                <option name="description" value="Displays the sub-projects of root project 'Classes'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="projects" />
               </ExternalTaskPojo>
@@ -242,7 +202,7 @@
                 <option name="name" value="assembleDebugUnitTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the configuration model of root project 'BasicJava'. [incubating]" />
+                <option name="description" value="Displays the configuration model of root project 'Classes'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="model" />
               </ExternalTaskPojo>
@@ -264,7 +224,7 @@
                 <option name="name" value="bundleAppClassesDebug" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the tasks runnable from root project 'BasicJava' (some of the displayed tasks may belong to subprojects)." />
+                <option name="description" value="Displays the tasks runnable from root project 'Classes' (some of the displayed tasks may belong to subprojects)." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="tasks" />
               </ExternalTaskPojo>
@@ -287,7 +247,7 @@
                 <option name="name" value="deviceCheck" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all dependencies declared in root project 'BasicJava'." />
+                <option name="description" value="Displays all dependencies declared in root project 'Classes'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencies" />
               </ExternalTaskPojo>
@@ -368,7 +328,7 @@
                 <option name="name" value="compileDebugAndroidTestJavaWithJavac" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the components produced by root project 'BasicJava'. [incubating]" />
+                <option name="description" value="Displays the components produced by root project 'Classes'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="components" />
               </ExternalTaskPojo>
@@ -497,7 +457,7 @@
                 <option name="name" value="uninstallDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the insight into a specific dependency in root project 'BasicJava'." />
+                <option name="description" value="Displays the insight into a specific dependency in root project 'Classes'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependencyInsight" />
               </ExternalTaskPojo>
@@ -798,12 +758,12 @@
                 <option name="name" value="transformDexArchiveWithDexMergerForDebugAndroidTest" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the dependent components of components in root project 'BasicJava'. [incubating]" />
+                <option name="description" value="Displays the dependent components of components in root project 'Classes'. [incubating]" />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="dependentComponents" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays all buildscript dependencies declared in root project 'BasicJava'." />
+                <option name="description" value="Displays all buildscript dependencies declared in root project 'Classes'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="buildEnvironment" />
               </ExternalTaskPojo>
@@ -934,7 +894,7 @@
                 <option name="name" value="generateReleaseResValues" />
               </ExternalTaskPojo>
               <ExternalTaskPojo>
-                <option name="description" value="Displays the properties of root project 'BasicJava'." />
+                <option name="description" value="Displays the properties of root project 'Classes'." />
                 <option name="linkedExternalProjectPath" value="$PROJECT_DIR$" />
                 <option name="name" value="properties" />
               </ExternalTaskPojo>
@@ -2000,7 +1960,7 @@
                   </entry>
                 </map>
               </option>
-              <option name="name" value="BasicJava" />
+              <option name="name" value="Classes" />
               <option name="projectBuildClasspath">
                 <list>
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.4-all/9br9xq1tocpiv8o6njlyu5op1/gradle-4.4/src/announce" />
@@ -2169,14 +2129,9 @@
       <list>
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/main_activity.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Arithmetic.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Array.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/FirstProgram.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Repetition.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/SecondProgram.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Selection.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Methods.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/Lab.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/MainActivityActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/MainActivity.java" />
       </list>
     </option>
   </component>
@@ -2202,25 +2157,45 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane" />
       <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
-              <item name="BasicJava" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Classes" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
             <path>
-              <item name="BasicJava" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Classes" type="1abcf292:AndroidViewProjectNode" />
               <item name="app" type="feadf853:AndroidModuleNode" />
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
             </path>
             <path>
-              <item name="BasicJava" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="Classes" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="classes" type="cbb59c9e:AndroidPsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Classes" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="java" type="edd41e36:AndroidSourceTypeNode" />
+              <item name="classes" type="cbb59c9e:AndroidPsiDirectoryNode" />
+              <item name="Lab.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
+            </path>
+            <path>
+              <item name="Classes" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+            </path>
+            <path>
+              <item name="Classes" type="1abcf292:AndroidViewProjectNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
+              <item name="res" type="d4f16f75:AndroidResFolderNode" />
+              <item name="layout" type="ddeffd01:AndroidResFolderTypeNode" />
             </path>
           </expand>
           <select />
@@ -2230,10 +2205,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="device.picker.selection" value="Pixel_2_API_27" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\rab29\cit360\examples\BasicJava\app\src\main\java\edu\byui\cit\basicjava" />
+      <recent name="C:\Users\rab29\cit360\examples\Classes\app\src\main\java\edu\byui\cit\classes" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -2272,7 +2248,7 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="app" />
       <option name="DEPLOY" value="true" />
       <option name="ARTIFACT_NAME" value="" />
@@ -2284,7 +2260,7 @@
       <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
       <option name="FORCE_STOP_RUNNING_APP" value="true" />
       <option name="TARGET_SELECTION_MODE" value="SHOW_DIALOG" />
-      <option name="USE_LAST_SELECTED_DEVICE" value="false" />
+      <option name="USE_LAST_SELECTED_DEVICE" value="true" />
       <option name="PREFERRED_AVD" value="" />
       <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
       <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
@@ -2392,11 +2368,11 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="8a740bbb-6ec5-4563-ae7b-495dba4fca0e" name="Default" comment="" />
-      <created>1527181139742</created>
+      <changelist id="76aa12d4-6384-45d4-be66-e0018970f37a" name="Default" comment="" />
+      <created>1527182006443</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1527181139742</updated>
+      <updated>1527182006443</updated>
     </task>
     <servers />
   </component>
@@ -2404,15 +2380,15 @@
     <frame x="722" y="94" width="1220" height="1175" extended-state="0" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2423,8 +2399,8 @@
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Device File Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -2445,8 +2421,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="3" column="24" lean-forward="false" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
+        <state relative-caret-position="546">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -2457,12 +2433,12 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
-          <caret line="6" column="41" lean-forward="false" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Arithmetic.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/Lab.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
@@ -2470,66 +2446,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Array.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/classes/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state relative-caret-position="147">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/FirstProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/SecondProgram.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Selection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="42">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Repetition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/Methods.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="40" column="33" lean-forward="false" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
-          <folding>
-            <element signature="e#2758#2759#0" expanded="true" />
-            <element signature="e#2788#2789#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="24" lean-forward="false" selection-start-line="13" selection-start-column="24" selection-end-line="13" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
