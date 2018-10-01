@@ -227,7 +227,7 @@ public class MainActivity extends Activity {
 
 	public static String[] readText(File file) throws IOException {
 		// Create an ArrayList to hold the lines of text from the file.
-		ArrayList<String> text = new ArrayList<>();
+		ArrayList<String> list = new ArrayList<>();
 
 		BufferedReader br = null;
 		FileReader fr = new FileReader(file);
@@ -237,7 +237,7 @@ public class MainActivity extends Activity {
 			// Read each line from the file and add each line to the ArrayList.
 			String line;
 			while ((line = br.readLine()) != null) {
-				text.add(line);
+				list.add(line);
 			}
 		}
 		finally {
@@ -253,8 +253,8 @@ public class MainActivity extends Activity {
 		// Create an array large enough to hold all the lines of text
 		// from the text file. Copy the text from the ArrayList into the
 		// array and return the array.
-		int size = text.size();
+		int size = list.size();
 		String[] array = new String[size];
-		return text.toArray(array);
+		return list.toArray(array);
 	}
 }
