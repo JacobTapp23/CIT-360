@@ -12,16 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8ca85348-82b7-4737-9013-1d0a74de7b45" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../BasicJava/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Classes/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BasicJava/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BasicJava/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/fileio/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/fileio/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Simple/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Simple/.idea/codeStyles/Project.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -47,8 +38,8 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/fileio/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
+            <state relative-caret-position="391">
+              <caret line="225" selection-start-line="225" selection-end-line="225" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -2322,10 +2313,10 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="605" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="630" />
     <option name="width" value="1245" />
-    <option name="height" value="1047" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -2352,7 +2343,7 @@
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="device.picker.selection" value="Pixel_API_27" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Simple" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../apps/Calc360" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
   </component>
   <component name="RunDashboard">
@@ -2478,10 +2469,25 @@
       <option name="presentableId" value="Default" />
       <updated>1537984478321</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add a comment to the FileIO project to explain reading from an assets file.">
+      <created>1538416820980</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1538416820980</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add a comment to the FileIO project to explain reading from an assets file.">
+      <created>1538416883596</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1538416883596</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="605" y="0" width="1245" height="1047" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
@@ -2490,7 +2496,7 @@
       <window_info id="Image Layers" order="2" />
       <window_info id="Build Variants" order="2" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Event Log" order="7" side_tool="true" visible="true" weight="0.32768363" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -2498,7 +2504,7 @@
       <window_info id="Captures" order="2" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24978903" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15637584" />
       <window_info anchor="bottom" id="Build" order="7" weight="0.3294271" />
       <window_info anchor="right" id="Gradle" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -2518,7 +2524,21 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add a comment to the FileIO project to explain reading from an assets file." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add a comment to the FileIO project to explain reading from an assets file." />
+  </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/fileio/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3825">
+          <caret line="225" lean-forward="true" selection-start-line="225" selection-end-line="225" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/fileio/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -2552,8 +2572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/fileio/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="122" column="30" selection-start-line="122" selection-start-column="30" selection-end-line="122" selection-end-column="30" />
+        <state relative-caret-position="391">
+          <caret line="225" selection-start-line="225" selection-end-line="225" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
