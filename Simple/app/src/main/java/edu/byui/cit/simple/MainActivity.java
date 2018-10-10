@@ -20,8 +20,8 @@ public class MainActivity extends Activity {
 		txtOne = findViewById(R.id.editText);
 		txtTwo = findViewById(R.id.editText2);
 
-		Button btnCompute = findViewById(R.id.button);
-		Button btnClear = findViewById(R.id.button2);
+		Button btnCompute = findViewById(R.id.btnCompute);
+		Button btnClear = findViewById(R.id.btnClear);
 		btnCompute.setOnClickListener(new ComputeHandler());
 		btnClear.setOnClickListener(new ClearHandler());
 	}
