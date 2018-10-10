@@ -1,93 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AndroidLayouts">
-    <shared>
-      <config />
-    </shared>
-  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1ccad000-c6db-4b69-8b57-70671a77c130" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/../Exceptions/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/proguard-rules.pro" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/androidTest/java/edu/byui/cit/exceptions/ExampleInstrumentedTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/java/edu/byui/cit/exceptions/MainActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/layout/main_activity.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/app/src/test/java/edu/byui/cit/exceptions/ExampleUnitTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/gradle.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Exceptions/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Simple/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Simple/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BasicJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/BasicJava.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/Classes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/Classes.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/app/src/main/java/edu/byui/cit/classes/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/app/src/main/java/edu/byui/cit/classes/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Classes/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Classes/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Console/Console.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Console/Console.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Console/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Console/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Console/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Console/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Console/app/src/main/java/edu/byui/cit/console/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Console/app/src/main/java/edu/byui/cit/console/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Console/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Console/app/src/main/res/values/styles.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Console/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Console/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Console/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Console/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Exceptions/src/Exceptions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileIO/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FileIO/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileIO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FileIO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileIO/FileIO.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../FileIO/FileIO.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileIO/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../FileIO/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileIO/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../FileIO/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FileIO/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../FileIO/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Simple/Simple.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Simple/Simple.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Simple/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Simple/app/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Simple/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../Simple/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Simple/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Simple/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-    </list>
+    <list default="true" id="57de3aeb-6289-488d-a97f-0063e210acbf" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,29 +27,17 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="false">
+    <leaf>
+      <file leaf-file-name="MainActivity.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56">
-              <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+            <state relative-caret-position="153">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
@@ -2384,28 +2291,20 @@
       </map>
     </option>
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
-        <option value="$PROJECT_DIR$/app/build.gradle" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="638" />
-    <option name="y" value="127" />
-    <option name="width" value="1245" />
-    <option name="height" value="900" />
+    <option name="x" value="707" />
+    <option name="y" value="167" />
+    <option name="width" value="1093" />
+    <option name="height" value="713" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="AndroidView">
         <subPane>
           <expand>
@@ -2424,21 +2323,15 @@
               <item name="java" type="edd41e36:AndroidSourceTypeNode" />
               <item name="basicjava" type="cbb59c9e:AndroidPsiDirectoryNode" />
             </path>
-            <path>
-              <item name="BasicJava" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Classes" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../FileIO" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.XML" />
   </component>
   <component name="RunDashboard">
@@ -2558,47 +2451,47 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="1ccad000-c6db-4b69-8b57-70671a77c130" name="Default" comment="" />
-      <created>1537984240579</created>
+      <changelist id="57de3aeb-6289-488d-a97f-0063e210acbf" name="Default" comment="" />
+      <created>1539213276417</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1537984240579</updated>
+      <updated>1539213276417</updated>
     </task>
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="638" y="127" width="1245" height="900" extended-state="0" />
+    <frame x="707" y="167" width="1093" height="713" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="Android Profiler" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="3" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Build Variants" order="2" side_tool="true" />
-      <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5012658" side_tool="true" visible="true" weight="0.3294271" />
+      <window_info anchor="bottom" id="Android Profiler" show_stripe_button="false" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info id="Image Layers" />
+      <window_info id="Build Variants" side_tool="true" />
+      <window_info anchor="right" id="Capture Analysis" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
-      <window_info anchor="bottom" id="Logcat" order="7" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Logcat" />
       <window_info id="Captures" order="2" weight="0.25" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24978903" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49873418" visible="true" weight="0.3294271" />
-      <window_info anchor="right" id="Gradle" order="3" />
+      <window_info id="Capture Tool" />
+      <window_info id="Designer" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2555663" />
+      <window_info anchor="bottom" id="Build" weight="0.5232358" />
+      <window_info anchor="right" id="Gradle" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Device File Explorer" order="3" side_tool="true" />
-      <window_info anchor="right" id="Theme Preview" order="3" />
+      <window_info anchor="right" id="Theme Preview" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Device File Explorer" side_tool="true" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2607,43 +2500,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/edu/byui/cit/basicjava/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/styles.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56">
-          <caret line="5" column="45" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="45" />
+        <state relative-caret-position="153">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>

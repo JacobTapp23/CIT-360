@@ -1,6 +1,6 @@
 package edu.byui.cit.collections;
 
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -12,7 +12,7 @@ import java.io.PrintStream;
 
 /** A simple activity that contains a single TextView and enables plain old
  * Java applications that write to the console to work in an Android app. */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
