@@ -24,10 +24,10 @@ import edu.byui.cit.firebaseModel.Creature;
 
 
 public class FirebaseFrag extends Fragment {
-	static final String TAG = "FirebaseFrag";
-
 	private TextView txtCreatureKey;
 	private EditText txtName, txtType;
+	private Button[] notInsertButtons;
+
 	private DatabaseReference dbCreatures;
 
 	/** A list of all creatures that are stored in the firebase database. */
@@ -35,10 +35,14 @@ public class FirebaseFrag extends Fragment {
 
 	private int index = -1;
 
+	private enum State { Starting, Browsing, Inputting, Waiting }
+	private State state;
+	private String waitingKey;
+
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater,
+			ViewGroup container, Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.frag_firebase, container, false);
 
@@ -58,14 +62,26 @@ public class FirebaseFrag extends Fragment {
 		btnUpdate.setOnClickListener(new HandleUpdate());
 		btnDelete.setOnClickListener(new HandleDelete());
 		btnDeleteAll.setOnClickListener(new HandleDeleteAll());
+		notInsertButtons = new Button[] { btnPrev, btnNext, btnUpdate, btnDeleteAll };
 
-		creatureList = new ArrayList<>();
 		if (dbCreatures == null) {
+			creatureList = new ArrayList<>();
 			FirebaseDatabase database = FirebaseDatabase.getInstance();
 			dbCreatures = database.getReference("/creatures");
-			dbCreatures.addChildEventListener(new CreatureAddedHandler());
+			dbCreatures.addChildEventListener(new CreatureEventHandler());
 		}
 
+		// Add two test creatures to the firebase database.
+		Creature[] testCreatures = {
+				new Creature("charizard", "fire"),
+				new Creature("squirtle", "water")
+		};
+		for (Creature creature : testCreatures) {
+			dbCreatures.push().setValue(creature);
+		}
+
+		waitingKey = null;
+		state = State.Starting;
 		return view;
 	}
 
@@ -105,11 +121,25 @@ public class FirebaseFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				FirebaseDatabase database = FirebaseDatabase.getInstance();
-				DatabaseReference creatures = database.getReference("/creatures");
-				String name = txtName.getText().toString().trim();
-				String type = txtType.getText().toString().trim();
-				creatures.push().setValue(new Creature(name, type));
+				if (state == State.Browsing) {
+					// Prepare the user interface for the user to input fields.
+					clearFields();
+					enableButtons(false);
+					txtName.requestFocus();
+					waitingKey = null;
+					state = State.Inputting;
+				}
+				else {
+					// The user has finished inputting fields, now insert a
+					// Creature in the firebase database and change the state
+					// to Browsing.
+					String name = txtName.getText().toString().trim();
+					String type = txtType.getText().toString().trim();
+					DatabaseReference node = dbCreatures.push();
+					node.setValue(new Creature(name, type));
+					waitingKey = node.getKey();
+					state = State.Waiting;
+				}
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
@@ -138,10 +168,23 @@ public class FirebaseFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				String key = txtCreatureKey.getText().toString();
-				FirebaseDatabase database = FirebaseDatabase.getInstance();
-				DatabaseReference toDelete = database.getReference("/creatures/" + key);
-				toDelete.removeValue();
+				if (state == State.Inputting) {
+					// The user cancelled an insert.
+					index = creatureList.size() - 1;
+					enableButtons(true);
+					waitingKey = null;
+					state = State.Browsing;
+					showCreature();
+				}
+				else {
+					// The user wants to delete an existing
+					// Creature from the firebase database.
+					String key = txtCreatureKey.getText().toString();
+					FirebaseDatabase database = FirebaseDatabase.getInstance();
+					DatabaseReference toDelete = database.getReference(
+							"/creatures/" + key);
+					toDelete.removeValue();
+				}
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
@@ -166,7 +209,7 @@ public class FirebaseFrag extends Fragment {
 	}
 
 
-	private final class CreatureAddedHandler implements ChildEventListener {
+	private final class CreatureEventHandler implements ChildEventListener {
 		/** Handles the event that firebase generates
 		 * when a new creature is added to the database. */
 		@Override
@@ -179,9 +222,18 @@ public class FirebaseFrag extends Fragment {
 					String key = dataSnapshot.getKey();
 					added.setKey(key);
 					creatureList.add(added);
-					if (index == -1) {
-						index = 0;
+					if (state == State.Starting) {
+						index = creatureList.size() - 1;
 						showCreature();
+						state = State.Browsing;
+					}
+					else if (state == State.Waiting) {
+						if (key.equals(waitingKey)) {
+							index = creatureList.size() - 1;
+							showCreature();
+							waitingKey = null;
+							state = State.Browsing;
+						}
 					}
 				}
 			}
@@ -196,9 +248,9 @@ public class FirebaseFrag extends Fragment {
 		public void onChildChanged(
 				@NonNull DataSnapshot dataSnapshot, String s) {
 			try {
-				String key = dataSnapshot.getKey();
 				Creature changed = dataSnapshot.getValue(Creature.class);
 				if (changed != null) {
+					String key = dataSnapshot.getKey();
 					changed.setKey(key);
 					int i = creatureList.indexOf(changed);
 					creatureList.set(i, changed);
@@ -218,8 +270,7 @@ public class FirebaseFrag extends Fragment {
 		public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
 			try {
 				String key = dataSnapshot.getKey();
-				Creature removed = new Creature(key);
-				int i = creatureList.indexOf(removed);
+				int i = creatureList.indexOf(new Creature(key));
 				if (i != -1) {
 					creatureList.remove(i);
 					if (i == index) {
@@ -256,9 +307,19 @@ public class FirebaseFrag extends Fragment {
 			txtType.setText(creature.getType());
 		}
 		else {
-			txtCreatureKey.setText("");
-			txtName.setText("");
-			txtType.setText("");
+			clearFields();
 		}
+	}
+
+	private void enableButtons(boolean value) {
+		for (Button button : notInsertButtons) {
+			button.setEnabled(value);
+		}
+	}
+
+	private void clearFields() {
+		txtCreatureKey.setText("");
+		txtName.setText("");
+		txtType.setText("");
 	}
 }

@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 
 
 public class BothFrag extends Fragment {
-	static final String TAG = "BothFrag";
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {

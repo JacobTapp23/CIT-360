@@ -41,11 +41,14 @@ public final class MainActivity extends AppCompatActivity {
 
 			Toolbar toolbar = findViewById(R.id.toolbar);
 			setSupportActionBar(toolbar);
-			ActionBar actBar = getSupportActionBar();
-			actBar.setDisplayHomeAsUpEnabled(true);
 
-			// TODO: change the home icon to the menu (hamburger) icon.
-//			actBar.setHomeAsUpIndicator(R.id.ic_menu);
+			// Change the home icon to the menu
+			// (hamburger) icon and make it visible.
+			ActionBar actBar = getSupportActionBar();
+			if (actBar != null) {
+				actBar.setHomeAsUpIndicator(R.drawable.ic_drawer);
+				actBar.setDisplayHomeAsUpEnabled(true);
+			}
 
 			if (savedInstState == null) {
 				// Create the main fragment and place it
@@ -53,7 +56,7 @@ public final class MainActivity extends AppCompatActivity {
 				Fragment frag = new MainFrag();
 				FragmentTransaction trans =
 						getSupportFragmentManager().beginTransaction();
-				trans.add(R.id.fragContainer, frag, MainFrag.TAG);
+				trans.add(R.id.fragContainer, frag);
 				trans.commit();
 			}
 
@@ -70,12 +73,13 @@ public final class MainActivity extends AppCompatActivity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
-		// Inflate our menu from the resources by using the menu inflater.
-		getMenuInflater().inflate(R.menu.menu_action, menu);
+		// Inflate the action bar items.
+		getMenuInflater().inflate(R.menu.action, menu);
 		return true;
 	}
 
 
+	/** Handles a click on one of the items in the action bar. */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
@@ -83,24 +87,16 @@ public final class MainActivity extends AppCompatActivity {
 		try {
 			switch (item.getItemId()) {
 				case android.R.id.home:
-					// If the MainFrag is visible then open the drawer,
-					// otherwise respond as if the user pressed the back button.
-					Fragment frag = getSupportFragmentManager().findFragmentByTag(MainFrag.TAG);
-					if (frag != null && frag.isVisible()) {
-						drawerLayout.openDrawer(GravityCompat.START);
-					}
-					else {
-						onBackPressed();
-					}
+					drawerLayout.openDrawer(GravityCompat.START);
 					break;
 				case R.id.actRoom:
-					switchToRoom();
+					switchToRoomFrag();
 					break;
 				case R.id.actFirebase:
-					switchToFirebase();
+					switchToFirebaseFrag();
 					break;
 				case R.id.actBoth:
-					switchToBoth();
+					switchToBothFrag();
 					break;
 				default:
 					handled = false;
@@ -117,6 +113,7 @@ public final class MainActivity extends AppCompatActivity {
 	}
 
 
+	/** Handles a click on one of the items in the drawer. */
 	private final class HandleNavClick
 			implements NavigationView.OnNavigationItemSelectedListener {
 		@Override
@@ -125,13 +122,13 @@ public final class MainActivity extends AppCompatActivity {
 			try {
 				switch (menuItem.getItemId()) {
 					case R.id.navRoom:
-						switchToRoom();
+						switchToRoomFrag();
 						break;
 					case R.id.navFirebase:
-						switchToFirebase();
+						switchToFirebaseFrag();
 						break;
 					case R.id.navBoth:
-						switchToBoth();
+						switchToBothFrag();
 						break;
 					default:
 						handled = false;
@@ -151,7 +148,7 @@ public final class MainActivity extends AppCompatActivity {
 	private final class HandleRoomClick implements View.OnClickListener {
 		@Override
 		public void onClick(View view) {
-			switchToRoom();
+			switchToRoomFrag();
 		}
 	}
 
@@ -159,47 +156,47 @@ public final class MainActivity extends AppCompatActivity {
 	private final class HandleFirebaseClick implements View.OnClickListener {
 		@Override
 		public void onClick(View view) {
-			switchToFirebase();
+			switchToFirebaseFrag();
 		}
 	}
 
-	/** Handles a click on the Firebase button. */
+	/** Handles a click on the Both button. */
 	private final class HandleBothClick implements View.OnClickListener {
 		@Override
 		public void onClick(View view) {
-			switchToBoth();
+			switchToBothFrag();
 		}
 	}
 
 
-	private void switchToRoom() {
+	private void switchToRoomFrag() {
 		if (fragRoom == null) {
 			fragRoom = new RoomFrag();
 		}
-		switchFragment(fragRoom, RoomFrag.TAG);
+		switchFragment(fragRoom);
 	}
 
-	private void switchToFirebase() {
+	private void switchToFirebaseFrag() {
 		if (fragFirebase == null) {
 			fragFirebase = new FirebaseFrag();
 		}
-		switchFragment(fragFirebase, FirebaseFrag.TAG);
+		switchFragment(fragFirebase);
 	}
 
-	private void switchToBoth() {
+	private void switchToBothFrag() {
 		if (fragBoth == null) {
 			fragBoth = new BothFrag();
 		}
-		switchFragment(fragBoth, BothFrag.TAG);
+		switchFragment(fragBoth);
 	}
 
 	/** Displays a different fragment in the frag container. */
-	private void switchFragment(Fragment fragment, String tag) {
+	private void switchFragment(Fragment fragment) {
 		// Replace whatever is in the fragContainer view with
 		// fragment, and add the transaction to the back stack so
 		// that the user can navigate back.
 		FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
-		trans.replace(R.id.fragContainer, fragment, tag);
+		trans.replace(R.id.fragContainer, fragment);
 		trans.addToBackStack(null);
 		trans.commit();
 	}

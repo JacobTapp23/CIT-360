@@ -1,7 +1,9 @@
 package edu.byui.cit.japanesecreatures;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -19,20 +21,24 @@ import edu.byui.cit.roomModel.CreatureDAO;
 
 
 public class RoomFrag extends Fragment {
-	static final String TAG = "RoomFrag";
-
 	private TextView txtCreatureID;
 	private EditText txtName, txtType;
+	private Button[] notInsertButtons;
 
-	/** A list of all creatures that are stored in the Room database. */
+	private CreatureDAO dao;
+
+	/** A list of all creatures that are stored in the Room Creature table. */
 	private List<Creature> creatureList;
 
 	private int index = -1;
 
+	private enum State { Browsing, Inputting }
+	private State state;
+
 
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater,
+			ViewGroup container, Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.frag_room, container, false);
 
@@ -52,12 +58,17 @@ public class RoomFrag extends Fragment {
 		btnUpdate.setOnClickListener(new HandleUpdate());
 		btnDelete.setOnClickListener(new HandleDelete());
 		btnDeleteAll.setOnClickListener(new HandleDeleteAll());
+		notInsertButtons = new Button[] { btnPrev, btnNext, btnUpdate, btnDeleteAll };
 
-		Context appCtx = getActivity().getApplicationContext();
-		AppDatabase db = AppDatabase.getInstance(appCtx);
-		CreatureDAO dao = db.getCreatureDAO();
+		// Get the data access object for the Creature table.
+		Activity act = getActivity();
+		if (act != null) {
+			Context appCtx = act.getApplicationContext();
+			AppDatabase db = AppDatabase.getInstance(appCtx);
+			dao = db.getCreatureDAO();
+		}
 
-		// Add two test creatures to the Room database.
+		// Add two test creatures to the Creature table.
 		Creature[] testCreatures = {
 				new Creature("charizard", "fire"),
 				new Creature("squirtle", "water")
@@ -73,6 +84,7 @@ public class RoomFrag extends Fragment {
 			showCreature();
 		}
 
+		state = State.Browsing;
 		return view;
 	}
 
@@ -114,17 +126,27 @@ public class RoomFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				String name = txtName.getText().toString().trim();
-				String type = txtType.getText().toString().trim();
-				Creature creature = new Creature(name, type);
-				Context appCtx = getActivity().getApplicationContext();
-				AppDatabase db = AppDatabase.getInstance(appCtx);
-				CreatureDAO dao = db.getCreatureDAO();
-				dao.insert(creature);
+				if (state == State.Browsing) {
+					// Prepare the user interface for the user to input fields.
+					clearFields();
+					enableButtons(false);
+					txtName.requestFocus();
+					state = State.Inputting;
+				}
+				else {
+					// The user has finished inputting fields, now insert a
+					// Creature in the Creature table and change the state
+					// to Browsing.
+					String name = txtName.getText().toString().trim();
+					String type = txtType.getText().toString().trim();
+					dao.insert(new Creature(name, type));
 
-				creatureList = dao.getAll();
-				index = creatureList.size() - 1;
-				showCreature();
+					creatureList = dao.getAll();
+					index = creatureList.size() - 1;
+					showCreature();
+					enableButtons(true);
+					state = State.Browsing;
+				}
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
@@ -141,11 +163,7 @@ public class RoomFrag extends Fragment {
 				long creatureID = Long.parseLong(text);
 				String name = txtName.getText().toString().trim();
 				String type = txtType.getText().toString().trim();
-				Creature creature = new Creature(creatureID, name, type);
-				Context appCtx = getActivity().getApplicationContext();
-				AppDatabase db = AppDatabase.getInstance(appCtx);
-				CreatureDAO dao = db.getCreatureDAO();
-				dao.update(creature);
+				dao.update(new Creature(creatureID, name, type));
 
 				creatureList = dao.getAll();
 				showCreature();
@@ -161,18 +179,24 @@ public class RoomFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				String text = txtCreatureID.getText().toString();
-				long creatureID = Long.parseLong(text);
-				Creature creature = new Creature(creatureID);
-				Context appCtx = getActivity().getApplicationContext();
-				AppDatabase db = AppDatabase.getInstance(appCtx);
-				CreatureDAO dao = db.getCreatureDAO();
-				dao.delete(creature);
+				if (state == State.Inputting) {
+					// The user cancelled an insert.
+					index = creatureList.size() - 1;
+					enableButtons(true);
+					state = State.Browsing;
+				}
+				else {
+					// The user wants to delete an existing
+					// row from the Creature table.
+					String text = txtCreatureID.getText().toString();
+					long creatureID = Long.parseLong(text);
+					dao.delete(new Creature(creatureID));
 
-				creatureList = dao.getAll();
-				int last = creatureList.size() - 1;
-				if (index > last) {
-					index = last;
+					creatureList = dao.getAll();
+					int last = creatureList.size() - 1;
+					if (index > last) {
+						index = last;
+					}
 				}
 				showCreature();
 			}
@@ -187,12 +211,10 @@ public class RoomFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				Context appCtx = getActivity().getApplicationContext();
-				AppDatabase db = AppDatabase.getInstance(appCtx);
-				CreatureDAO dao = db.getCreatureDAO();
 				dao.deleteAll();
+
 				creatureList = dao.getAll();
-				index = -1;
+				index = creatureList.size() - 1;
 				showCreature();
 			}
 			catch (Exception ex) {
@@ -210,9 +232,19 @@ public class RoomFrag extends Fragment {
 			txtType.setText(creature.getType());
 		}
 		else {
-			txtCreatureID.setText("");
-			txtName.setText("");
-			txtType.setText("");
+			clearFields();
 		}
+	}
+
+	private void enableButtons(boolean value) {
+		for (Button button : notInsertButtons) {
+			button.setEnabled(value);
+		}
+	}
+
+	private void clearFields() {
+		txtCreatureID.setText("");
+		txtName.setText("");
+		txtType.setText("");
 	}
 }

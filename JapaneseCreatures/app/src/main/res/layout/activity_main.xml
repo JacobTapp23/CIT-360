@@ -17,6 +17,7 @@
 			android:layout_height="wrap_content"
 			android:theme="@style/AppTheme.AppBarOverlay">
 
+			<!-- Container for the action bar. -->
 			<android.support.v7.widget.Toolbar
 				android:id="@+id/toolbar"
 				android:layout_width="match_parent"
@@ -32,24 +33,6 @@
 			android:layout_height="match_parent"/>
 	</LinearLayout>
 
-	<!--<FrameLayout-->
-	<!--android:id="@+id/fragContainer"-->
-	<!--android:layout_width="match_parent"-->
-	<!--android:layout_height="match_parent">-->
-
-	<!--<android.support.v7.widget.Toolbar-->
-	<!--android:id="@+id/toolbar"-->
-	<!--android:layout_width="match_parent"-->
-	<!--android:layout_height="?attr/actionBarSize"-->
-	<!--android:background="?attr/colorPrimary"-->
-	<!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />-->
-	<!--</FrameLayout>-->
-
-	<!--<FrameLayout-->
-	<!--android:id="@+id/fragContainer"-->
-	<!--android:layout_width="match_parent"-->
-	<!--android:layout_height="match_parent"/>-->
-
 	<!-- Container for the navigation drawer. -->
 	<android.support.design.widget.NavigationView
 		android:id="@+id/navView"
@@ -57,5 +40,5 @@
 		android:layout_height="match_parent"
 		android:layout_gravity="start"
 		android:fitsSystemWindows="true"
-		app:menu="@menu/menu_drawer"/>
+		app:menu="@menu/drawer"/>
 </android.support.v4.widget.DrawerLayout>
