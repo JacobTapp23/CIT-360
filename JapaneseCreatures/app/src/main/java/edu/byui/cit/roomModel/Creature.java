@@ -1,7 +1,8 @@
-package edu.byui.cit.japanesecreatures.model;
+package edu.byui.cit.roomModel;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+
 
 @Entity
 public class Creature {
@@ -10,6 +11,7 @@ public class Creature {
 
     private String name;
     private String type;
+
 
 	public Creature(long id) {
 		this.creatureId = id;
@@ -30,7 +32,7 @@ public class Creature {
         return creatureId;
     }
 
-    public void setCreatureId(long creatureId) {
+    void setCreatureId(long creatureId) {
         this.creatureId = creatureId;
     }
 

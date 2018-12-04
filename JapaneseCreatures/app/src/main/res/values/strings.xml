@@ -1,3 +1,20 @@
 <resources>
-	<string name="app_name">JapaneseCreatures</string>
+	<string name="appName">Japanese Creatures</string>
+
+	<string name="room">Room</string>
+	<string name="firebase">Firebase</string>
+	<string name="fire">Fire</string>
+	<string name="both">Both</string>
+
+	<string name="creatureID">Creature ID</string>
+	<string name="creatureKey">Creature Key</string>
+	<string name="name">Name</string>
+	<string name="type">Type</string>
+
+	<string name="prev">&lt;</string>
+	<string name="insert">+</string>
+	<string name="update">=</string>
+	<string name="delete">-</string>
+	<string name="next">&gt;</string>
+	<string name="deleteAll">!</string>
 </resources>

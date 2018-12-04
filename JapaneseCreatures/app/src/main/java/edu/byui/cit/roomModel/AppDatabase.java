@@ -1,4 +1,4 @@
-package edu.byui.cit.japanesecreatures.model;
+package edu.byui.cit.roomModel;
 
 import android.arch.persistence.room.Database;
 import android.arch.persistence.room.Room;

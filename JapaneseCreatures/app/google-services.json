@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "576191336435",
+    "firebase_url": "https://japanesecreatures.firebaseio.com",
+    "project_id": "japanesecreatures",
+    "storage_bucket": "japanesecreatures.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576191336435:android:f682c2a6aa941d44",
+        "android_client_info": {
+          "package_name": "edu.byui.cit.japanesecreatures"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576191336435-77e0m64f3odoihi8e5msp78ivlsc9qbs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQPMXvk2jXwfBXeJM8TNC7nSo9qJcWih8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

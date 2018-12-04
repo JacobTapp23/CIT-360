@@ -1,109 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v4.widget.DrawerLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
-	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/drawerLayout"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
-	android:orientation="vertical"
-	tools:context=".MainActivity">
+	android:fitsSystemWindows="true">
 
 	<LinearLayout
-		android:layout_width="match_parent"
+		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:orientation="horizontal">
+		android:orientation="vertical">
 
-		<TextView
-			android:layout_width="wrap_content"
+		<android.support.design.widget.AppBarLayout
+			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:text="Creature ID"/>
+			android:theme="@style/AppTheme.AppBarOverlay">
 
-		<EditText
-			android:id="@+id/txtCreatureID"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:ems="5"/>
+			<android.support.v7.widget.Toolbar
+				android:id="@+id/toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="?attr/colorPrimary"
+				app:popupTheme="@style/AppTheme.PopupOverlay"/>
+		</android.support.design.widget.AppBarLayout>
+
+		<!-- Container for the app's main content. -->
+		<FrameLayout
+			android:id="@+id/fragContainer"
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"/>
 	</LinearLayout>
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal">
+	<!--<FrameLayout-->
+	<!--android:id="@+id/fragContainer"-->
+	<!--android:layout_width="match_parent"-->
+	<!--android:layout_height="match_parent">-->
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="Name"/>
+	<!--<android.support.v7.widget.Toolbar-->
+	<!--android:id="@+id/toolbar"-->
+	<!--android:layout_width="match_parent"-->
+	<!--android:layout_height="?attr/actionBarSize"-->
+	<!--android:background="?attr/colorPrimary"-->
+	<!--android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />-->
+	<!--</FrameLayout>-->
 
-		<EditText
-			android:id="@+id/txtName"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:ems="12"/>
-	</LinearLayout>
+	<!--<FrameLayout-->
+	<!--android:id="@+id/fragContainer"-->
+	<!--android:layout_width="match_parent"-->
+	<!--android:layout_height="match_parent"/>-->
 
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal">
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="Type"/>
-
-		<EditText
-			android:id="@+id/txtType"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:ems="12"/>
-	</LinearLayout>
-
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal">
-
-		<Button
-			android:id="@+id/btnPrev"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="&lt;"/>
-
-		<Button
-			android:id="@+id/btnInsert"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="+"/>
-
-		<Button
-			android:id="@+id/btnUpdate"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="="/>
-
-		<Button
-			android:id="@+id/btnDelete"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="-"/>
-
-		<Button
-			android:id="@+id/btnNext"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="&gt;"/>
-	</LinearLayout>
-
-	<LinearLayout
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:orientation="horizontal">
-
-		<Button
-			android:id="@+id/btnDeleteAll"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:text="!"/>
-	</LinearLayout>
-</LinearLayout>
+	<!-- Container for the navigation drawer. -->
+	<android.support.design.widget.NavigationView
+		android:id="@+id/navView"
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:layout_gravity="start"
+		android:fitsSystemWindows="true"
+		app:menu="@menu/menu_drawer"/>
+</android.support.v4.widget.DrawerLayout>
