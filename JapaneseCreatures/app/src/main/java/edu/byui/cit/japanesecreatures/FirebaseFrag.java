@@ -35,9 +35,9 @@ public class FirebaseFrag extends Fragment {
 
 	private int index = -1;
 
-	private enum State { Starting, Browsing, Inputting, Waiting }
+	private enum State { Browsing, Inputting, PendingInsert }
 	private State state;
-	private String waitingKey;
+	private String pendingKey;
 
 
 	@Override
@@ -80,8 +80,8 @@ public class FirebaseFrag extends Fragment {
 			dbCreatures.push().setValue(creature);
 		}
 
-		waitingKey = null;
-		state = State.Starting;
+		pendingKey = null;
+		state = State.Browsing;
 		return view;
 	}
 
@@ -126,7 +126,7 @@ public class FirebaseFrag extends Fragment {
 					clearFields();
 					enableButtons(false);
 					txtName.requestFocus();
-					waitingKey = null;
+					pendingKey = null;
 					state = State.Inputting;
 				}
 				else {
@@ -137,8 +137,8 @@ public class FirebaseFrag extends Fragment {
 					String type = txtType.getText().toString().trim();
 					DatabaseReference node = dbCreatures.push();
 					node.setValue(new Creature(name, type));
-					waitingKey = node.getKey();
-					state = State.Waiting;
+					pendingKey = node.getKey();
+					state = State.PendingInsert;
 				}
 			}
 			catch (Exception ex) {
@@ -172,7 +172,7 @@ public class FirebaseFrag extends Fragment {
 					// The user cancelled an insert.
 					index = creatureList.size() - 1;
 					enableButtons(true);
-					waitingKey = null;
+					pendingKey = null;
 					state = State.Browsing;
 					showCreature();
 				}
@@ -222,16 +222,12 @@ public class FirebaseFrag extends Fragment {
 					String key = dataSnapshot.getKey();
 					added.setKey(key);
 					creatureList.add(added);
-					if (state == State.Starting) {
-						index = creatureList.size() - 1;
-						showCreature();
-						state = State.Browsing;
-					}
-					else if (state == State.Waiting) {
-						if (key.equals(waitingKey)) {
+					if (state == State.PendingInsert) {
+						if (key.equals(pendingKey)) {
 							index = creatureList.size() - 1;
 							showCreature();
-							waitingKey = null;
+							enableButtons(true);
+							pendingKey = null;
 							state = State.Browsing;
 						}
 					}
