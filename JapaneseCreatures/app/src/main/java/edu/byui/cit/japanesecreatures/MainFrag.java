@@ -1,6 +1,7 @@
 package edu.byui.cit.japanesecreatures;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,13 +13,13 @@ import android.widget.EditText;
 
 public class MainFrag extends Fragment {
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(@NonNull LayoutInflater inflater,
+			ViewGroup container, Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.frag_main, container, false);
 
 		// Display the username in the username text field.
-		MainActivity act = (MainActivity)getActivity();
+		MainActivity act = getMainActivity();
 		EditText txtUsername = view.findViewById(R.id.txtUsername);
 		txtUsername.setText(act.getUsername());
 		txtUsername.setOnFocusChangeListener(new HandleUsername());
@@ -38,15 +39,20 @@ public class MainFrag extends Fragment {
 		return view;
 	}
 
+	@NonNull
+	private MainActivity getMainActivity() {
+		return (MainActivity)getActivity();
+	}
+
 
 	private final class HandleUsername implements View.OnFocusChangeListener {
 		@Override
 		public void onFocusChange(View view, boolean hasFocus) {
 			try {
 				if (!hasFocus) {
+					MainActivity act = getMainActivity();
 					EditText txtUsername = (EditText)view;
 					String username = txtUsername.getText().toString().trim();
-					MainActivity act = (MainActivity)getActivity();
 					act.setUsername(username);
 				}
 			}
