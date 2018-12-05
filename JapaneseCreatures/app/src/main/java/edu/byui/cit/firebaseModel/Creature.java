@@ -10,8 +10,13 @@ public class Creature {
 
 	private String name;
 	private String type;
+
 	private Object whenCreated;
 	private String creator;
+
+	private Object whenUpdated;
+	private String updater;
+
 
 	@SuppressWarnings("unused")  // Used by firebase
 	public Creature() {
@@ -29,6 +34,17 @@ public class Creature {
 		this.type = type;
 		this.whenCreated = ServerValue.TIMESTAMP;
 		this.creator = creator;
+	}
+
+	// Used for creating a creature that will be sent to firebase.
+	public Creature(String name, String type,
+			Object whenCreated, String creator, String updater) {
+		this.name = name;
+		this.type = type;
+		this.whenCreated = whenCreated;
+		this.creator = creator;
+		this.whenUpdated = ServerValue.TIMESTAMP;
+		this.updater = updater;
 	}
 
 	public String getKey() {
@@ -69,6 +85,22 @@ public class Creature {
 
 	public void setCreator(String creator) {
 		this.creator = creator;
+	}
+
+	public Object getWhenUpdated() {
+		return whenUpdated;
+	}
+
+	public void setWhenUpdated(Object whenUpdated) {
+		this.whenUpdated = whenUpdated;
+	}
+
+	public String getUpdater() {
+		return updater;
+	}
+
+	public void setUpdater(String updater) {
+		this.updater = updater;
 	}
 
 	@Override

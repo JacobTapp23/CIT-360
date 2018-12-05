@@ -11,18 +11,19 @@ import android.widget.EditText;
 
 
 public class MainFrag extends Fragment {
-
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.frag_main, container, false);
 
+		// Display the username in the username text field.
 		MainActivity act = (MainActivity)getActivity();
 		EditText txtUsername = view.findViewById(R.id.txtUsername);
 		txtUsername.setText(act.getUsername());
 		txtUsername.setOnFocusChangeListener(new HandleUsername());
 
+		// Add an action listener to each button.
 		int[] buttonIds = { R.id.btnRoom, R.id.btnFirebase, R.id.btnBoth };
 		View.OnClickListener[] listeners = {
 				act.roomClickHandler,

@@ -25,7 +25,7 @@ public final class MainActivity extends AppCompatActivity {
 	private static final String USERNAME_KEY = "username";
 
 	View.OnClickListener roomClickHandler, firebaseClickHandler, bothClickHandler;
-	private Fragment fragRoom, fragFirebase, fragBoth;
+	private Fragment fragMain, fragRoom, fragFirebase, fragBoth;
 	private DrawerLayout drawerLayout;
 
 	private String username;
@@ -39,15 +39,13 @@ public final class MainActivity extends AppCompatActivity {
 			FirebaseApp.initializeApp(ctx);
 			setContentView(R.layout.activity_main);
 
-			roomClickHandler = new HandleRoomClick();
-			firebaseClickHandler = new HandleFirebaseClick();
-			bothClickHandler = new HandleBothClick();
-
+			// Set the toolbar that is in main_activity.xml
+			// as the action bar for this app.
 			Toolbar toolbar = findViewById(R.id.toolbar);
 			setSupportActionBar(toolbar);
 
-			// Change the home icon to the menu
-			// (hamburger) icon and make it visible.
+			// Change the home icon on the action bar to
+			// the menu (hamburger) icon and make it visible.
 			ActionBar actBar = getSupportActionBar();
 			if (actBar != null) {
 				actBar.setHomeAsUpIndicator(R.drawable.ic_drawer);
@@ -57,16 +55,23 @@ public final class MainActivity extends AppCompatActivity {
 			if (savedInstState == null) {
 				// Create the main fragment and place it
 				// as the first fragment in this activity.
-				Fragment frag = new MainFrag();
+				fragMain = new MainFrag();
 				FragmentTransaction trans =
 						getSupportFragmentManager().beginTransaction();
-				trans.add(R.id.fragContainer, frag);
+				trans.add(R.id.fragContainer, fragMain);
 				trans.commit();
 			}
 
+			// Set up the drawer and its navigation items.
 			drawerLayout = findViewById(R.id.drawerLayout);
 			NavigationView nav = findViewById(R.id.navView);
 			nav.setNavigationItemSelectedListener(new HandleNavClick());
+
+			// Create three click handlers that are used by the items on the
+			// action bar, the items in the drawer, and the buttons in MainFrag.
+			roomClickHandler = new HandleRoomClick();
+			firebaseClickHandler = new HandleFirebaseClick();
+			bothClickHandler = new HandleBothClick();
 		}
 		catch (Exception ex) {
 			Log.e(TAG, ex.getMessage());
@@ -92,23 +97,24 @@ public final class MainActivity extends AppCompatActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		super.onOptionsItemSelected(item);
-		boolean handled = true;
+		boolean handled = false;
 		try {
 			switch (item.getItemId()) {
 				case android.R.id.home:
 					drawerLayout.openDrawer(GravityCompat.START);
+					handled = true;
 					break;
 				case R.id.actRoom:
 					switchToRoomFrag();
+					handled = true;
 					break;
 				case R.id.actFirebase:
 					switchToFirebaseFrag();
+					handled = true;
 					break;
 				case R.id.actBoth:
 					switchToBothFrag();
-					break;
-				default:
-					handled = false;
+					handled = true;
 					break;
 			}
 		}
@@ -127,20 +133,20 @@ public final class MainActivity extends AppCompatActivity {
 			implements NavigationView.OnNavigationItemSelectedListener {
 		@Override
 		public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-			boolean handled = true;
+			boolean handled = false;
 			try {
 				switch (menuItem.getItemId()) {
 					case R.id.navRoom:
 						switchToRoomFrag();
+						handled = true;
 						break;
 					case R.id.navFirebase:
 						switchToFirebaseFrag();
+						handled = true;
 						break;
 					case R.id.navBoth:
 						switchToBothFrag();
-						break;
-					default:
-						handled = false;
+						handled = true;
 						break;
 				}
 				drawerLayout.closeDrawers();
@@ -224,5 +230,6 @@ public final class MainActivity extends AppCompatActivity {
 		SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
 		SharedPreferences.Editor editor = prefs.edit();
 		editor.putString(USERNAME_KEY, username);
+		editor.apply();
 	}
 }

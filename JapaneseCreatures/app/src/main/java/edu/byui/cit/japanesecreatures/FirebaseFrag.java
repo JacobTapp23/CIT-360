@@ -30,8 +30,10 @@ public class FirebaseFrag extends Fragment {
 
 	private DatabaseReference dbCreatures;
 
-	/** A list of all creatures that are stored in the firebase database. */
-	private List<Creature> creatureList;
+	/** A list of all creatures that are stored in the firebase database. This
+	 *  is an in memory copy of the creatures that are in the firebase
+	 *  database. */
+	private List<Creature> listCreatures;
 
 	private int index = -1;
 
@@ -65,14 +67,14 @@ public class FirebaseFrag extends Fragment {
 		notInsertButtons = new Button[] { btnPrev, btnNext, btnUpdate, btnDeleteAll };
 
 		if (dbCreatures == null) {
-			creatureList = new ArrayList<>();
+			listCreatures = new ArrayList<>();
 			FirebaseDatabase database = FirebaseDatabase.getInstance();
 			dbCreatures = database.getReference("/creatures");
 			dbCreatures.addChildEventListener(new CreatureEventHandler());
 		}
 
 		// Add two test creatures to the firebase database.
-		MainActivity act = (MainActivity)getActivity();
+		MainActivity act = getMainActivity();
 		Creature[] testCreatures = {
 				new Creature("charizard", "fire", act.getUsername()),
 				new Creature("squirtle", "water", act.getUsername())
@@ -86,6 +88,10 @@ public class FirebaseFrag extends Fragment {
 		return view;
 	}
 
+	@NonNull
+	private MainActivity getMainActivity() {
+		return (MainActivity)getActivity();
+	}
 
 	private final class HandlePrev implements View.OnClickListener {
 		@Override
@@ -106,7 +112,7 @@ public class FirebaseFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				int last = creatureList.size() - 1;
+				int last = listCreatures.size() - 1;
 				if (++index > last) {
 					index = last;
 				}
@@ -123,7 +129,7 @@ public class FirebaseFrag extends Fragment {
 		public void onClick(View view) {
 			try {
 				if (state == State.Browsing) {
-					// Prepare the user interface for the user to input fields.
+					// Prepare the user interface for the user to enter data.
 					clearFields();
 					enableButtons(false);
 					txtName.requestFocus();
@@ -131,12 +137,12 @@ public class FirebaseFrag extends Fragment {
 					state = State.Inputting;
 				}
 				else {
-					// The user has finished inputting fields, now insert a
+					// The user has finished entering data, now insert a
 					// Creature in the firebase database and change the state
 					// to Browsing.
 					String name = txtName.getText().toString().trim();
 					String type = txtType.getText().toString().trim();
-					String creator = ((MainActivity)getActivity()).getUsername();
+					String creator = getMainActivity().getUsername();
 					DatabaseReference node = dbCreatures.push();
 					node.setValue(new Creature(name, type, creator));
 					pendingKey = node.getKey();
@@ -154,13 +160,16 @@ public class FirebaseFrag extends Fragment {
 		public void onClick(View view) {
 			try {
 				String key = txtCreatureKey.getText().toString();
-				int index = creatureList.indexOf(new Creature(key));
+				int index = listCreatures.indexOf(new Creature(key));
+				Creature old = listCreatures.get(index);
 				String name = txtName.getText().toString().trim();
 				String type = txtType.getText().toString().trim();
-				String creator = creatureList.get(index).getCreator();
+				String updater = getMainActivity().getUsername();
 				FirebaseDatabase database = FirebaseDatabase.getInstance();
-				DatabaseReference toUpdate = database.getReference("/creatures/" + key);
-				toUpdate.setValue(new Creature(name, type, creator));
+				DatabaseReference toUpdate =
+						database.getReference("/creatures/" + key);
+				toUpdate.setValue(new Creature(name, type,
+						old.getWhenCreated(), old.getCreator(), updater));
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
@@ -174,7 +183,7 @@ public class FirebaseFrag extends Fragment {
 			try {
 				if (state == State.Inputting) {
 					// The user cancelled an insert.
-					index = creatureList.size() - 1;
+					index = listCreatures.size() - 1;
 					enableButtons(true);
 					pendingKey = null;
 					state = State.Browsing;
@@ -185,8 +194,8 @@ public class FirebaseFrag extends Fragment {
 					// Creature from the firebase database.
 					String key = txtCreatureKey.getText().toString();
 					FirebaseDatabase database = FirebaseDatabase.getInstance();
-					DatabaseReference toDelete = database.getReference(
-							"/creatures/" + key);
+					DatabaseReference toDelete =
+							database.getReference("/creatures/" + key);
 					toDelete.removeValue();
 				}
 			}
@@ -200,9 +209,7 @@ public class FirebaseFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				FirebaseDatabase database = FirebaseDatabase.getInstance();
-				DatabaseReference toDelete = database.getReference("/creatures");
-				toDelete.removeValue();
+				dbCreatures.removeValue();
 				index = -1;
 				showCreature();
 			}
@@ -225,10 +232,16 @@ public class FirebaseFrag extends Fragment {
 				if (added != null) {
 					String key = dataSnapshot.getKey();
 					added.setKey(key);
-					creatureList.add(added);
-					if (state == State.PendingInsert) {
-						if (key.equals(pendingKey)) {
-							index = creatureList.size() - 1;
+					listCreatures.add(added);
+					if (state == State.Browsing) {
+						if (index == -1) {
+							index = listCreatures.size() - 1;
+							showCreature();
+						}
+					}
+					else if (state == State.PendingInsert) {
+						if (key != null && key.equals(pendingKey)) {
+							index = listCreatures.size() - 1;
 							showCreature();
 							enableButtons(true);
 							pendingKey = null;
@@ -252,8 +265,8 @@ public class FirebaseFrag extends Fragment {
 				if (changed != null) {
 					String key = dataSnapshot.getKey();
 					changed.setKey(key);
-					int i = creatureList.indexOf(changed);
-					creatureList.set(i, changed);
+					int i = listCreatures.indexOf(changed);
+					listCreatures.set(i, changed);
 					if (i == index) {
 						showCreature();
 					}
@@ -270,9 +283,9 @@ public class FirebaseFrag extends Fragment {
 		public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
 			try {
 				String key = dataSnapshot.getKey();
-				int i = creatureList.indexOf(new Creature(key));
+				int i = listCreatures.indexOf(new Creature(key));
 				if (i != -1) {
-					creatureList.remove(i);
+					listCreatures.remove(i);
 					if (i == index) {
 						showCreature();
 					}
@@ -296,12 +309,12 @@ public class FirebaseFrag extends Fragment {
 
 
 	private void showCreature() {
-		int size = creatureList.size();
+		int size = listCreatures.size();
 		if (index >= size) {
 			index = size - 1;
 		}
-		if (0 <= index && index < creatureList.size()) {
-			Creature creature = creatureList.get(index);
+		if (0 <= index && index < listCreatures.size()) {
+			Creature creature = listCreatures.get(index);
 			txtCreatureKey.setText(creature.getKey());
 			txtName.setText(creature.getName());
 			txtType.setText(creature.getType());

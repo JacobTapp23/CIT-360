@@ -127,14 +127,14 @@ public class RoomFrag extends Fragment {
 		public void onClick(View view) {
 			try {
 				if (state == State.Browsing) {
-					// Prepare the user interface for the user to input fields.
+					// Prepare the user interface for the user to enter data.
 					clearFields();
 					enableButtons(false);
 					txtName.requestFocus();
 					state = State.Inputting;
 				}
 				else {
-					// The user has finished inputting fields, now insert a
+					// The user has finished entering data, now insert a
 					// Creature in the Creature table and change the state
 					// to Browsing.
 					String name = txtName.getText().toString().trim();
