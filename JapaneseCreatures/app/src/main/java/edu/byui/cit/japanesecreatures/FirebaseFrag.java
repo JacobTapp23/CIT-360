@@ -72,9 +72,10 @@ public class FirebaseFrag extends Fragment {
 		}
 
 		// Add two test creatures to the firebase database.
+		MainActivity act = (MainActivity)getActivity();
 		Creature[] testCreatures = {
-				new Creature("charizard", "fire"),
-				new Creature("squirtle", "water")
+				new Creature("charizard", "fire", act.getUsername()),
+				new Creature("squirtle", "water", act.getUsername())
 		};
 		for (Creature creature : testCreatures) {
 			dbCreatures.push().setValue(creature);
@@ -135,8 +136,9 @@ public class FirebaseFrag extends Fragment {
 					// to Browsing.
 					String name = txtName.getText().toString().trim();
 					String type = txtType.getText().toString().trim();
+					String creator = ((MainActivity)getActivity()).getUsername();
 					DatabaseReference node = dbCreatures.push();
-					node.setValue(new Creature(name, type));
+					node.setValue(new Creature(name, type, creator));
 					pendingKey = node.getKey();
 					state = State.PendingInsert;
 				}
@@ -152,11 +154,13 @@ public class FirebaseFrag extends Fragment {
 		public void onClick(View view) {
 			try {
 				String key = txtCreatureKey.getText().toString();
-				FirebaseDatabase database = FirebaseDatabase.getInstance();
-				DatabaseReference toUpdate = database.getReference("/creatures/" + key);
+				int index = creatureList.indexOf(new Creature(key));
 				String name = txtName.getText().toString().trim();
 				String type = txtType.getText().toString().trim();
-				toUpdate.setValue(new Creature(name, type));
+				String creator = creatureList.get(index).getCreator();
+				FirebaseDatabase database = FirebaseDatabase.getInstance();
+				DatabaseReference toUpdate = database.getReference("/creatures/" + key);
+				toUpdate.setValue(new Creature(name, type, creator));
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());

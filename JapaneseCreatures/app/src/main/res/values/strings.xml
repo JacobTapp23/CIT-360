@@ -1,6 +1,8 @@
 <resources>
 	<string name="appName">Japanese Creatures</string>
 
+	<string name="username">Username</string>
+
 	<string name="room">Room</string>
 	<string name="firebase">Firebase</string>
 	<string name="fire">Fire</string>

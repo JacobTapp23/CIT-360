@@ -1,6 +1,7 @@
 package edu.byui.cit.japanesecreatures;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -21,16 +22,19 @@ import com.google.firebase.FirebaseApp;
 
 public final class MainActivity extends AppCompatActivity {
 	static final String TAG = "Creatures";
+	private static final String USERNAME_KEY = "username";
 
 	View.OnClickListener roomClickHandler, firebaseClickHandler, bothClickHandler;
 	private Fragment fragRoom, fragFirebase, fragBoth;
 	private DrawerLayout drawerLayout;
 
+	private String username;
+
 
 	@Override
 	protected void onCreate(Bundle savedInstState) {
-		super.onCreate(savedInstState);
 		try {
+			super.onCreate(savedInstState);
 			Context ctx = getApplicationContext();
 			FirebaseApp.initializeApp(ctx);
 			setContentView(R.layout.activity_main);
@@ -72,9 +76,14 @@ public final class MainActivity extends AppCompatActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		super.onCreateOptionsMenu(menu);
-		// Inflate the action bar items.
-		getMenuInflater().inflate(R.menu.action, menu);
+		try {
+			super.onCreateOptionsMenu(menu);
+			// Inflate the action bar items.
+			getMenuInflater().inflate(R.menu.action, menu);
+		}
+		catch (Exception ex) {
+			Log.e(TAG, ex.getMessage());
+		}
 		return true;
 	}
 
@@ -199,5 +208,21 @@ public final class MainActivity extends AppCompatActivity {
 		trans.replace(R.id.fragContainer, fragment);
 		trans.addToBackStack(null);
 		trans.commit();
+	}
+
+
+	public String getUsername() {
+		if (username == null) {
+			SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+			username = prefs.getString(USERNAME_KEY, "");
+		}
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+		SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+		SharedPreferences.Editor editor = prefs.edit();
+		editor.putString(USERNAME_KEY, username);
 	}
 }
