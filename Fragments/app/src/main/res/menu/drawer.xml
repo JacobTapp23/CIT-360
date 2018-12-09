@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+	xmlns:android="http://schemas.android.com/apk/res/android">
+
+	<item
+		android:id="@+id/navMain"
+		android:icon="@android:drawable/btn_star"
+		android:title="@string/mainFrag"/>
+
+	<item
+		android:id="@+id/navSecond"
+		android:icon="@android:drawable/btn_plus"
+		android:title="@string/secondFrag"/>
+
+	<item
+		android:id="@+id/navThird"
+		android:icon="@android:drawable/btn_plus"
+		android:title="@string/thirdFrag"/>
+</menu>

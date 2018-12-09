@@ -20,6 +20,14 @@ import android.view.View;
 import com.google.firebase.FirebaseApp;
 
 
+/** This is an example app that shows how to use the following:
+ * 1. Action bar
+ * 2. Drawer
+ * 3. Fragments
+ * 4. User preferences
+ * 5. Room database
+ * 6. Firebase realtime database
+ */
 public final class MainActivity extends AppCompatActivity {
 	static final String TAG = "Creatures";
 	private static final String USERNAME_KEY = "username";
