@@ -2,20 +2,24 @@ package edu.byui.cit.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 public class MainFrag extends Fragment {
+	private TextView phoneNumber;
+
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState) {
 		super.onCreateView(inflater, container, savedInstanceState);
 		View view = inflater.inflate(R.layout.frag_main, container, false);
+
+		phoneNumber = view.findViewById(R.id.txtPhone);
 
 		Button btnSecond = view.findViewById(R.id.btnSecond);
 		btnSecond.setOnClickListener(new HandleSecond());
@@ -26,12 +30,22 @@ public class MainFrag extends Fragment {
 	}
 
 
+	@Override
+	public void onResume () {
+		super.onResume();
+		MainActivity act = getMainActivity();
+		SecondFrag fragSecond = act.getSecondFrag();
+		String phone = fragSecond.getPhone();
+		phoneNumber.setText(phone);
+	}
+
+
 	private final class HandleSecond implements View.OnClickListener {
 		@Override
 		public void onClick(View view) {
 			try {
-				MainActivity act = (MainActivity)getActivity();
-				act.switchToSecondFrag();
+				MainActivity act = getMainActivity();
+				act.switchToFragment(act.getSecondFrag());
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
@@ -43,8 +57,8 @@ public class MainFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				MainActivity act = (MainActivity)getActivity();
-				act.switchToThirdFrag();
+				MainActivity act = getMainActivity();
+				act.switchToFragment(act.getThirdFrag());
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());

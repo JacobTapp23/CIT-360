@@ -3,4 +3,6 @@
 	<string name="mainFrag">Main</string>
 	<string name="secondFrag">Second</string>
 	<string name="thirdFrag">Third</string>
+
+	<string name="phone">Phone</string>
 </resources>

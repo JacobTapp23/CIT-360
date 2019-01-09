@@ -19,7 +19,9 @@ public class MainActivity extends AppCompatActivity {
 	public static final String TAG = "Fragments";
 
 	private DrawerLayout drawerLayout;
-	private Fragment fragMain, fragSecond, fragThird;
+	private MainFrag fragMain;
+	private SecondFrag fragSecond;
+	private ThirdFrag fragThird;
 
 
 	@Override
@@ -43,10 +45,9 @@ public class MainActivity extends AppCompatActivity {
 		if (savedInstState == null) {
 			// Create the main fragment and place it
 			// as the first fragment in this activity.
-			fragMain = new MainFrag();
 			FragmentTransaction trans =
 					getSupportFragmentManager().beginTransaction();
-			trans.add(R.id.fragContainer, fragMain);
+			trans.add(R.id.fragContainer, getMainFrag());
 			trans.commit();
 		}
 
@@ -83,15 +84,15 @@ public class MainActivity extends AppCompatActivity {
 					handled = true;
 					break;
 				case R.id.actMain:
-					switchToMainFrag();
+					switchToFragment(getMainFrag());
 					handled = true;
 					break;
 				case R.id.actSecond:
-					switchToSecondFrag();
+					switchToFragment(getSecondFrag());
 					handled = true;
 					break;
 				case R.id.actThird:
-					switchToThirdFrag();
+					switchToFragment(getThirdFrag());
 					handled = true;
 					break;
 			}
@@ -115,15 +116,15 @@ public class MainActivity extends AppCompatActivity {
 			try {
 				switch (menuItem.getItemId()) {
 					case R.id.navMain:
-						switchToMainFrag();
+						switchToFragment(getMainFrag());
 						handled = true;
 						break;
 					case R.id.navSecond:
-						switchToSecondFrag();
+						switchToFragment(getSecondFrag());
 						handled = true;
 						break;
 					case R.id.navThird:
-						switchToThirdFrag();
+						switchToFragment(getThirdFrag());
 						handled = true;
 						break;
 				}
@@ -137,32 +138,36 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 
-	void switchToMainFrag() {
-		switchFragment(fragMain);
+	MainFrag getMainFrag() {
+		if (fragMain == null) {
+			fragMain = new MainFrag();
+		}
+		return fragMain;
 	}
 
-	void switchToSecondFrag() {
+	SecondFrag getSecondFrag() {
 		if (fragSecond == null) {
 			fragSecond = new SecondFrag();
 		}
-		switchFragment(fragSecond);
+		return fragSecond;
 	}
 
-	void switchToThirdFrag() {
+	ThirdFrag getThirdFrag() {
 		if (fragThird == null) {
 			fragThird = new ThirdFrag();
 		}
-		switchFragment(fragThird);
+		return fragThird;
 	}
 
-	/** Displays a different fragment in the frag container. */
-	private void switchFragment(Fragment fragment) {
+
+	/** Displays a different fragment in the fragment container. */
+	void switchToFragment(Fragment toShow) {
 		// Replace whatever is in the fragContainer view with
-		// fragment, and add the transaction to the back stack so
+		// toShow, and add the transaction to the back stack so
 		// that the user can navigate back.
-		FragmentTransaction trans = getSupportFragmentManager()
-				.beginTransaction();
-		trans.replace(R.id.fragContainer, fragment);
+		FragmentTransaction trans =
+				getSupportFragmentManager().beginTransaction();
+		trans.replace(R.id.fragContainer, toShow);
 		trans.addToBackStack(null);
 		trans.commit();
 	}
