@@ -20,7 +20,8 @@ import android.view.View;
 import com.google.firebase.FirebaseApp;
 
 
-/** This is an example app that shows how to use the following:
+/**
+ * This is an example app that shows how to use the following:
  * 1. Action bar
  * 2. Drawer
  * 3. Fragments
@@ -32,7 +33,8 @@ public final class MainActivity extends AppCompatActivity {
 	static final String TAG = "Creatures";
 	private static final String USERNAME_KEY = "username";
 
-	View.OnClickListener roomClickHandler, firebaseClickHandler, bothClickHandler;
+	View.OnClickListener roomClickHandler, firebaseClickHandler,
+			bothClickHandler;
 	private Fragment fragMain, fragRoom, fragFirebase, fragBoth;
 	private DrawerLayout drawerLayout;
 
@@ -76,7 +78,8 @@ public final class MainActivity extends AppCompatActivity {
 			nav.setNavigationItemSelectedListener(new HandleNavClick());
 
 			// Create three click handlers that are used by the items on the
-			// action bar, the items in the drawer, and the buttons in MainFrag.
+			// action bar, the items in the drawer, and the buttons in
+			// MainFrag.
 			roomClickHandler = new HandleRoomClick();
 			firebaseClickHandler = new HandleFirebaseClick();
 			bothClickHandler = new HandleBothClick();
@@ -218,7 +221,8 @@ public final class MainActivity extends AppCompatActivity {
 		// Replace whatever is in the fragContainer view with
 		// fragment, and add the transaction to the back stack so
 		// that the user can navigate back.
-		FragmentTransaction trans = getSupportFragmentManager().beginTransaction();
+		FragmentTransaction trans = getSupportFragmentManager()
+				.beginTransaction();
 		trans.replace(R.id.fragContainer, fragment);
 		trans.addToBackStack(null);
 		trans.commit();

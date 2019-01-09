@@ -32,7 +32,8 @@ public class RoomFrag extends Fragment {
 
 	private int index = -1;
 
-	private enum State { Browsing, Inputting }
+	private enum State {Browsing, Inputting}
+
 	private State state;
 
 
@@ -58,7 +59,8 @@ public class RoomFrag extends Fragment {
 		btnUpdate.setOnClickListener(new HandleUpdate());
 		btnDelete.setOnClickListener(new HandleDelete());
 		btnDeleteAll.setOnClickListener(new HandleDeleteAll());
-		notInsertButtons = new Button[] { btnPrev, btnNext, btnUpdate, btnDeleteAll };
+		notInsertButtons = new Button[]{ btnPrev, btnNext, btnUpdate,
+				btnDeleteAll };
 
 		// Get the data access object for the Creature table.
 		Activity act = getActivity();

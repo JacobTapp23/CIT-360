@@ -10,19 +10,22 @@ import java.util.List;
 
 
 @Dao
-public interface CreatureDAO {
-    @Query("SELECT * FROM Creature")
-    List<Creature> getAll();
+public abstract class CreatureDAO {
+	@Query("SELECT COUNT(*) FROM Creature")
+	public abstract long count();
 
-    @Insert
-    void insert(Creature creature);
+	@Query("SELECT * FROM Creature")
+	public abstract List<Creature> getAll();
+
+	@Insert
+	public abstract void insert(Creature creature);
 
 	@Update
-	void update(Creature creature);
+	public abstract void update(Creature creature);
 
-    @Delete
-    void delete(Creature creature);
+	@Delete
+	public abstract void delete(Creature creature);
 
-    @Query("DELETE FROM Creature")
-    void deleteAll();
+	@Query("DELETE FROM Creature")
+	public abstract void deleteAll();
 }

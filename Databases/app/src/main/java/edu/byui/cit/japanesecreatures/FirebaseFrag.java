@@ -30,14 +30,17 @@ public class FirebaseFrag extends Fragment {
 
 	private DatabaseReference dbCreatures;
 
-	/** A list of all creatures that are stored in the firebase database. This
-	 *  is an in memory copy of the creatures that are in the firebase
-	 *  database. */
+	/**
+	 * A list of all creatures that are stored in the firebase database. This
+	 * is an in memory copy of the creatures that are in the firebase
+	 * database.
+	 */
 	private List<Creature> listCreatures;
 
 	private int index = -1;
 
-	private enum State { Browsing, Inputting, PendingInsert }
+	private enum State {Browsing, Inputting, PendingInsert}
+
 	private State state;
 	private String pendingKey;
 
@@ -64,7 +67,8 @@ public class FirebaseFrag extends Fragment {
 		btnUpdate.setOnClickListener(new HandleUpdate());
 		btnDelete.setOnClickListener(new HandleDelete());
 		btnDeleteAll.setOnClickListener(new HandleDeleteAll());
-		notInsertButtons = new Button[] { btnPrev, btnNext, btnUpdate, btnDeleteAll };
+		notInsertButtons = new Button[]{ btnPrev, btnNext, btnUpdate,
+				btnDeleteAll };
 
 		if (dbCreatures == null) {
 			listCreatures = new ArrayList<>();
@@ -221,8 +225,10 @@ public class FirebaseFrag extends Fragment {
 
 
 	private final class CreatureEventHandler implements ChildEventListener {
-		/** Handles the event that firebase generates
-		 * when a new creature is added to the database. */
+		/**
+		 * Handles the event that firebase generates
+		 * when a new creature is added to the database.
+		 */
 		@Override
 		public void onChildAdded(
 				@NonNull DataSnapshot dataSnapshot, String prevChildKey) {
@@ -255,8 +261,10 @@ public class FirebaseFrag extends Fragment {
 			}
 		}
 
-		/** Handles the event that firebase
-		 * generates when a creature is updated. */
+		/**
+		 * Handles the event that firebase
+		 * generates when a creature is updated.
+		 */
 		@Override
 		public void onChildChanged(
 				@NonNull DataSnapshot dataSnapshot, String s) {
@@ -277,8 +285,10 @@ public class FirebaseFrag extends Fragment {
 			}
 		}
 
-		/** Handles the event that firebase
-		 * generates when a creature is deleted. */
+		/**
+		 * Handles the event that firebase
+		 * generates when a creature is deleted.
+		 */
 		@Override
 		public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
 			try {
@@ -297,7 +307,8 @@ public class FirebaseFrag extends Fragment {
 		}
 
 		@Override
-		public void onChildMoved(@NonNull DataSnapshot dataSnapshot, String s) {
+		public void onChildMoved(@NonNull DataSnapshot dataSnapshot, String
+				s) {
 		}
 
 		@Override
