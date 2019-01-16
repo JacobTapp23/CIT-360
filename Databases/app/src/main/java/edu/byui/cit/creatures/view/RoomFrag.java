@@ -1,4 +1,4 @@
-package edu.byui.cit.japanesecreatures;
+package edu.byui.cit.creatures.view;
 
 import android.app.Activity;
 import android.content.Context;
@@ -15,12 +15,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import edu.byui.cit.roomModel.AppDatabase;
-import edu.byui.cit.roomModel.Creature;
-import edu.byui.cit.roomModel.CreatureDAO;
+import edu.byui.cit.creatures.roomModel.AppDatabase;
+import edu.byui.cit.creatures.roomModel.Creature;
+import edu.byui.cit.creatures.roomModel.CreatureDAO;
 
 
-public class RoomFrag extends Fragment {
+public final class RoomFrag extends Fragment {
 	private TextView txtCreatureID;
 	private EditText txtName, txtType;
 	private Button[] notInsertButtons;
@@ -62,7 +62,7 @@ public class RoomFrag extends Fragment {
 		notInsertButtons = new Button[]{ btnPrev, btnNext, btnUpdate,
 				btnDeleteAll };
 
-		// Get the data access object for the Creature table.
+		// Connect to the Room database and get the data access object for the Creature table.
 		Activity act = getActivity();
 		if (act != null) {
 			Context appCtx = act.getApplicationContext();
@@ -229,7 +229,7 @@ public class RoomFrag extends Fragment {
 	private void showCreature() {
 		if (0 <= index && index < creatureList.size()) {
 			Creature creature = creatureList.get(index);
-			txtCreatureID.setText(Long.toString(creature.getCreatureId()));
+			txtCreatureID.setText(Long.toString(creature.getKey()));
 			txtName.setText(creature.getName());
 			txtType.setText(creature.getType());
 		}

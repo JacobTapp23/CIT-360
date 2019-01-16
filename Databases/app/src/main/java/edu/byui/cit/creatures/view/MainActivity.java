@@ -1,4 +1,4 @@
-package edu.byui.cit.japanesecreatures;
+package edu.byui.cit.creatures.view;
 
 import android.content.Context;
 import android.content.SharedPreferences;

@@ -1,4 +1,4 @@
-package edu.byui.cit.japanesecreatures;
+package edu.byui.cit.creatures.view;
 
 import org.junit.Test;
 

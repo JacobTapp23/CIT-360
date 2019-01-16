@@ -1,4 +1,4 @@
-package edu.byui.cit.japanesecreatures;
+package edu.byui.cit.creatures.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
-public class BothFrag extends Fragment {
+public final class BothFrag extends Fragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState) {

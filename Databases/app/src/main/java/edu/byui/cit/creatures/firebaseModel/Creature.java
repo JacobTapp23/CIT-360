@@ -1,4 +1,4 @@
-package edu.byui.cit.firebaseModel;
+package edu.byui.cit.creatures.firebaseModel;
 
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.ServerValue;

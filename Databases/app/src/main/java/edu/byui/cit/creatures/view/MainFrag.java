@@ -1,4 +1,4 @@
-package edu.byui.cit.japanesecreatures;
+package edu.byui.cit.creatures.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class MainFrag extends Fragment {
+public final class MainFrag extends Fragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState) {

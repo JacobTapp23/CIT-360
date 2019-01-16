@@ -1,5 +1,5 @@
 <resources>
-	<string name="appName">Japanese Creatures</string>
+	<string name="appName">Creatures</string>
 
 	<string name="username">Username</string>
 
@@ -9,7 +9,7 @@
 	<string name="both">Both</string>
 
 	<string name="creatureID">Creature ID</string>
-	<string name="creatureKey">Creature Key</string>
+	<string name="key">Creature Key</string>
 	<string name="name">Name</string>
 	<string name="type">Type</string>
 

@@ -1,4 +1,4 @@
-package edu.byui.cit.japanesecreatures;
+package edu.byui.cit.creatures.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -20,10 +20,10 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.byui.cit.firebaseModel.Creature;
+import edu.byui.cit.creatures.firebaseModel.Creature;
 
 
-public class FirebaseFrag extends Fragment {
+public final class FirebaseFrag extends Fragment {
 	private TextView txtCreatureKey;
 	private EditText txtName, txtType;
 	private Button[] notInsertButtons;
