@@ -2,7 +2,6 @@ package edu.byui.cit.creatures.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -90,11 +89,6 @@ public final class FirebaseFrag extends Fragment {
 		pendingKey = null;
 		state = State.Browsing;
 		return view;
-	}
-
-	@NonNull
-	private MainActivity getMainActivity() {
-		return (MainActivity)getActivity();
 	}
 
 	private final class HandlePrev implements View.OnClickListener {

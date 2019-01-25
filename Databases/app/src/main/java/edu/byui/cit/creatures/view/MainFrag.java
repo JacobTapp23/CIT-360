@@ -2,7 +2,6 @@ package edu.byui.cit.creatures.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,11 +36,6 @@ public final class MainFrag extends Fragment {
 		}
 
 		return view;
-	}
-
-	@NonNull
-	private MainActivity getMainActivity() {
-		return (MainActivity)getActivity();
 	}
 
 

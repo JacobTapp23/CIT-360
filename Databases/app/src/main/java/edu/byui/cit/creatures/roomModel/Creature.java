@@ -4,6 +4,8 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Ignore;
 import android.arch.persistence.room.PrimaryKey;
 
+import java.util.Objects;
+
 
 @Entity
 public class Creature {
@@ -57,14 +59,19 @@ public class Creature {
 
 	@Override
 	public boolean equals(Object obj) {
-		boolean eq = false;
-		if (obj instanceof Creature) {
+		boolean eq = (this == obj);
+		if (!eq && obj != null && getClass() == obj.getClass()) {
 			Creature other = (Creature)obj;
 			eq = this.key == other.key &&
 					this.name.equals(other.name) &&
 					this.type.equals(other.type);
 		}
 		return eq;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(key, name, type);
 	}
 
 	@Override

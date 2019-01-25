@@ -34,7 +34,7 @@ public final class TestRoomDatabase {
 		dao.deleteAll();
 		assertEquals(0, dao.count());
 
-		// Insert a creature object into the Creature
+		// Insert a Creature object into the Creature
 		// table and verify that it was correctly inserted.
 		Creature first = new Creature("Mowgli", "human");
 		dao.insert(first);
