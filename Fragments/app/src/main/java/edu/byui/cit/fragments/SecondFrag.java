@@ -18,21 +18,32 @@ public class SecondFrag extends Fragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstState) {
-		super.onCreateView(inflater, container, savedInstState);
-		View view = inflater.inflate(R.layout.frag_second, container, false);
+		View view = null;
+		try {
+			super.onCreateView(inflater, container, savedInstState);
+			view = inflater.inflate(R.layout.frag_second, container, false);
 
-		txtPhone = view.findViewById(R.id.txtPhone);
-		Button btnThird = view.findViewById(R.id.btnThird);
-		btnThird.setOnClickListener(new HandleThird());
-
+			txtPhone = view.findViewById(R.id.txtPhone);
+			Button btnThird = view.findViewById(R.id.btnThird);
+			btnThird.setOnClickListener(new HandleThird());
+		}
+		catch (Exception ex) {
+			Log.e(MainActivity.TAG, ex.toString());
+		}
 		return view;
 	}
 
 
 	@Override
 	public void onPause() {
-		this.phone = txtPhone.getText().toString();
-		super.onPause();
+		try {
+			this.phone = txtPhone.getText().toString();
+			super.onPause();
+		}
+		catch (Exception ex) {
+			Log.e(MainActivity.TAG, ex.toString());
+		}
+
 	}
 
 	String getPhone() {

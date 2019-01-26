@@ -16,27 +16,37 @@ public class MainFrag extends Fragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState) {
-		super.onCreateView(inflater, container, savedInstanceState);
-		View view = inflater.inflate(R.layout.frag_main, container, false);
+		View view = null;
+		try {
+			super.onCreateView(inflater, container, savedInstanceState);
+			view = inflater.inflate(R.layout.frag_main, container, false);
 
-		phoneNumber = view.findViewById(R.id.txtPhone);
+			phoneNumber = view.findViewById(R.id.txtPhone);
 
-		Button btnSecond = view.findViewById(R.id.btnSecond);
-		btnSecond.setOnClickListener(new HandleSecond());
-		Button btnThird = view.findViewById(R.id.btnThird);
-		btnThird.setOnClickListener(new HandleThird());
-
+			Button btnSecond = view.findViewById(R.id.btnSecond);
+			btnSecond.setOnClickListener(new HandleSecond());
+			Button btnThird = view.findViewById(R.id.btnThird);
+			btnThird.setOnClickListener(new HandleThird());
+		}
+		catch (Exception ex) {
+			Log.e(MainActivity.TAG, ex.toString());
+		}
 		return view;
 	}
 
 
 	@Override
-	public void onResume () {
-		super.onResume();
-		MainActivity act = getMainActivity();
-		SecondFrag fragSecond = act.getSecondFrag();
-		String phone = fragSecond.getPhone();
-		phoneNumber.setText(phone);
+	public void onResume() {
+		try {
+			super.onResume();
+			MainActivity act = getMainActivity();
+			SecondFrag fragSecond = act.getSecondFrag();
+			String phone = fragSecond.getPhone();
+			phoneNumber.setText(phone);
+		}
+		catch (Exception ex) {
+			Log.e(MainActivity.TAG, ex.toString());
+		}
 	}
 
 

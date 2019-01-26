@@ -1,5 +1,6 @@
 package edu.byui.cit.fragments;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -8,7 +9,6 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -26,35 +26,40 @@ public class MainActivity extends AppCompatActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstState) {
-		super.onCreate(savedInstState);
-		setContentView(R.layout.activity_main);
+		try {
+			super.onCreate(savedInstState);
+			setContentView(R.layout.activity_main);
 
-		// Set the toolbar that is in main_activity.xml
-		// as the action bar for this app.
-		Toolbar toolbar = findViewById(R.id.toolbar);
-		setSupportActionBar(toolbar);
+			// Set the toolbar that is in activity_main.xml
+			// as the action bar for this app.
+			Toolbar toolbar = findViewById(R.id.toolbar);
+			setSupportActionBar(toolbar);
 
-		// Change the home icon on the action bar to
-		// the menu (hamburger) icon and make it visible.
-		ActionBar actBar = getSupportActionBar();
-		if (actBar != null) {
-			actBar.setHomeAsUpIndicator(R.drawable.ic_drawer);
-			actBar.setDisplayHomeAsUpEnabled(true);
+			// Change the home icon on the action bar to
+			// the menu (hamburger) icon and make it visible.
+			ActionBar actBar = getSupportActionBar();
+			if (actBar != null) {
+				actBar.setHomeAsUpIndicator(R.drawable.ic_drawer);
+				actBar.setDisplayHomeAsUpEnabled(true);
+			}
+
+			if (savedInstState == null) {
+				// Create the main fragment and place it
+				// as the first fragment in this activity.
+				FragmentTransaction trans =
+						getSupportFragmentManager().beginTransaction();
+				trans.add(R.id.fragContainer, getMainFrag());
+				trans.commit();
+			}
+
+			// Set up the drawer and its navigation items.
+			drawerLayout = findViewById(R.id.drawerLayout);
+			NavigationView nav = findViewById(R.id.navView);
+			nav.setNavigationItemSelectedListener(new HandleNavClick());
 		}
-
-		if (savedInstState == null) {
-			// Create the main fragment and place it
-			// as the first fragment in this activity.
-			FragmentTransaction trans =
-					getSupportFragmentManager().beginTransaction();
-			trans.add(R.id.fragContainer, getMainFrag());
-			trans.commit();
+		catch (Exception ex) {
+			Log.e(TAG, ex.toString());
 		}
-
-		// Set up the drawer and its navigation items.
-		drawerLayout = findViewById(R.id.drawerLayout);
-		NavigationView nav = findViewById(R.id.navView);
-		nav.setNavigationItemSelectedListener(new HandleNavClick());
 	}
 
 
@@ -66,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
 			getMenuInflater().inflate(R.menu.action, menu);
 		}
 		catch (Exception ex) {
-			Log.e(TAG, ex.getMessage());
+			Log.e(TAG, ex.toString());
 		}
 		return true;
 	}
@@ -98,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
 			}
 		}
 		catch (Exception ex) {
-			Log.e(TAG, ex.getMessage());
+			Log.e(TAG, ex.toString());
 		}
 		if (!handled) {
 			handled = super.onOptionsItemSelected(item);
@@ -131,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 				drawerLayout.closeDrawers();
 			}
 			catch (Exception ex) {
-				Log.e(TAG, ex.getMessage());
+				Log.e(TAG, ex.toString());
 			}
 			return handled;
 		}
