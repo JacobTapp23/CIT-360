@@ -8,7 +8,7 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/secondFrag"/>
+		android:text="@string/second"/>
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -33,5 +33,5 @@
 		android:id="@+id/btnThird"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/thirdFrag"/>
+		android:text="@string/third"/>
 </LinearLayout>

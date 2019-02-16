@@ -8,5 +8,23 @@
 	<TextView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/thirdFrag"/>
+		android:text="@string/third"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:labelFor="@+id/txtMsg"
+			android:text="@string/message"/>
+
+		<TextView
+			android:id="@+id/txtMsg"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginStart="10dp"/>
+	</LinearLayout>
 </LinearLayout>

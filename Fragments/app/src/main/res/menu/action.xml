@@ -5,16 +5,16 @@
 
 	<item
 		android:id="@+id/actMain"
-		android:title="@string/mainFrag"
+		android:title="@string/main"
 		app:showAsAction="ifRoom"/>
 
 	<item
 		android:id="@+id/actSecond"
-		android:title="@string/secondFrag"
+		android:title="@string/second"
 		app:showAsAction="ifRoom"/>
 
 	<item
 		android:id="@+id/actThird"
-		android:title="@string/thirdFrag"
+		android:title="@string/third"
 		app:showAsAction="ifRoom"/>
 </menu>

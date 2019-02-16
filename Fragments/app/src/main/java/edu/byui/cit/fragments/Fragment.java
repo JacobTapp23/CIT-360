@@ -1,6 +1,6 @@
 package edu.byui.cit.fragments;
 
-import android.support.annotation.NonNull;
+import org.jetbrains.annotations.NotNull;
 
 
 /**
@@ -8,7 +8,7 @@ import android.support.annotation.NonNull;
  * This added functionality is useful for fragments in this app.
  */
 public class Fragment extends android.support.v4.app.Fragment {
-	@NonNull
+	@NotNull
 	public MainActivity getMainActivity() {
 		return (MainActivity)getActivity();
 	}

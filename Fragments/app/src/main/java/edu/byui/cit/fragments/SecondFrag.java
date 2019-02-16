@@ -1,5 +1,6 @@
 package edu.byui.cit.fragments;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -23,9 +24,16 @@ public class SecondFrag extends Fragment {
 			super.onCreateView(inflater, container, savedInstState);
 			view = inflater.inflate(R.layout.frag_second, container, false);
 
+			// Change the button that appears at the start of the
+			// toolbar from the menu icon to the home as up indicator.
+			MainActivity act = getMainActivity();
+			act.setDrawerIndicatorEnabled(false);
+
 			txtPhone = view.findViewById(R.id.txtPhone);
 			Button btnThird = view.findViewById(R.id.btnThird);
 			btnThird.setOnClickListener(new HandleThird());
+
+			txtPhone.requestFocus();
 		}
 		catch (Exception ex) {
 			Log.e(MainActivity.TAG, ex.toString());
@@ -56,11 +64,24 @@ public class SecondFrag extends Fragment {
 		public void onClick(View view) {
 			try {
 				MainActivity act = getMainActivity();
-				act.switchToFragment(act.getThirdFrag());
+				ThirdFrag third = act.getThirdFrag();
+
+				Bundle args = new Bundle();
+				Resources res = act.getResources();
+				String[] messages = res.getStringArray(R.array.messages);
+				args.putString("message", choose(messages));
+				third.setArguments(args);
+
+				act.switchToFragment(third);
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
 			}
 		}
+	}
+
+	static String choose(String[] a) {
+		int r = (int)Math.floor(Math.random() * a.length);
+		return a[r];
 	}
 }

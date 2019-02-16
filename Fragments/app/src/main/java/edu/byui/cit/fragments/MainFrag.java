@@ -21,6 +21,11 @@ public class MainFrag extends Fragment {
 			super.onCreateView(inflater, container, savedInstanceState);
 			view = inflater.inflate(R.layout.frag_main, container, false);
 
+			// Change the button that appears at the start of the
+			// toolbar from the home as up indicator to the menu icon.
+			MainActivity act = getMainActivity();
+			act.setDrawerIndicatorEnabled(true);
+
 			phoneNumber = view.findViewById(R.id.txtPhone);
 
 			Button btnSecond = view.findViewById(R.id.btnSecond);
@@ -68,6 +73,12 @@ public class MainFrag extends Fragment {
 		public void onClick(View view) {
 			try {
 				MainActivity act = getMainActivity();
+				ThirdFrag third = act.getThirdFrag();
+
+				Bundle args = new Bundle();
+				args.putString("message", "From Main");
+				third.setArguments(args);
+
 				act.switchToFragment(act.getThirdFrag());
 			}
 			catch (Exception ex) {

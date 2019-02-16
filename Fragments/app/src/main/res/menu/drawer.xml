@@ -5,15 +5,15 @@
 	<item
 		android:id="@+id/navMain"
 		android:icon="@android:drawable/btn_star"
-		android:title="@string/mainFrag"/>
+		android:title="@string/main"/>
 
 	<item
 		android:id="@+id/navSecond"
 		android:icon="@android:drawable/btn_plus"
-		android:title="@string/secondFrag"/>
+		android:title="@string/second"/>
 
 	<item
 		android:id="@+id/navThird"
 		android:icon="@android:drawable/btn_plus"
-		android:title="@string/thirdFrag"/>
+		android:title="@string/third"/>
 </menu>
