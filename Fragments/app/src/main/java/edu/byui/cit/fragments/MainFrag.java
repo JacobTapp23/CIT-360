@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 
 public class MainFrag extends Fragment {
-	private TextView phoneNumber;
+	private TextView txtPhone;
 
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
@@ -26,7 +26,7 @@ public class MainFrag extends Fragment {
 			MainActivity act = getMainActivity();
 			act.setDrawerIndicatorEnabled(true);
 
-			phoneNumber = view.findViewById(R.id.txtPhone);
+			txtPhone = view.findViewById(R.id.txtPhone);
 
 			Button btnSecond = view.findViewById(R.id.btnSecond);
 			btnSecond.setOnClickListener(new HandleSecond());
@@ -44,10 +44,14 @@ public class MainFrag extends Fragment {
 	public void onResume() {
 		try {
 			super.onResume();
-			MainActivity act = getMainActivity();
-			SecondFrag fragSecond = act.getSecondFrag();
-			String phone = fragSecond.getPhone();
-			phoneNumber.setText(phone);
+
+			// If the MainActivity has the phone number, it came from the
+			// second fragment. Get the phone number and display it for
+			// the user to see.
+			String phone = getMainActivity().getPhone();
+			if (phone != null) {
+				txtPhone.setText(phone);
+			}
 		}
 		catch (Exception ex) {
 			Log.e(MainActivity.TAG, ex.toString());
@@ -59,8 +63,9 @@ public class MainFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
+				// Switch to the second fragment.
 				MainActivity act = getMainActivity();
-				act.switchToFragment(act.getSecondFrag());
+				act.switchToFragment(new SecondFrag());
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
@@ -72,14 +77,17 @@ public class MainFrag extends Fragment {
 		@Override
 		public void onClick(View view) {
 			try {
-				MainActivity act = getMainActivity();
-				ThirdFrag third = act.getThirdFrag();
+				// Create the third fragment.
+				ThirdFrag third = new ThirdFrag();
 
+				// Create and populate an arguments
+				// bundle for the third fragment.
 				Bundle args = new Bundle();
 				args.putString("message", "From Main");
 				third.setArguments(args);
 
-				act.switchToFragment(act.getThirdFrag());
+				// Switch to the third fragment.
+				getMainActivity().switchToFragment(third);
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());

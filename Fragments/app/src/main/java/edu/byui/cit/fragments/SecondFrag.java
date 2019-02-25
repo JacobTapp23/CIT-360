@@ -13,8 +13,6 @@ import android.widget.EditText;
 
 public class SecondFrag extends Fragment {
 	private EditText txtPhone;
-	private String phone;
-
 
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
@@ -45,7 +43,8 @@ public class SecondFrag extends Fragment {
 	@Override
 	public void onPause() {
 		try {
-			this.phone = txtPhone.getText().toString();
+			String phone = txtPhone.getText().toString().trim();
+			getMainActivity().setPhone(phone);
 			super.onPause();
 		}
 		catch (Exception ex) {
@@ -54,24 +53,24 @@ public class SecondFrag extends Fragment {
 
 	}
 
-	String getPhone() {
-		return this.phone;
-	}
-
 
 	private final class HandleThird implements View.OnClickListener {
 		@Override
 		public void onClick(View view) {
 			try {
-				MainActivity act = getMainActivity();
-				ThirdFrag third = act.getThirdFrag();
+				// Create the third fragment.
+				ThirdFrag third = new ThirdFrag();
 
+				// Create and populate an arguments
+				// bundle for the third fragment.
 				Bundle args = new Bundle();
+				MainActivity act = getMainActivity();
 				Resources res = act.getResources();
 				String[] messages = res.getStringArray(R.array.messages);
 				args.putString("message", choose(messages));
 				third.setArguments(args);
 
+				// Switch to the third fragment.
 				act.switchToFragment(third);
 			}
 			catch (Exception ex) {

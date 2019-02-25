@@ -21,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
 	private DrawerLayout drawerLayout;
 	private ActionBarDrawerToggle drawerToggle;
 	private MainFrag fragMain;
-	private SecondFrag fragSecond;
-	private ThirdFrag fragThird;
+
+	private String phone;
 
 
 	@Override
@@ -58,6 +58,12 @@ public class MainActivity extends AppCompatActivity {
 						getSupportFragmentManager().beginTransaction();
 				trans.add(R.id.fragContainer, getMainFrag());
 				trans.commit();
+			}
+			else {
+				// If this activity was previously running and was destroyed
+				// and is now being recreated, then get the phone number from
+				// the savedInstState.
+				phone = savedInstState.getString("phone");
 			}
 		}
 		catch (Exception ex) {
@@ -97,8 +103,6 @@ public class MainActivity extends AppCompatActivity {
 			if (! handled) {
 				switch (item.getItemId()) {
 					case android.R.id.home:
-//						drawerLayout.openDrawer(GravityCompat.START);
-//						handled = true;
 						// Respond to the user pressing the "back/up" button
 						// on the action bar in the same way as if the user
 						// pressed the left-facing triangle icon on the main
@@ -110,11 +114,11 @@ public class MainActivity extends AppCompatActivity {
 						handled = true;
 						break;
 					case R.id.actSecond:
-						switchToFragment(getSecondFrag());
+						switchToFragment(new SecondFrag());
 						handled = true;
 						break;
 					case R.id.actThird:
-						switchToFragment(getThirdFrag());
+						switchToFragment(new ThirdFrag());
 						handled = true;
 						break;
 				}
@@ -144,11 +148,11 @@ public class MainActivity extends AppCompatActivity {
 						handled = true;
 						break;
 					case R.id.navSecond:
-						switchToFragment(getSecondFrag());
+						switchToFragment(new SecondFrag());
 						handled = true;
 						break;
 					case R.id.navThird:
-						switchToFragment(getThirdFrag());
+						switchToFragment(new ThirdFrag());
 						handled = true;
 						break;
 				}
@@ -169,18 +173,13 @@ public class MainActivity extends AppCompatActivity {
 		return fragMain;
 	}
 
-	SecondFrag getSecondFrag() {
-		if (fragSecond == null) {
-			fragSecond = new SecondFrag();
-		}
-		return fragSecond;
+
+	public String getPhone() {
+		return phone;
 	}
 
-	ThirdFrag getThirdFrag() {
-		if (fragThird == null) {
-			fragThird = new ThirdFrag();
-		}
-		return fragThird;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 
@@ -194,5 +193,19 @@ public class MainActivity extends AppCompatActivity {
 		trans.replace(R.id.fragContainer, toShow);
 		trans.addToBackStack(null);
 		trans.commit();
+	}
+
+
+	@Override
+	public void onSaveInstanceState(Bundle savedInstState) {
+		// This method is called when the activity is being destroyed and
+		// then will be recreated. For example, if the user rotates the
+		// to its side, the activity will be destroyed and recreated.
+
+		// Save the phone number that came from the second fragment, so
+		// that it will be restored in onCreate when this activity is
+		// recreated.
+		savedInstState.putString("phone", phone);
+		super.onSaveInstanceState(savedInstState);
 	}
 }
