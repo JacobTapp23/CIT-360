@@ -9,10 +9,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 
 public class SecondFrag extends Fragment {
 	private EditText txtPhone;
+	private TextView txtResponse;
 
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
@@ -28,6 +30,8 @@ public class SecondFrag extends Fragment {
 			act.setDrawerIndicatorEnabled(false);
 
 			txtPhone = view.findViewById(R.id.txtPhone);
+			txtResponse = view.findViewById(R.id.txtResponse);
+
 			Button btnThird = view.findViewById(R.id.btnThird);
 			btnThird.setOnClickListener(new HandleThird());
 
@@ -41,6 +45,20 @@ public class SecondFrag extends Fragment {
 
 
 	@Override
+	public void onResume() {
+		try {
+			super.onResume();
+			MainActivity act = getMainActivity();
+			act.setTitle(R.string.second);
+			txtResponse.setText(act.getResponse());
+		}
+		catch (Exception ex) {
+			Log.e(MainActivity.TAG, ex.toString());
+		}
+	}
+
+
+	@Override
 	public void onPause() {
 		try {
 			String phone = txtPhone.getText().toString().trim();
@@ -50,7 +68,6 @@ public class SecondFrag extends Fragment {
 		catch (Exception ex) {
 			Log.e(MainActivity.TAG, ex.toString());
 		}
-
 	}
 
 
@@ -71,7 +88,7 @@ public class SecondFrag extends Fragment {
 				third.setArguments(args);
 
 				// Switch to the third fragment.
-				act.switchToFragment(third);
+				act.switchToFragment(third, "third");
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
@@ -79,7 +96,7 @@ public class SecondFrag extends Fragment {
 		}
 	}
 
-	static String choose(String[] a) {
+	private static String choose(String[] a) {
 		int r = (int)Math.floor(Math.random() * a.length);
 		return a[r];
 	}

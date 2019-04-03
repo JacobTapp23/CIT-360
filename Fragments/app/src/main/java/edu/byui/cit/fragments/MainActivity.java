@@ -23,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
 	private MainFrag fragMain;
 
 	private String phone;
+	private String response;
 
 
 	@Override
@@ -54,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
 			if (savedInstState == null) {
 				// Create the main fragment and place it
 				// as the first fragment in this activity.
+				fragMain = new MainFrag();
 				FragmentTransaction trans =
 						getSupportFragmentManager().beginTransaction();
-				trans.add(R.id.fragContainer, getMainFrag());
+				trans.add(R.id.fragContainer, fragMain);
 				trans.commit();
 			}
 			else {
@@ -110,15 +112,15 @@ public class MainActivity extends AppCompatActivity {
 						onBackPressed();
 						break;
 					case R.id.actMain:
-						switchToFragment(getMainFrag());
+						switchToFragment(fragMain, "main");
 						handled = true;
 						break;
 					case R.id.actSecond:
-						switchToFragment(new SecondFrag());
+						switchToFragment(new SecondFrag(), "second");
 						handled = true;
 						break;
 					case R.id.actThird:
-						switchToFragment(new ThirdFrag());
+						switchToFragment(new ThirdFrag(), "third");
 						handled = true;
 						break;
 				}
@@ -144,15 +146,15 @@ public class MainActivity extends AppCompatActivity {
 			try {
 				switch (menuItem.getItemId()) {
 					case R.id.navMain:
-						switchToFragment(getMainFrag());
+						switchToFragment(fragMain, "main");
 						handled = true;
 						break;
 					case R.id.navSecond:
-						switchToFragment(new SecondFrag());
+						switchToFragment(new SecondFrag(), "second");
 						handled = true;
 						break;
 					case R.id.navThird:
-						switchToFragment(new ThirdFrag());
+						switchToFragment(new ThirdFrag(), "third");
 						handled = true;
 						break;
 				}
@@ -166,31 +168,31 @@ public class MainActivity extends AppCompatActivity {
 	}
 
 
-	MainFrag getMainFrag() {
-		if (fragMain == null) {
-			fragMain = new MainFrag();
-		}
-		return fragMain;
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
-
 
 	public String getPhone() {
 		return phone;
 	}
 
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setResponse(String response) {
+		this.response = response;
+	}
+
+	public String getResponse() {
+		return response;
 	}
 
 
 	/** Displays a different fragment in the fragment container. */
-	void switchToFragment(Fragment toShow) {
+	void switchToFragment(Fragment toShow, String tag) {
 		// Replace whatever is in the fragContainer view with
 		// toShow, and add the transaction to the back stack so
 		// that the user can navigate back.
 		FragmentTransaction trans =
 				getSupportFragmentManager().beginTransaction();
-		trans.replace(R.id.fragContainer, toShow);
+		trans.replace(R.id.fragContainer, toShow, tag);
 		trans.addToBackStack(null);
 		trans.commit();
 	}

@@ -45,6 +45,9 @@ public class MainFrag extends Fragment {
 		try {
 			super.onResume();
 
+			MainActivity act = getMainActivity();
+			act.setTitle(R.string.appName);
+
 			// If the MainActivity has the phone number, it came from the
 			// second fragment. Get the phone number and display it for
 			// the user to see.
@@ -65,7 +68,7 @@ public class MainFrag extends Fragment {
 			try {
 				// Switch to the second fragment.
 				MainActivity act = getMainActivity();
-				act.switchToFragment(new SecondFrag());
+				act.switchToFragment(new SecondFrag(), "second");
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());
@@ -87,7 +90,7 @@ public class MainFrag extends Fragment {
 				third.setArguments(args);
 
 				// Switch to the third fragment.
-				getMainActivity().switchToFragment(third);
+				getMainActivity().switchToFragment(third, "third");
 			}
 			catch (Exception ex) {
 				Log.e(MainActivity.TAG, ex.getMessage());

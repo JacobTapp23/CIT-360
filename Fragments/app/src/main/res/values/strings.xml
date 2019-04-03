@@ -26,7 +26,12 @@
 
 	<string name="second">Second</string>
 	<string name="phone">Phone</string>
+	<string name="response">Response from Third:</string>
 
 	<string name="third">Third</string>
 	<string name="message">Message from previous fragment:</string>
+	<string name="hello">Hello</string>
+	<string name="howdy">Howdy</string>
+	<string name="yes">Yes</string>
+	<string name="no">No</string>
 </resources>
