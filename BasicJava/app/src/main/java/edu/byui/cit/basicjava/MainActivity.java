@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
 		FirstProgram.main(null);
 		Arithmetic.main(null);
 		Selection.main(null);
-		Repetition.main(null);
+//		Repetition.main(null);
 		Methods.main(null);
 		Array.main(null);
 	}
