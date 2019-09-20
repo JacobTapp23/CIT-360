@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.OutputStream;
 import java.io.PrintStream;
 
@@ -35,7 +33,7 @@ public class MainActivity extends Activity {
 		}
 
 		@Override
-		public void write(@NotNull byte[] b, int offs, int len) {
+		public void write(byte[] b, int offs, int len) {
 			buffer.append(new String(b, offs, len));
 			console.setText(buffer);
 		}
