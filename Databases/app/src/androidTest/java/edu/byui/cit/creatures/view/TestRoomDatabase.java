@@ -1,7 +1,7 @@
 package edu.byui.cit.creatures.view;
 
 import android.content.Context;
-import android.support.test.InstrumentationRegistry;
+import androidx.test.platform.app.InstrumentationRegistry;
 
 import org.junit.Test;
 
@@ -14,7 +14,7 @@ import static org.junit.Assert.assertEquals;
 
 public final class TestRoomDatabase {
 	// Get the database and the data access objects.
-	private Context ctx = InstrumentationRegistry.getTargetContext();
+	private Context ctx = InstrumentationRegistry.getInstrumentation().getTargetContext();
 	private AppDatabase db = AppDatabase.getInstance(ctx);
 	private CreatureDAO dao = db.getCreatureDAO();
 
@@ -22,7 +22,7 @@ public final class TestRoomDatabase {
 	@Test
 	public void useAppContext() {
 		// Context of the app under test.
-		Context appContext = InstrumentationRegistry.getTargetContext();
+		Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
 		assertEquals("edu.byui.cit.japanesecreatures", appContext.getPackageName());
 	}
 
