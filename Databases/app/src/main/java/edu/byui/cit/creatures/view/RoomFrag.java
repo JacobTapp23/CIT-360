@@ -3,7 +3,9 @@ package edu.byui.cit.creatures.view;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -61,7 +63,8 @@ public final class RoomFrag extends Fragment {
 		notInsertButtons = new Button[]{ btnPrev, btnNext, btnUpdate,
 				btnDeleteAll };
 
-		// Connect to the Room database and get the data access object for the Creature table.
+		// Connect to the Room database and get the
+		// data access object for the Creature table.
 		Activity act = getActivity();
 		if (act != null) {
 			Context appCtx = act.getApplicationContext();
