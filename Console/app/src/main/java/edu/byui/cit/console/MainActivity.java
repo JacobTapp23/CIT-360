@@ -2,6 +2,7 @@ package edu.byui.cit.console;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.io.OutputStream;
@@ -9,12 +10,19 @@ import java.io.PrintStream;
 
 
 public class MainActivity extends Activity {
+	public static final String TAG = "Console";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-		TextView console = findViewById(R.id.console);
-		System.setOut(new PrintStream(new TextViewWriter(console)));
+		try {
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.activity_main);
+			TextView console = findViewById(R.id.console);
+			System.setOut(new PrintStream(new TextViewWriter(console)));
+		}
+		catch (Exception ex) {
+			Log.e(TAG, ex.getMessage(), ex);
+		}
 	}
 
 	private static final class TextViewWriter extends OutputStream {
@@ -41,8 +49,13 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onStart() {
-		super.onStart();
-		main();
+		try {
+			super.onStart();
+			main();
+		}
+		catch (Exception ex) {
+			Log.e(TAG, ex.getMessage(), ex);
+		}
 	}
 
 

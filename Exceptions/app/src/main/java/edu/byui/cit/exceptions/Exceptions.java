@@ -2,9 +2,8 @@ package edu.byui.cit.exceptions;
 
 import java.io.PrintStream;
 
-/** Demonstrates Java exceptions. Exceptions are used to handle errors
- * in an
- * organized way.
+/** Demonstrates Java exceptions. Exceptions are
+ * used to handle errors in an organized way.
  */
 public class Exceptions {
 	public static void main(String[] args) {
@@ -59,7 +58,8 @@ public class Exceptions {
 			 * by the above catch blocks.
 			 */
 			ex.printStackTrace();
-		} finally {
+		}
+		finally {
 			/* The finally block is useful for cleaning up or releasing
 			 * resources. The finally block is used for releasing resources
 			 * because if any code in a try block is executed, the code in
