@@ -2,6 +2,7 @@ package edu.byui.cit.basicjava;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
@@ -15,18 +16,26 @@ import java.io.PrintStream;
  * Java applications that write to the console to work in an Android app.
  */
 public class MainActivity extends Activity {
+	public static final String TAG = "BasicJava";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_activity);
+		try {
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.main_activity);
 
-		// Find the TextView and change System.out
-		// so that it will print to the TextView.
-		TextView console = findViewById(R.id.console);
-		PrintStream out = new PrintStream(new TextViewWriter(console));
-		System.setOut(out);
-		System.setErr(out);
+			// Find the TextView and change System.out
+			// so that it will print to the TextView.
+			TextView console = findViewById(R.id.console);
+			PrintStream out = new PrintStream(new TextViewWriter(console));
+			System.setOut(out);
+			System.setErr(out);
+		}
+		catch (Exception ex) {
+			Log.e(TAG, ex.getMessage(), ex);
+		}
 	}
+
 
 	private static final class TextViewWriter extends OutputStream {
 		private final StringBuilder buffer;
@@ -52,16 +61,22 @@ public class MainActivity extends Activity {
 		}
 	}
 
+
 	@Override
 	protected void onStart() {
-		super.onStart();
+		try {
+			super.onStart();
 
-		// Call main in the plain old Java applications.
-		FirstProgram.main(null);
-		Arithmetic.main(null);
-		Selection.main(null);
-//		Repetition.main(null);
-		Methods.main(null);
-		Array.main(null);
+			// Call main in the plain old Java applications.
+			FirstProgram.main(null);
+			Arithmetic.main(null);
+			Selection.main(null);
+//			Repetition.main(null);
+			Methods.main(null);
+			Array.main(null);
+		}
+		catch (Exception ex) {
+			Log.e(TAG, ex.getMessage(), ex);
+		}
 	}
 }

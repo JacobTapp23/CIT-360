@@ -3,6 +3,7 @@ package edu.byui.cit.fileio;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import org.jetbrains.annotations.NotNull;
@@ -22,12 +23,22 @@ import java.util.ArrayList;
 
 
 public class MainActivity extends Activity {
+	public static final String TAG = "FileIO";
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_activity);
-		TextView console = findViewById(R.id.console);
-		System.setOut(new PrintStream(new TextViewWriter(console)));
+		try {
+			super.onCreate(savedInstanceState);
+			setContentView(R.layout.main_activity);
+
+			// Find the TextView and change System.out
+			// so that it will print to the TextView.
+			TextView console = findViewById(R.id.console);
+			System.setOut(new PrintStream(new TextViewWriter(console)));
+		}
+		catch (Exception ex) {
+			Log.e(TAG, ex.getMessage(), ex);
+		}
 	}
 
 	private static final class TextViewWriter extends OutputStream {
@@ -39,12 +50,14 @@ public class MainActivity extends Activity {
 			this.console = console;
 		}
 
+		// Write a single byte to the console TextView.
 		@Override
 		public void write(int b) {
 			buffer.append(b);
 			console.setText(buffer);
 		}
 
+		// Write an array of bytes to the console TextView.
 		@Override
 		public void write(@NotNull byte[] b, int offs, int len) {
 			buffer.append(new String(b, offs, len));
@@ -54,59 +67,67 @@ public class MainActivity extends Activity {
 
 	@Override
 	protected void onStart() {
-		super.onStart();
-		main();
+		try {
+			super.onStart();
+			main();
+		}
+		catch (Exception ex) {
+			Log.e(TAG, ex.getMessage(), ex);
+		}
 	}
 
 
-	private void main() {
-		/* In Java there are two categories of objects that can read from files.
-		 * 1. Streams write to and read from binary files, such as .png or
-		 * .jpg files.
+	private void main() throws IOException {
+		/* In Java there are two categories of
+		 * objects that can read from files.
+		 *
+		 * 1. Streams write to and read from binary
+		 *    files, such as .png or .jpg files.
 		 * 2. Writers and Readers write to and read from text files.
 		 *
-		 * This program demonstrates how to write to and read from a text file.
+		 * This program demonstrates how to
+		 * write to and read from a text file.
 		 */
 
-		try {
-			// Read an existing file from the assets folder.
-			String[] read = readFromAssets("declaration.txt");
+		// Read an existing file from the assets folder.
+		String[] read = readFromAssets("declaration.txt");
 
-			// Print the text that was read from the text file.
-			for (String line : read) {
-				System.out.println(line);
-			}
-
-			// Write a text file to internal storage. Then
-			// read that same file from internal storage.
-			String filename = "preamble.txt";
-			String[] text = {
-					"We the People of the United States, in Order to form a more",
-					"perfect Union, establish Justice, insure domestic Tranquility,",
-					"provide for the common defence, promote the general Welfare,",
-					"and secure the Blessings of Liberty to ourselves and our",
-					"Posterity, do ordain and establish this Constitution for the",
-					"United States of America."
-			};
-
-			// Create a File object that refers to a local text file.
-			Context ctx = getApplicationContext();
-			File dir = ctx.getFilesDir();
-			File file = new File(dir, filename);
-
-			// Write the text to a text file.
-			writeText(file, text);
-
-			// Read the text from the text file.
-			read = readText(file);
-
-			// Print the text that was read from the text file.
-			for (String line : read) {
-				System.out.println(line);
-			}
+		// Print the text that was read from the text file.
+		for (String line : read) {
+			System.out.println(line);
 		}
-		catch (Exception ex) {
-			ex.printStackTrace();
+
+		// Write a text file to internal storage. Then
+		// read that same file from internal storage.
+		String filename = "preamble.txt";
+		String[] text = {
+				"We the People of the United States, in Order to form a " +
+						"more",
+				"perfect Union, establish Justice, insure domestic " +
+						"Tranquility,",
+				"provide for the common defence, promote the general " +
+						"Welfare,",
+				"and secure the Blessings of Liberty to ourselves and our",
+				"Posterity, do ordain and establish this Constitution for" +
+						" " +
+						"the",
+				"United States of America."
+		};
+
+		// Create a File object that refers to a local text file.
+		Context ctx = getApplicationContext();
+		File dir = ctx.getFilesDir();
+		File file = new File(dir, filename);
+
+		// Write the text to a text file.
+		writeText(file, text);
+
+		// Read the text from the text file.
+		read = readText(file);
+
+		// Print the text that was read from the text file.
+		for (String line : read) {
+			System.out.println(line);
 		}
 	}
 

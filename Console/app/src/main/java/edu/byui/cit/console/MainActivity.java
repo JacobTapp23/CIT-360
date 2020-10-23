@@ -9,6 +9,10 @@ import java.io.OutputStream;
 import java.io.PrintStream;
 
 
+/**
+ * A simple activity that contains a single TextView and enables plain old
+ * Java applications that write to the console to work in an Android app.
+ */
 public class MainActivity extends Activity {
 	public static final String TAG = "Console";
 
@@ -17,6 +21,9 @@ public class MainActivity extends Activity {
 		try {
 			super.onCreate(savedInstanceState);
 			setContentView(R.layout.activity_main);
+
+			// Find the TextView and change System.out
+			// so that it will print to the TextView.
 			TextView console = findViewById(R.id.console);
 			System.setOut(new PrintStream(new TextViewWriter(console)));
 		}
@@ -34,18 +41,21 @@ public class MainActivity extends Activity {
 			this.console = console;
 		}
 
+		// Write a single byte to the console TextView.
 		@Override
 		public void write(int b) {
 			buffer.append(b);
 			console.setText(buffer);
 		}
 
+		// Write an array of bytes to the console TextView.
 		@Override
 		public void write(byte[] b, int offs, int len) {
 			buffer.append(new String(b, offs, len));
 			console.setText(buffer);
 		}
 	}
+
 
 	@Override
 	protected void onStart() {
@@ -57,7 +67,6 @@ public class MainActivity extends Activity {
 			Log.e(TAG, ex.getMessage(), ex);
 		}
 	}
-
 
 	private void main() {
 		/* Write your code in this function as if this function were

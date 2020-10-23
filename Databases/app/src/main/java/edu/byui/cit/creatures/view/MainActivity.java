@@ -30,7 +30,7 @@ import com.google.firebase.FirebaseApp;
  * 6. Firebase realtime database
  */
 public final class MainActivity extends AppCompatActivity {
-	static final String TAG = "Creatures";
+	public static final String TAG = "Databases";
 	private static final String USERNAME_KEY = "username";
 
 	View.OnClickListener roomClickHandler, firebaseClickHandler,

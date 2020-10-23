@@ -41,54 +41,60 @@ public final class RoomFrag extends Fragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState) {
-		super.onCreateView(inflater, container, savedInstanceState);
-		View view = inflater.inflate(R.layout.frag_room, container, false);
+		View view = null;
+		try {
+			super.onCreateView(inflater, container, savedInstanceState);
+			view = inflater.inflate(R.layout.frag_room, container, false);
 
-		txtCreatureID = view.findViewById(R.id.txtCreatureID);
-		txtName = view.findViewById(R.id.txtName);
-		txtType = view.findViewById(R.id.txtType);
+			txtCreatureID = view.findViewById(R.id.txtCreatureID);
+			txtName = view.findViewById(R.id.txtName);
+			txtType = view.findViewById(R.id.txtType);
 
-		Button btnPrev = view.findViewById(R.id.btnPrev);
-		Button btnNext = view.findViewById(R.id.btnNext);
-		Button btnInsert = view.findViewById(R.id.btnInsert);
-		Button btnUpdate = view.findViewById(R.id.btnUpdate);
-		Button btnDelete = view.findViewById(R.id.btnDelete);
-		Button btnDeleteAll = view.findViewById(R.id.btnDeleteAll);
-		btnPrev.setOnClickListener(new HandlePrev());
-		btnNext.setOnClickListener(new HandleNext());
-		btnInsert.setOnClickListener(new HandleInsert());
-		btnUpdate.setOnClickListener(new HandleUpdate());
-		btnDelete.setOnClickListener(new HandleDelete());
-		btnDeleteAll.setOnClickListener(new HandleDeleteAll());
-		notInsertButtons = new Button[]{ btnPrev, btnNext, btnUpdate,
-				btnDeleteAll };
+			Button btnPrev = view.findViewById(R.id.btnPrev);
+			Button btnNext = view.findViewById(R.id.btnNext);
+			Button btnInsert = view.findViewById(R.id.btnInsert);
+			Button btnUpdate = view.findViewById(R.id.btnUpdate);
+			Button btnDelete = view.findViewById(R.id.btnDelete);
+			Button btnDeleteAll = view.findViewById(R.id.btnDeleteAll);
+			btnPrev.setOnClickListener(new HandlePrev());
+			btnNext.setOnClickListener(new HandleNext());
+			btnInsert.setOnClickListener(new HandleInsert());
+			btnUpdate.setOnClickListener(new HandleUpdate());
+			btnDelete.setOnClickListener(new HandleDelete());
+			btnDeleteAll.setOnClickListener(new HandleDeleteAll());
+			notInsertButtons = new Button[]{ btnPrev, btnNext, btnUpdate,
+					btnDeleteAll };
 
-		// Connect to the Room database and get the
-		// data access object for the Creature table.
-		Activity act = getActivity();
-		if (act != null) {
-			Context appCtx = act.getApplicationContext();
-			AppDatabase db = AppDatabase.getInstance(appCtx);
-			dao = db.getCreatureDAO();
+			// Connect to the Room database and get the
+			// data access object for the Creature table.
+			Activity act = getActivity();
+			if (act != null) {
+				Context appCtx = act.getApplicationContext();
+				AppDatabase db = AppDatabase.getInstance(appCtx);
+				dao = db.getCreatureDAO();
+			}
+
+			// Add two test creatures to the Creature table.
+			Creature[] testCreatures = {
+					new Creature("charizard", "fire"),
+					new Creature("squirtle", "water")
+			};
+			for (Creature creature : testCreatures) {
+				dao.insert(creature);
+			}
+
+			// Read all creatures from the Room database.
+			creatureList = dao.getAll();
+			if (creatureList.size() > 0) {
+				index = 0;
+				showCreature();
+			}
+
+			state = State.Browsing;
 		}
-
-		// Add two test creatures to the Creature table.
-		Creature[] testCreatures = {
-				new Creature("charizard", "fire"),
-				new Creature("squirtle", "water")
-		};
-		for (Creature creature : testCreatures) {
-			dao.insert(creature);
+		catch (Exception ex) {
+			Log.e(MainActivity.TAG, ex.getMessage(), ex);
 		}
-
-		// Read all creatures from the Room database.
-		creatureList = dao.getAll();
-		if (creatureList.size() > 0) {
-			index = 0;
-			showCreature();
-		}
-
-		state = State.Browsing;
 		return view;
 	}
 
