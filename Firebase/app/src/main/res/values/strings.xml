@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appName">Firebase</string>
+
+    <string name="username">Username</string>
+    <string name="key">Creature Key</string>
+    <string name="name">Name</string>
+    <string name="type">Type</string>
+
+    <string name="prev">&lt;</string>
+    <string name="insert">+</string>
+    <string name="update">=</string>
+    <string name="delete">-</string>
+    <string name="next">&gt;</string>
+    <string name="deleteAll">!</string>
+</resources>

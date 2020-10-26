@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "785447181351",
+    "firebase_url": "https://creatures-a52d9.firebaseio.com",
+    "project_id": "creatures-a52d9",
+    "storage_bucket": "creatures-a52d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:785447181351:android:c62d365b67d557fe600202",
+        "android_client_info": {
+          "package_name": "edu.byui.cit.creatures"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "785447181351-qcn4rb62b6o25pm1to10d564snlo60dq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCBohaxyQbcD-uU-A_pHT5K8OYPzPGgvI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "785447181351-qcn4rb62b6o25pm1to10d564snlo60dq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
