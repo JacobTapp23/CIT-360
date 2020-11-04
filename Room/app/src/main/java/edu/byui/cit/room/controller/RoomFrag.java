@@ -1,11 +1,8 @@
-package edu.byui.cit.creatures.view;
+package edu.byui.cit.room.controller;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +13,11 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import edu.byui.cit.creatures.roomModel.AppDatabase;
-import edu.byui.cit.creatures.roomModel.Creature;
-import edu.byui.cit.creatures.roomModel.CreatureDAO;
+import androidx.annotation.NonNull;
+import edu.byui.cit.room.model.AppDatabase;
+import edu.byui.cit.room.R;
+import edu.byui.cit.room.model.Creature;
+import edu.byui.cit.room.model.CreatureDAO;
 
 
 public final class RoomFrag extends Fragment {
@@ -30,11 +29,8 @@ public final class RoomFrag extends Fragment {
 
 	/** A list of all creatures that are stored in the Room Creature table. */
 	private List<Creature> creatureList;
-
 	private int index = -1;
-
 	private enum State {Browsing, Inputting}
-
 	private State state;
 
 
@@ -67,7 +63,7 @@ public final class RoomFrag extends Fragment {
 
 			// Connect to the Room database and get the
 			// data access object for the Creature table.
-			Activity act = getActivity();
+			Activity act = getMainActivity();
 			if (act != null) {
 				Context appCtx = act.getApplicationContext();
 				AppDatabase db = AppDatabase.getInstance(appCtx);

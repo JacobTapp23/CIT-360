@@ -11,13 +11,13 @@
 
 		<fragment
 			android:id="@+id/fragRoom"
-			android:name="edu.byui.cit.creatures.view.RoomFrag"
+			android:name="edu.byui.cit.creatures.controller.RoomFrag"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"/>
 
 		<fragment
 			android:id="@+id/fragFirebase"
-			android:name="edu.byui.cit.creatures.view.FirebaseFrag"
+			android:name="edu.byui.cit.creatures.controller.FirebaseFrag"
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"/>
 	</LinearLayout>

@@ -1,4 +1,4 @@
-package edu.byui.cit.view;
+package edu.byui.cit.room.controller;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
+import edu.byui.cit.room.R;
 
 
 public final class MainFrag extends Fragment {

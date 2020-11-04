@@ -1,8 +1,11 @@
-package edu.byui.cit.view;
+package edu.byui.cit.creatures.controller;
 
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,10 +16,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import androidx.annotation.NonNull;
-import edu.byui.cit.model.AppDatabase;
-import edu.byui.cit.model.Creature;
-import edu.byui.cit.model.CreatureDAO;
+import edu.byui.cit.creatures.roomModel.AppDatabase;
+import edu.byui.cit.creatures.roomModel.Creature;
+import edu.byui.cit.creatures.roomModel.CreatureDAO;
 
 
 public final class RoomFrag extends Fragment {

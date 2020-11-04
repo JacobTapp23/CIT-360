@@ -1,4 +1,4 @@
-package edu.byui.cit.model;
+package edu.byui.cit.room.model;
 
 import android.content.Context;
 

@@ -1,4 +1,4 @@
-package edu.byui.cit.view;
+package edu.byui.cit.room.controller;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -18,6 +18,7 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import edu.byui.cit.room.R;
 
 
 /**

@@ -1,4 +1,4 @@
-package edu.byui.cit.view;
+package edu.byui.cit.room.controller;
 
 import androidx.annotation.NonNull;
 

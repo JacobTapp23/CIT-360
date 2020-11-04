@@ -116,7 +116,7 @@ public final class MainFrag extends Fragment {
 		}
 	}
 
-	
+
 	private final class HandleNext implements View.OnClickListener {
 		@Override
 		public void onClick(View view) {

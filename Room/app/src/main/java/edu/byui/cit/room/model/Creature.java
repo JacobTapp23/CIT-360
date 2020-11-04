@@ -1,4 +1,4 @@
-package edu.byui.cit.model;
+package edu.byui.cit.room.model;
 
 import androidx.room.Entity;
 import androidx.room.Ignore;

@@ -1,4 +1,4 @@
-package edu.byui.cit.creatures.view;
+package edu.byui.cit.creatures.controller;
 
 import android.content.Context;
 import androidx.test.platform.app.InstrumentationRegistry;

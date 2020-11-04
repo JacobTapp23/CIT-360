@@ -1,4 +1,4 @@
-package edu.byui.cit.creatures.view;
+package edu.byui.cit.creatures.controller;
 
 import androidx.annotation.NonNull;
 
