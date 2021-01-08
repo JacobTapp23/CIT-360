@@ -19,7 +19,7 @@ public class Lab {
  * Each object created from the Particle class will have two attributes
  * named mass and charge.
  */
-class Particle {
+abstract class Particle {
 	private double mass;
 	private double charge;
 

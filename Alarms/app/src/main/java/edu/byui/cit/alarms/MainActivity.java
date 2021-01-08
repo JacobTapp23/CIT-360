@@ -19,7 +19,7 @@ import java.io.PrintStream;
  * Java applications that write to the console to work in an Android app.
  */
 public class MainActivity extends Activity {
-	public static final String TAG = "Console";
+	public static final String TAG = "Alarms";
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,8 @@ public class MainActivity extends Activity {
 			// so that it will print to the TextView.
 			TextView console = findViewById(R.id.console);
 			System.setOut(new PrintStream(new TextViewWriter(console)));
+
+			setAlarm();
 		}
 		catch (Exception ex) {
 			Log.e(TAG, ex.getMessage(), ex);
@@ -63,19 +65,7 @@ public class MainActivity extends Activity {
 	}
 
 
-	@Override
-	protected void onStart() {
-		try {
-			super.onStart();
-			main();
-		}
-		catch (Exception ex) {
-			Log.e(TAG, ex.getMessage(), ex);
-		}
-	}
-
-
-	private void main() {
+	private void setAlarm() {
 		/* Write your code in this function as if this function were
 		 * public static void main(String[] args)
 		 */
@@ -100,7 +90,7 @@ public class MainActivity extends Activity {
 
 		// Set an alarm that will fire in 30 seconds and then again every minute.
 		alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-				SystemClock.elapsedRealtime() + INTERVAL_30_SECONDS,
+						SystemClock.elapsedRealtime() + INTERVAL_30_SECONDS,
 				INTERVAL_ONE_MINUTE, pending);
 		System.out.println("Set a repeating alarm to fire every minute.");
 	}
