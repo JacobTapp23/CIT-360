@@ -69,32 +69,37 @@
 
 		<Button
 			android:id="@+id/btnPrev"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_weight="1"
 			android:text="@string/prev"/>
 
 		<Button
 			android:id="@+id/btnInsert"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_weight="1"
 			android:text="@string/insert"/>
 
 		<Button
 			android:id="@+id/btnUpdate"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_weight="1"
 			android:text="@string/update"/>
 
 		<Button
 			android:id="@+id/btnDelete"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_weight="1"
 			android:text="@string/delete"/>
 
 		<Button
 			android:id="@+id/btnNext"
-			android:layout_width="wrap_content"
+			android:layout_width="0dp"
 			android:layout_height="wrap_content"
+			android:layout_weight="1"
 			android:text="@string/next"/>
 	</LinearLayout>
 

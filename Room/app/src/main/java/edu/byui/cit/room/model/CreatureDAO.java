@@ -20,14 +20,13 @@ public abstract class CreatureDAO {
 	@Query("SELECT * FROM Creature WHERE `key` = :key")
 	public abstract Creature getByKey(long key);
 
-	public long insert(Creature creature) {
-		long id = insertH(creature);
+	public void insert(Creature creature) {
+		long id = realInsert(creature);
 		creature.setKey(id);
-		return id;
 	}
 
 	@Insert
-	abstract long insertH(Creature creature);
+	abstract long realInsert(Creature creature);
 
 	@Update
 	public abstract void update(Creature creature);

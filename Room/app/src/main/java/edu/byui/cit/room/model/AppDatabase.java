@@ -11,7 +11,7 @@ import androidx.room.TypeConverters;
 @Database(entities = { Creature.class }, version = 2, exportSchema = false)
 @TypeConverters({ Converters.class })
 public abstract class AppDatabase extends RoomDatabase {
-	private static AppDatabase singleton;
+	private static AppDatabase singleton = null;
 
 	public static AppDatabase getInstance(Context appCtx) {
 		if (singleton == null) {

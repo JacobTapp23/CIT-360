@@ -64,11 +64,9 @@ public final class RoomFrag extends Fragment {
 			// Connect to the Room database and get the
 			// data access object for the Creature table.
 			Activity act = getMainActivity();
-			if (act != null) {
-				Context appCtx = act.getApplicationContext();
-				AppDatabase db = AppDatabase.getInstance(appCtx);
-				dao = db.getCreatureDAO();
-			}
+			Context appCtx = act.getApplicationContext();
+			AppDatabase db = AppDatabase.getInstance(appCtx);
+			dao = db.getCreatureDAO();
 
 			// Add two test creatures to the Creature table.
 			Creature[] testCreatures = {
@@ -105,7 +103,7 @@ public final class RoomFrag extends Fragment {
 				showCreature();
 			}
 			catch (Exception ex) {
-				Log.e(MainActivity.TAG, ex.getMessage());
+				Log.e(MainActivity.TAG, ex.toString());
 			}
 		}
 	}
@@ -122,7 +120,7 @@ public final class RoomFrag extends Fragment {
 				showCreature();
 			}
 			catch (Exception ex) {
-				Log.e(MainActivity.TAG, ex.getMessage());
+				Log.e(MainActivity.TAG, ex.toString());
 			}
 		}
 	}
@@ -155,7 +153,7 @@ public final class RoomFrag extends Fragment {
 				}
 			}
 			catch (Exception ex) {
-				Log.e(MainActivity.TAG, ex.getMessage());
+				Log.e(MainActivity.TAG, ex.toString());
 			}
 		}
 	}
@@ -175,7 +173,7 @@ public final class RoomFrag extends Fragment {
 				showCreature();
 			}
 			catch (Exception ex) {
-				Log.e(MainActivity.TAG, ex.getMessage());
+				Log.e(MainActivity.TAG, ex.toString());
 			}
 		}
 	}
@@ -207,7 +205,7 @@ public final class RoomFrag extends Fragment {
 				showCreature();
 			}
 			catch (Exception ex) {
-				Log.e(MainActivity.TAG, ex.getMessage());
+				Log.e(MainActivity.TAG, ex.toString());
 			}
 		}
 	}
@@ -224,7 +222,7 @@ public final class RoomFrag extends Fragment {
 				showCreature();
 			}
 			catch (Exception ex) {
-				Log.e(MainActivity.TAG, ex.getMessage());
+				Log.e(MainActivity.TAG, ex.toString());
 			}
 		}
 	}
