@@ -37,23 +37,28 @@ public class Project {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Project project = (Project) o;
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Project project = (Project) obj;
         return projectKey == project.projectKey &&
-                Objects.equals(title, project.title) &&
-                Objects.equals(description, project.description);
+                title.equals(project.title) &&
+                description.equals(project.description);
     }
+
     @Override
     public int hashCode() {
         return Objects.hash(projectKey, title, description);
     }
+
     @Override
     public String toString() {
         return "Project{" +
-                "projectKey" + projectKey +
-                ", title" + title +
-                ", description" + description + '}';
+                "projectKey=" + projectKey +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                '}';
     }
+
+
 }

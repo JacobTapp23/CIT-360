@@ -83,8 +83,14 @@ public class MainActivity extends Activity {
 		Date end1 = new Date(2021, 4, 23, 12, 30);
 		Session s1 = new Session( proj1.getProjectKey(), "Unplug freezer to remove power",
 		start1, end1);
-
+		Session s2 = new Session( proj2.getProjectKey(), "Use remote control to turn up volume",
+				start1, end1);
+		Session s3 = new Session( proj1.getProjectKey(), "Grab icepick and hair dryer and lots of towels",
+				start1, end1);
 		System.out.println(proj1);
 		System.out.println(proj2);
+		System.out.println(s1);
+		System.out.println(s2);
+		System.out.println(s3);
 	}
 }
