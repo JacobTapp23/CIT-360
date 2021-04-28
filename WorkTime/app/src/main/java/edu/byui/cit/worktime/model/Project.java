@@ -1,9 +1,15 @@
 package edu.byui.cit.worktime.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Objects;
 
+@Entity
 public class Project {
+    @PrimaryKey(autoGenerate = true)
     private long projectKey;
+
     private String title;
     private String description;
 

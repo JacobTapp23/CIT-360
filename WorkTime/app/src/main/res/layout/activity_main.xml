@@ -15,6 +15,6 @@
 			android:id="@+id/console"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:textSize="35sp"/>
+			android:textSize="25sp"/>
 	</FrameLayout>
 </ScrollView>

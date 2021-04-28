@@ -76,16 +76,16 @@ public class MainActivity extends Activity {
 		/* Write your code in this function as if this function were
 		 * public static void main(String[] args)
 		 */
-		Project proj1 = new Project( "Defrost the freezer", "cold and frosty");
+		Project proj1 = new Project( "Take shoes to doctor", "Tongue is weird color");
 		Project proj2 = new Project( "Defrost the television", "picture is frozen");
 
 		Date start1 = new Date(2021, 4, 23, 10,30);
 		Date end1 = new Date(2021, 4, 23, 12, 30);
-		Session s1 = new Session( proj1.getProjectKey(), "Unplug freezer to remove power",
+		Session s1 = new Session( proj1.getProjectKey(), "Check for weird odor",
 		start1, end1);
 		Session s2 = new Session( proj2.getProjectKey(), "Use remote control to turn up volume",
 				start1, end1);
-		Session s3 = new Session( proj1.getProjectKey(), "Grab icepick and hair dryer and lots of towels",
+		Session s3 = new Session( proj1.getProjectKey(), "Try to determine the 'sole' symptom",
 				start1, end1);
 		System.out.println(proj1);
 		System.out.println(proj2);

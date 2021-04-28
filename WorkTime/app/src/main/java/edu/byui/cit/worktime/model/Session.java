@@ -1,10 +1,21 @@
 package edu.byui.cit.worktime.model;
 
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 import java.util.Objects;
 
+@Entity(foreignKeys = @ForeignKey(
+        entity = Project.class,
+        parentColumns = "projectKey",
+        childColumns = "projectKey",
+        onDelete = ForeignKey.CASCADE))
 public class Session {
+    @PrimaryKey(autoGenerate = true)
     private long sessionKey;
+
     private long projectKey;
     private String description;
     private Date start;
