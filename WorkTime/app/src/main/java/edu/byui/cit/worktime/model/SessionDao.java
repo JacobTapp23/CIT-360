@@ -28,4 +28,4 @@ public abstract class SessionDao {
     @Query("DELETE FROM Session")
     public abstract void deleteAll();
     }
-}
+

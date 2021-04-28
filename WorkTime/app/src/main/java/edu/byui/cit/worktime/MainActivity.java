@@ -1,6 +1,7 @@
 package edu.byui.cit.worktime;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
@@ -8,8 +9,11 @@ import android.widget.TextView;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.util.Date;
+import java.util.List;
 
+import edu.byui.cit.worktime.model.AppDatabase;
 import edu.byui.cit.worktime.model.Project;
+import edu.byui.cit.worktime.model.ProjectDAO;
 import edu.byui.cit.worktime.model.Session;
 
 
@@ -79,18 +83,37 @@ public class MainActivity extends Activity {
 		Project proj1 = new Project( "Take shoes to doctor", "Tongue is weird color");
 		Project proj2 = new Project( "Defrost the television", "picture is frozen");
 
-		Date start1 = new Date(2021, 4, 23, 10,30);
-		Date end1 = new Date(2021, 4, 23, 12, 30);
-		Session s1 = new Session( proj1.getProjectKey(), "Check for weird odor",
-		start1, end1);
-		Session s2 = new Session( proj2.getProjectKey(), "Use remote control to turn up volume",
-				start1, end1);
-		Session s3 = new Session( proj1.getProjectKey(), "Try to determine the 'sole' symptom",
-				start1, end1);
-		System.out.println(proj1);
-		System.out.println(proj2);
-		System.out.println(s1);
-		System.out.println(s2);
-		System.out.println(s3);
+		//Get the application context so that we can use it to connect to the database.
+		Context appCtx = getApplicationContext();
+		// Connect to the database
+		AppDatabase db = AppDatabase.getInstance(appCtx);
+
+		//Get the project data access object ProjectDAO
+		ProjectDAO pdao = db.getProjectDAO();
+
+		pdao.deleteAll();
+
+		pdao.insertAll(proj1);
+		pdao.insertAll(proj2);
+
+		System.out.println(proj1.toString());
+		System.out.println(proj2.toString());
+
+		List<Project> allProjects = pdao.getAll();
+		System.out.print(allProjects);
+
+		// Date start1 = new Date(2021, 4, 23, 10,30);
+		// Date end1 = new Date(2021, 4, 23, 12, 30);
+		// Session s1 = new Session( proj1.getProjectKey(), "Check for weird odor",
+		// start1, end1);
+		// Session s2 = new Session( proj2.getProjectKey(), "Use remote control to turn up volume",
+		// 		start1, end1);
+		// Session s3 = new Session( proj1.getProjectKey(), "Try to determine the 'sole' symptom",
+		// 		start1, end1);
+		// System.out.println(proj1);
+		// System.out.println(proj2);
+		// System.out.println(s1);
+		// System.out.println(s2);
+		// System.out.println(s3);
 	}
 }

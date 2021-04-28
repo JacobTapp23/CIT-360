@@ -8,15 +8,15 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 
-@Database(entities = { Creature.class }, version = 2, exportSchema = false)
+@Database(entities = { Project.class, Session.class }, version = 1, exportSchema = false)
 @TypeConverters({ Converters.class })
 public abstract class AppDatabase extends RoomDatabase {
-	private static edu.byui.cit.room.model.AppDatabase singleton = null;
+	private static AppDatabase singleton = null;
 
-	public static edu.byui.cit.room.model.AppDatabase getInstance(Context appCtx) {
+	public static AppDatabase getInstance(Context appCtx) {
 		if (singleton == null) {
 			singleton = Room.databaseBuilder(
-					appCtx, edu.byui.cit.room.model.AppDatabase.class, "Creatures")
+					appCtx, AppDatabase.class, "Creatures")
 					.allowMainThreadQueries()
 					.fallbackToDestructiveMigration()
 					.build();
@@ -24,5 +24,6 @@ public abstract class AppDatabase extends RoomDatabase {
 		return singleton;
 	}
 
-	public abstract CreatureDAO getCreatureDAO();
+	public abstract ProjectDAO getProjectDAO();
+	public abstract SessionDao getSessionDAO();
 }

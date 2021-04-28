@@ -28,4 +28,3 @@ public abstract class ProjectDAO {
     @Query("DELETE FROM Project")
     public abstract void deleteAll();
     }
-}
