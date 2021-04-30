@@ -15,6 +15,7 @@ import edu.byui.cit.worktime.model.AppDatabase;
 import edu.byui.cit.worktime.model.Project;
 import edu.byui.cit.worktime.model.ProjectDAO;
 import edu.byui.cit.worktime.model.Session;
+import edu.byui.cit.worktime.model.SessionDao;
 
 
 /**
@@ -92,6 +93,7 @@ public class MainActivity extends Activity {
 		//Get the project data access object ProjectDAO
 		ProjectDAO pdao = db.getProjectDAO();
 
+
 		pdao.deleteAll();
 
 		pdao.insert(proj1);
@@ -100,21 +102,33 @@ public class MainActivity extends Activity {
 		System.out.println(proj1.toString());
 		System.out.println(proj2.toString());
 
-	// 	List<Project> allProjects = pdao.getAll();
-	// 	System.out.print(allProjects);
 
-		// Date start1 = new Date(2021, 4, 23, 10,30);
-		// Date end1 = new Date(2021, 4, 23, 12, 30);
-		// Session s1 = new Session( proj1.getProjectKey(), "Check for weird odor",
-		// start1, end1);
-		// Session s2 = new Session( proj2.getProjectKey(), "Use remote control to turn up volume",
-		// 		start1, end1);
-		// Session s3 = new Session( proj1.getProjectKey(), "Try to determine the 'sole' symptom",
-		// 		start1, end1);
-		// System.out.println(proj1);
-		// System.out.println(proj2);
-		// System.out.println(s1);
-		// System.out.println(s2);
-		// System.out.println(s3);
+
+	 	List<Project> allProjects = pdao.getAll();
+	 	System.out.print(allProjects);
+
+		 Date start1 = new Date(2021, 4, 23, 10,30);
+		 Date end1 = new Date(2021, 4, 23, 12, 30);
+		 Session s1 = new Session( proj1.getProjectKey(), "Check for weird odor",
+		 start1, end1);
+		 Session s2 = new Session( proj2.getProjectKey(), "Use remote control to turn up volume",
+		 		start1, end1);
+		 Session s3 = new Session( proj1.getProjectKey(), "Try to determine the 'sole' symptom",
+		 		start1, end1);
+		 System.out.println(proj1);
+		 System.out.println(proj2);
+		 System.out.println(s1);
+		 System.out.println(s2);
+		 System.out.println(s3);
+
+		SessionDao sdao = db.getSessionDAO();
+		sdao.deleteAll();
+
+		sdao.insert(s1);
+		sdao.insert(s2);
+		sdao.insert(s3);
+
 	}
+
+
 }
