@@ -16,8 +16,12 @@ public abstract class ProjectDAO {
     @Query("SELECT * FROM Project WHERE projectKey = :projectKey")
     public abstract Project getProjectByProjectKey(long projectKey);
 
+    public void insert(Project proj) {
+        long pk = realInsertAll(proj);
+                proj.setProjectKey(pk);
+    }
     @Insert
-    public abstract void insertAll(Project proj);
+     abstract long realInsertAll(Project proj);
 
     @Update
     public abstract void update(Project proj);

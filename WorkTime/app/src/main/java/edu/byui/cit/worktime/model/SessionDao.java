@@ -15,9 +15,15 @@ public abstract class SessionDao {
 
     @Query("SELECT * FROM Session WHERE sessionKey = :sessionKey")
     public abstract Session getSessionBySessionKey(long sessionKey);
-    
+
+    public void insert(Session sess) {
+        long sk = realInsert(sess);
+        sess.setSessionKey(sk);
+    }
+
     @Insert
-    public abstract void insert(Session sess);
+    abstract long realInsert(Session sess);
+
 
     @Update
     public abstract void update(Session sess);

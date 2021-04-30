@@ -82,7 +82,8 @@ public class MainActivity extends Activity {
 		 */
 		Project proj1 = new Project( "Take shoes to doctor", "Tongue is weird color");
 		Project proj2 = new Project( "Defrost the television", "picture is frozen");
-
+		System.out.println(proj1.toString());
+		System.out.println(proj2.toString());
 		//Get the application context so that we can use it to connect to the database.
 		Context appCtx = getApplicationContext();
 		// Connect to the database
@@ -93,14 +94,14 @@ public class MainActivity extends Activity {
 
 		pdao.deleteAll();
 
-		pdao.insertAll(proj1);
-		pdao.insertAll(proj2);
+		pdao.insert(proj1);
+		pdao.insert(proj2);
 
 		System.out.println(proj1.toString());
 		System.out.println(proj2.toString());
 
-		List<Project> allProjects = pdao.getAll();
-		System.out.print(allProjects);
+	// 	List<Project> allProjects = pdao.getAll();
+	// 	System.out.print(allProjects);
 
 		// Date start1 = new Date(2021, 4, 23, 10,30);
 		// Date end1 = new Date(2021, 4, 23, 12, 30);
