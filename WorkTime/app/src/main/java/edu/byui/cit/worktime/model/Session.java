@@ -32,7 +32,7 @@ public class Session {
         return sessionKey;
     }
 
-    public void setSessionKey(long sessionKey) {
+    void setSessionKey(long sessionKey) {
         this.sessionKey = sessionKey;
     }
 
@@ -40,7 +40,7 @@ public class Session {
         return projectKey;
     }
 
-    public void setProjectKey(long projectKey) {
+    void setProjectKey(long projectKey) {
         this.projectKey = projectKey;
     }
 

@@ -10,11 +10,17 @@ import java.util.List;
 
 @Dao
 public abstract class ProjectDAO {
+
+    @Query("SELECT COUNT(*) FROM Project")
+    public abstract long count();
+
     @Query("SELECT * FROM Project")
     public abstract List<Project> getAll();
 
     @Query("SELECT * FROM Project WHERE projectKey = :projectKey")
     public abstract Project getProjectByProjectKey(long projectKey);
+
+
 
     public void insert(Project proj) {
         long pk = realInsertAll(proj);
