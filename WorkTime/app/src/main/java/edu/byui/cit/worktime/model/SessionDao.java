@@ -10,6 +10,10 @@ import java.util.List;
 
 @Dao
 public abstract class SessionDao {
+
+    @Query("SELECT COUNT(*) FROM Session")
+    public abstract long count();
+
     @Query("SELECT * FROM Session")
     public abstract List<Session> getAll();
 
