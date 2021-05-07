@@ -44,7 +44,6 @@ public class ProjectTest {
         pdao.insert(p2);
 
         // 4. Verify that the count is 2
-        assertEquals(1, pdao.count());
         assertEquals(2, pdao.count());
 
         // 5. Retrieve inserted rows
@@ -71,7 +70,7 @@ public class ProjectTest {
         assertEquals(p1, updated1);
 
         // 11. Retrieve the row that was not updated
-        Project notupdated1 = stored2;
+        Project notupdated1 = pdao.getProjectByProjectKey(p2.getProjectKey());
 
         // 12. Verify that the data in the non-updated row is correct
         assertEquals("Play Zelda",p2.getTitle());
@@ -86,7 +85,7 @@ public class ProjectTest {
         pdao.getAll();
 
         // 16. Verify that the remaining row contains the correct data
-        assertEquals("English 302",p1.getDescription());
+        assertEquals("English 320",p1.getDescription());
 
         // 17. Delete the remaining row
         pdao.delete(p1);

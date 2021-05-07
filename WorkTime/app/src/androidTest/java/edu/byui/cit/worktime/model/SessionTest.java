@@ -15,9 +15,26 @@ public class SessionTest {
 
     @Test
     public void testSessionClass() {
+
+        //Get the application context so that we can use it to connect to the database.
+        Context appCtx = InstrumentationRegistry.getInstrumentation().getTargetContext();
+        // Connect to the database
+        AppDatabase db = AppDatabase.getInstance(appCtx);
+
+        //Get the session data access object SessionDao
+        SessionDao sdao = db.getSessionDAO();
+        ProjectDAO pdao = db.getProjectDAO();
+
+        // 1. Delete all rows from a table
+        sdao.deleteAll();
+        pdao.deleteAll();
+
         Project p1 = new Project("Write Essay", "English 301");
         Project p2 = new Project("Play Zelda", "fun,fun,fun");
         Project p3 = new Project("Write Essay", "English 301");
+
+        pdao.insert(p1);
+        pdao.insert(p2);
 
         Date start1 = new Date(2021, 4, 23, 10,30);
         Date end1 = new Date(2021, 4, 23, 12, 30);
@@ -28,23 +45,16 @@ public class SessionTest {
         Session s3 = new Session( p1.getProjectKey(), "Check for weird odor",
                 start1, end1);
 
-        assertEquals(0, s1.getProjectKey());
+        assertEquals(0, s1.getSessionKey());
         assertEquals("Check for weird odor", s1.getDescription());
         assertEquals("Use remote control to turn up volume", s2.getDescription());
         assertEquals(false, s1.equals(s2));
 
         assertTrue(s1.equals(s3));
 
-        //Get the application context so that we can use it to connect to the database.
-        Context appCtx = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        // Connect to the database
-        AppDatabase db = AppDatabase.getInstance(appCtx);
 
-        //Get the session data access object SessionDao
-        SessionDao sdao = db.getSessionDAO();
 
-        // 1. Delete all rows from a table
-        sdao.deleteAll();
+
 
         // 2. Verify that the count of that table is 0
         assertEquals(0, sdao.count());
@@ -54,12 +64,11 @@ public class SessionTest {
         sdao.insert(s2);
 
         // 4. Verify that the count is 2
-        assertEquals(1, sdao.count());
         assertEquals(2, sdao.count());
 
         // 5. Retrieve inserted rows
-        Session stored1 = sdao.getSessionBySessionKey(s1.getProjectKey());
-        Session stored2 = sdao.getSessionBySessionKey(s2.getProjectKey());
+        Session stored1 = sdao.getSessionBySessionKey(s1.getSessionKey());
+        Session stored2 = sdao.getSessionBySessionKey(s2.getSessionKey());
 
         // 6. Verify that the data in the retrieved rows is exactly
         // the same as the data that was inserted into the rows
@@ -74,14 +83,14 @@ public class SessionTest {
         assertEquals(2, sdao.count());
 
         // 9. Retrieve updated row
-        Session updated1 = sdao.getSessionBySessionKey(s1.getProjectKey());
+        Session updated1 = sdao.getSessionBySessionKey(s1.getSessionKey());
 
         // 10. Verify that the data in the retrieved row is exactly
         // the same as the data that was updated into the row
         assertEquals(s1, updated1);
 
         // 11. Retrieve the row that was not updated
-        Session notupdated1 = sdao.getSessionBySessionKey(s2.getProjectKey());
+        Session notupdated1 = sdao.getSessionBySessionKey(s2.getSessionKey());
 
         // 12. Verify that the data in the non-updated row is correct
         assertEquals("Use remote control to turn up volume",s2.getDescription());
