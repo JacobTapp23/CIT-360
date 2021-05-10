@@ -36,24 +36,21 @@ public class SessionTest {
         pdao.insert(p1);
         pdao.insert(p2);
 
-        Date start1 = new Date(2021, 4, 23, 10,30);
+        Date start1 = new Date(2021, 5, 10, 10,30);
         Date end1 = new Date(2021, 4, 23, 12, 30);
-        Session s1 = new Session( p1.getProjectKey(), "Check for weird odor",
+        Session s1 = new Session( p1.getProjectKey(), "Create an outline",
                 start1, end1);
-        Session s2 = new Session( p2.getProjectKey(), "Use remote control to turn up volume",
+        Session s2 = new Session( p2.getProjectKey(), "Avoid water temple",
                 start1, end1);
-        Session s3 = new Session( p1.getProjectKey(), "Check for weird odor",
+        Session s3 = new Session( p1.getProjectKey(), "Create an outline",
                 start1, end1);
 
         assertEquals(0, s1.getSessionKey());
-        assertEquals("Check for weird odor", s1.getDescription());
-        assertEquals("Use remote control to turn up volume", s2.getDescription());
+        assertEquals("Create an outline", s1.getDescription());
+        assertEquals("Avoid water temple", s2.getDescription());
         assertEquals(false, s1.equals(s2));
 
         assertTrue(s1.equals(s3));
-
-
-
 
 
         // 2. Verify that the count of that table is 0
@@ -76,7 +73,7 @@ public class SessionTest {
         assertEquals(s1, stored1);
 
         // 7. Update one of the inserted rows
-        s1.setDescription("Check for Strange Smell");
+        s1.setDescription("Change font to Wingdings");
         sdao.update(s1);
 
         // 8. Verify that the count is still 2
@@ -93,7 +90,7 @@ public class SessionTest {
         Session notupdated1 = sdao.getSessionBySessionKey(s2.getSessionKey());
 
         // 12. Verify that the data in the non-updated row is correct
-        assertEquals("Use remote control to turn up volume",s2.getDescription());
+        assertEquals("Avoid water temple",s2.getDescription());
 
         // 13. Delete one of the rows
         sdao.delete(s2);
@@ -105,7 +102,7 @@ public class SessionTest {
         sdao.getAll();
 
         // 16. Verify that the remaining row contains the correct data
-        assertEquals("Check for Strange Smell",s1.getDescription());
+        assertEquals("Change font to Wingdings",s1.getDescription());
 
         // 17. Delete the remaining row
         sdao.delete(s1);

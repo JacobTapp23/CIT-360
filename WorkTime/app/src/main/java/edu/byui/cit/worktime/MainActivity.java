@@ -84,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
 		 * public static void main(String[] args)
 		 */
 		Project proj1 = new Project( "Take shoes to doctor", "Tongue is weird color");
-		Project proj2 = new Project( "Defrost the television", "picture is frozen");
+		Project proj2 = new Project( "Defrost the television", "Picture is frozen");
 		System.out.println(proj1.toString());
 		System.out.println(proj2.toString());
 		//Get the application context so that we can use it to connect to the database.
@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
 
 		//Get the project data access object ProjectDAO
 		ProjectDAO pdao = db.getProjectDAO();
-
 
 		pdao.deleteAll();
 
