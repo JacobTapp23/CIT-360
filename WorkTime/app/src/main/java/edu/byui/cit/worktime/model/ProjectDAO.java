@@ -21,13 +21,13 @@ public abstract class ProjectDAO {
     public abstract Project getProjectByProjectKey(long projectKey);
 
 
-
     public void insert(Project proj) {
         long pk = realInsertAll(proj);
-                proj.setProjectKey(pk);
+        proj.setProjectKey(pk);
     }
+
     @Insert
-     abstract long realInsertAll(Project proj);
+    abstract long realInsertAll(Project proj);
 
     @Update
     public abstract void update(Project proj);
@@ -37,4 +37,4 @@ public abstract class ProjectDAO {
 
     @Query("DELETE FROM Project")
     public abstract void deleteAll();
-    }
+}

@@ -73,7 +73,7 @@ public class ProjectTest {
         Project notupdated1 = pdao.getProjectByProjectKey(p2.getProjectKey());
 
         // 12. Verify that the data in the non-updated row is correct
-        assertEquals("Play Zelda",p2.getTitle());
+        assertEquals("Play Zelda", p2.getTitle());
 
         // 13. Delete one of the rows
         pdao.delete(p2);
@@ -85,7 +85,7 @@ public class ProjectTest {
         pdao.getAll();
 
         // 16. Verify that the remaining row contains the correct data
-        assertEquals("English 320",p1.getDescription());
+        assertEquals("English 320", p1.getDescription());
 
         // 17. Delete the remaining row
         pdao.delete(p1);

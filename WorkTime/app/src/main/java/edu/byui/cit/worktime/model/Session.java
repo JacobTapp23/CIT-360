@@ -84,8 +84,9 @@ public class Session {
     public int hashCode() {
         return Objects.hash(sessionKey, projectKey, description, start, end);
     }
+
     @Override
-            public String toString() {
+    public String toString() {
         return "Session{" +
                 "sessionKey=" + sessionKey +
                 ", projectKey" + projectKey +
@@ -94,6 +95,6 @@ public class Session {
                 ", end=" + end +
                 '}';
 
-        }
+    }
 
 }

@@ -36,13 +36,13 @@ public class SessionTest {
         pdao.insert(p1);
         pdao.insert(p2);
 
-        Date start1 = new Date(2021, 5, 10, 10,30);
+        Date start1 = new Date(2021, 5, 10, 10, 30);
         Date end1 = new Date(2021, 4, 23, 12, 30);
-        Session s1 = new Session( p1.getProjectKey(), "Create an outline",
+        Session s1 = new Session(p1.getProjectKey(), "Create an outline",
                 start1, end1);
-        Session s2 = new Session( p2.getProjectKey(), "Avoid water temple",
+        Session s2 = new Session(p2.getProjectKey(), "Avoid water temple",
                 start1, end1);
-        Session s3 = new Session( p1.getProjectKey(), "Create an outline",
+        Session s3 = new Session(p1.getProjectKey(), "Create an outline",
                 start1, end1);
 
         assertEquals(0, s1.getSessionKey());
@@ -90,7 +90,7 @@ public class SessionTest {
         Session notupdated1 = sdao.getSessionBySessionKey(s2.getSessionKey());
 
         // 12. Verify that the data in the non-updated row is correct
-        assertEquals("Avoid water temple",s2.getDescription());
+        assertEquals("Avoid water temple", s2.getDescription());
 
         // 13. Delete one of the rows
         sdao.delete(s2);
@@ -102,7 +102,7 @@ public class SessionTest {
         sdao.getAll();
 
         // 16. Verify that the remaining row contains the correct data
-        assertEquals("Change font to Wingdings",s1.getDescription());
+        assertEquals("Change font to Wingdings", s1.getDescription());
 
         // 17. Delete the remaining row
         sdao.delete(s1);
