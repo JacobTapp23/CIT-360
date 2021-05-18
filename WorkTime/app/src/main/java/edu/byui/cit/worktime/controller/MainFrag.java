@@ -1,5 +1,6 @@
 package edu.byui.cit.worktime.controller;
 
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
@@ -42,9 +43,15 @@ public final class MainFrag extends Fragment {
 
         @Override
         public void onClick(View v) {
-            Context ctx = getActivity();
-            Toast.makeText(ctx, "FAB Clicked!", Toast.LENGTH_LONG).show();
+            // Create a new Add Project Fragment and display
+            // it to the user.
+            MainActivity act = (MainActivity)getActivity();
+            assert act != null;
+            AddProjectFrag frag = new AddProjectFrag();
+            FragmentTransaction trans =
+                    act.getSupportFragmentManager().beginTransaction();
+            trans.replace(R.id.fragContainer, frag);
+            trans.commit();
         }
     }
-
 }
