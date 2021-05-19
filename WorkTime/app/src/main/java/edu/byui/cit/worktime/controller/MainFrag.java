@@ -3,18 +3,25 @@ package edu.byui.cit.worktime.controller;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import edu.byui.cit.worktime.R;
+import edu.byui.cit.worktime.model.AppDatabase;
+import edu.byui.cit.worktime.model.Project;
+import edu.byui.cit.worktime.model.ProjectDAO;
 
 
 public final class MainFrag extends Fragment {
@@ -32,8 +39,8 @@ public final class MainFrag extends Fragment {
             // Get the floating action button and add a function to it.
             FloatingActionButton fabAddProject = view.findViewById(R.id.fabAddProject);
             fabAddProject.setOnClickListener(new HandleFABClick());
-        }
-        catch (Exception ex) {
+
+        } catch (Exception ex) {
             Log.e(MainActivity.TAG, ex.toString());
         }
         return view;
@@ -43,15 +50,24 @@ public final class MainFrag extends Fragment {
 
         @Override
         public void onClick(View v) {
-            // Create a new Add Project Fragment and display
-            // it to the user.
-            MainActivity act = (MainActivity)getActivity();
-            assert act != null;
-            AddProjectFrag frag = new AddProjectFrag();
-            FragmentTransaction trans =
-                    act.getSupportFragmentManager().beginTransaction();
-            trans.replace(R.id.fragContainer, frag);
-            trans.commit();
+            try {
+                // Create a new Add Project Fragment and display
+                // it to the user.
+                MainActivity act = (MainActivity) getActivity();
+                assert act != null;
+                AddProjectFrag frag = new AddProjectFrag();
+
+                FragmentTransaction trans =
+                        act.getSupportFragmentManager().beginTransaction();
+                trans.replace(R.id.fragContainer, frag);
+
+                // Add this fragment transaction to the back arrow stack,
+                // so that pressing the back arrow will return to the main fragment
+                trans.addToBackStack(null);
+                trans.commit();
+            } catch (Exception ex) {
+                Log.e(MainActivity.TAG, ex.toString());
+            }
         }
     }
 }
