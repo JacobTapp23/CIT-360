@@ -7,6 +7,8 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -35,6 +37,13 @@ public final class MainFrag extends Fragment {
 
             // Load the xml file that corresponds to this Java file.
             view = inflater.inflate(R.layout.frag_main, container, false);
+
+            MainActivity act = (MainActivity)getActivity();
+            RecyclerView recycler = view.findViewById(R.id.recycler);
+            recycler.setLayoutManager(new LinearLayoutManager(act));
+
+            ProjectAdapter adapter = new ProjectAdapter(act);
+            recycler.setAdapter(adapter);
 
             // Get the floating action button and add a function to it.
             FloatingActionButton fabAddProject = view.findViewById(R.id.fabAddProject);
@@ -70,4 +79,5 @@ public final class MainFrag extends Fragment {
             }
         }
     }
+
 }

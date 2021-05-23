@@ -12,6 +12,8 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -31,13 +33,15 @@ public final class AddProjectFrag extends androidx.fragment.app.Fragment {
             // Load the xml file that corresponds to this Java file.
             view = inflater.inflate(R.layout.frag_add_project, container, false);
 
+
+
             //Find the Cancel button and attach a click listener to it
             Button buttonCancel = view.findViewById(R.id.buttonCancel);
-            buttonCancel.setOnClickListener(new MainFrag.CancelCultureClick());
+            buttonCancel.setOnClickListener(new CancelCultureClick());
 
             //Find the Add button and attach a click listener to it
             Button buttonAdd = view.findViewById(R.id.buttonAdd);
-            buttonAdd.setOnClickListener(new MainFrag.AddClick());
+            buttonAdd.setOnClickListener(new AddClick());
 
         } catch (Exception ex) {
             Log.e(MainActivity.TAG, ex.toString());
@@ -54,6 +58,7 @@ public final class AddProjectFrag extends androidx.fragment.app.Fragment {
             act.onBackPressed();
         }
     }
+
 
     private final class AddClick implements View.OnClickListener {
         @Override
