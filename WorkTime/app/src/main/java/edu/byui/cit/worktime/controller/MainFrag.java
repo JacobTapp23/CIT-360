@@ -1,11 +1,9 @@
 package edu.byui.cit.worktime.controller;
 
-import android.app.Activity;
-import android.content.Context;
+
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -14,19 +12,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import edu.byui.cit.worktime.R;
-import edu.byui.cit.worktime.model.AppDatabase;
-import edu.byui.cit.worktime.model.Project;
-import edu.byui.cit.worktime.model.ProjectDAO;
 
 
-public final class MainFrag extends Fragment {
+public final class MainFrag extends JacksFrag {
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -38,9 +30,10 @@ public final class MainFrag extends Fragment {
             // Load the xml file that corresponds to this Java file.
             view = inflater.inflate(R.layout.frag_main, container, false);
 
-            MainActivity act = (MainActivity)getActivity();
+            MainActivity act = getMainActivity();
             RecyclerView recycler = view.findViewById(R.id.recycler);
             recycler.setLayoutManager(new LinearLayoutManager(act));
+
 
             ProjectAdapter adapter = new ProjectAdapter(act);
             recycler.setAdapter(adapter);

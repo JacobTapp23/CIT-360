@@ -11,11 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import edu.byui.cit.worktime.R;
 import edu.byui.cit.worktime.model.AppDatabase;
@@ -77,7 +72,7 @@ public final class AddProjectFrag extends androidx.fragment.app.Fragment {
                 Project newProj = new Project(title, descrip);
 
                 //Connect to the database
-                Activity act = getActivity();
+                MainActivity act = (MainActivity) getActivity();
                 assert act != null;
                 Context appCtx = act.getApplicationContext();
                 AppDatabase db = AppDatabase.getInstance(appCtx);

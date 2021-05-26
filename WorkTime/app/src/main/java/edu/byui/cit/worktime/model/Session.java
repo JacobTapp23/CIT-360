@@ -2,24 +2,25 @@ package edu.byui.cit.worktime.model;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.util.Date;
 import java.util.Objects;
 
-@Entity(foreignKeys = @ForeignKey(
-        entity = Project.class,
-        parentColumns = "projectKey",
-        childColumns = "projectKey",
-        onDelete = ForeignKey.CASCADE))
+@Entity(foreignKeys = @ForeignKey(entity = Project.class,
+            parentColumns = "projectKey",
+            childColumns = "projectKey",
+            onDelete = ForeignKey.CASCADE),
+        indices = @Index(value = {"projectKey"}))
 public class Session {
     @PrimaryKey(autoGenerate = true)
     private long sessionKey;
 
-    private long projectKey;
+    private final long projectKey;
     private String description;
-    private Date start;
-    private Date end;
+    private final Date start;
+    private final Date end;
 
     public Session(long projectKey, String description, Date start, Date end) {
         this.projectKey = projectKey;
@@ -40,9 +41,9 @@ public class Session {
         return projectKey;
     }
 
-    void setProjectKey(long projectKey) {
-        this.projectKey = projectKey;
-    }
+    //void setProjectKey(long projectKey) {
+    //    this.projectKey = projectKey;
+    //}
 
     public String getDescription() {
         return description;
@@ -56,17 +57,17 @@ public class Session {
         return start;
     }
 
-    public void setStart(Date start) {
-        this.start = start;
-    }
+    //public void setStart(Date start) {
+    //    this.start = start;
+    //}
 
     public Date getEnd() {
         return end;
     }
 
-    public void setEnd(Date end) {
-        this.end = end;
-    }
+    // public void setEnd(Date end) {
+    //    this.end = end;
+    //}
 
     @Override
     public boolean equals(Object obj) {
