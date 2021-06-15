@@ -1,5 +1,7 @@
 package edu.byui.cit.room.model;
 
+import java.util.Objects;
+
 import androidx.room.Embedded;
 import androidx.room.Ignore;
 import androidx.room.Relation;
@@ -66,5 +68,61 @@ public class Student {
 
 	public void setGpa(float gpa) {
 		studentData.setGpa(gpa);
+	}
+
+
+	@Override
+	public boolean equals(Object obj) {
+		boolean eq = (this == obj);
+		if (!eq && obj != null && getClass() == obj.getClass()) {
+			Student other = (Student)obj;
+			eq = super.equals(other) &&
+					floatEquals(this.getGpa(), other.getGpa(), 2);
+		}
+		return eq;
+	}
+
+	public static boolean floatEquals(float e, float f, int maxULPs) {
+		boolean eq;
+		boolean enan = Float.isNaN(e);
+		boolean fnan = Float.isNaN(f);
+		if (enan && fnan) {
+			eq = true;
+		}
+		else if (enan || fnan) {
+			eq = false;
+		}
+		else {
+			boolean einf = Float.isInfinite(e);
+			boolean finf = Float.isInfinite(f);
+			if (einf && finf) {
+				int esig = (int)Math.signum(e);
+				int fsig = (int)Math.signum(f);
+				eq = (esig == fsig);
+			}
+			else if (einf || finf) {
+				eq = false;
+			}
+			else if (e == 0 && f == 0) {
+				eq = true;
+			}
+			else {
+				float ulp = Math.ulp(Math.max(Math.abs(e), Math.abs(f)));
+				eq = (Math.abs(e - f) <= ulp * maxULPs);
+			}
+		}
+		return eq;
+	}
+
+	@Override
+	public int hashCode() {
+		int pCode = super.hashCode();
+		int sCode = Objects.hashCode(getGpa());
+		return pCode + sCode;
+	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " " + getGpa();
 	}
 }
