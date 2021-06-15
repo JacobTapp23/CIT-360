@@ -8,7 +8,8 @@ import androidx.room.RoomDatabase;
 import androidx.room.TypeConverters;
 
 
-@Database(entities = { Creature.class }, version = 2, exportSchema = false)
+@Database(entities = { Creature.class, Person.class, StudentData.class, FacultyData.class },
+		version = 7, exportSchema = false)
 @TypeConverters({ Converters.class })
 public abstract class AppDatabase extends RoomDatabase {
 	private static AppDatabase singleton = null;
@@ -25,4 +26,7 @@ public abstract class AppDatabase extends RoomDatabase {
 	}
 
 	public abstract CreatureDAO getCreatureDAO();
+	public abstract PersonDAO getPersonDAO();
+	public abstract StudentDAO getStudentDAO();
+	public abstract FacultyDAO getFacultyDAO();
 }

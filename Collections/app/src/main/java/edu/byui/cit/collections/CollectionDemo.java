@@ -61,6 +61,7 @@ public class CollectionDemo {
 		arrList.add("63-408-6001");
 		arrList.add("70-550-5505");
 		arrList.add("42-112-1338");
+		arrList.add("70-550-5505");
 		arrList.add("22-556-4424");
 		out.println("ArrayList allows duplicate objects and stores" +
 				" objects in the order that they were added.");
@@ -76,6 +77,7 @@ public class CollectionDemo {
 		linkList.add("Monica");
 		linkList.add("Jeff");
 		linkList.add("Suyeon");
+		linkList.add("Monica");
 		linkList.add("Jeff");
 		out.println("LinkedList allows duplicate objects and stores" +
 				" objects in the order that they were added.");
