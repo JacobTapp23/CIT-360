@@ -2,6 +2,7 @@ package edu.byui.cit.room.model;
 
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 import static androidx.room.ForeignKey.CASCADE;
@@ -16,11 +17,14 @@ import static androidx.room.ForeignKey.CASCADE;
 public class StudentData {
 	@PrimaryKey
 	private long personKey;
-
 	private float gpa;
 
+	@Ignore
 	StudentData(float gpa) {
 		this.gpa = gpa;
+	}
+
+	StudentData() {
 	}
 
 	long getPersonKey() {

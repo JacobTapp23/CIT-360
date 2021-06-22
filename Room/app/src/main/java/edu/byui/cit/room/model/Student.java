@@ -2,6 +2,7 @@ package edu.byui.cit.room.model;
 
 import java.util.Objects;
 
+import androidx.annotation.NonNull;
 import androidx.room.Embedded;
 import androidx.room.Ignore;
 import androidx.room.Relation;
@@ -17,6 +18,8 @@ public class Student {
 	StudentData studentData;
 
 	Student() {
+		personData = new Person();
+		studentData = new StudentData();
 	}
 
 	Person getPersonData() {
@@ -76,7 +79,7 @@ public class Student {
 		boolean eq = (this == obj);
 		if (!eq && obj != null && getClass() == obj.getClass()) {
 			Student other = (Student)obj;
-			eq = super.equals(other) &&
+			eq = personData.equals(other.personData) &&
 					floatEquals(this.getGpa(), other.getGpa(), 2);
 		}
 		return eq;
@@ -87,26 +90,35 @@ public class Student {
 		boolean enan = Float.isNaN(e);
 		boolean fnan = Float.isNaN(f);
 		if (enan && fnan) {
+			// Both e and f are not numbers (NaN),
+			// so we consider them to be equal.
 			eq = true;
 		}
-		else if (enan || fnan) {
+    else if (enan || fnan) {
+			// Either e or f but not both is not a
+			// number (NaN), so they aren't equal.
 			eq = false;
 		}
 		else {
 			boolean einf = Float.isInfinite(e);
 			boolean finf = Float.isInfinite(f);
 			if (einf && finf) {
+				// Both e and f are infinite, so they
+				// are equal if their signs are equal,
+				// otherwise they are not equal.
 				int esig = (int)Math.signum(e);
 				int fsig = (int)Math.signum(f);
 				eq = (esig == fsig);
 			}
-			else if (einf || finf) {
+        else if (einf || finf) {
+				// Either e or f but not both is
+				// infinite, so they aren't equal.
 				eq = false;
 			}
-			else if (e == 0 && f == 0) {
-				eq = true;
-			}
 			else {
+				// Both e and f are finite numbers, so
+				// compare them to see if they are
+				// close enough to be considered equal.
 				float ulp = Math.ulp(Math.max(Math.abs(e), Math.abs(f)));
 				eq = (Math.abs(e - f) <= ulp * maxULPs);
 			}
@@ -122,6 +134,7 @@ public class Student {
 	}
 
 	@Override
+	@NonNull
 	public String toString() {
 		return super.toString() + " " + getGpa();
 	}

@@ -25,26 +25,24 @@ public abstract class FacultyDAO extends PersonDAO {
 	@Insert
 	public void insert(Faculty faculty) {
 		insert((Person)faculty);
-		realInsert(new FacultyData(faculty));
+		realInsert(new Faculty.Data(faculty));
 	}
 
 	@Insert
-	abstract void realInsert(FacultyData data);
+	abstract void realInsert(Faculty.Data data);
 
 	@Transaction
 	@Update
 	public void update(Faculty faculty) {
 		update((Person)faculty);
-		realUpdate(new FacultyData(faculty));
+		realUpdate(new Faculty.Data(faculty));
 	}
 
 	@Update
-	abstract void realUpdate(FacultyData data);
+	abstract void realUpdate(Faculty.Data data);
 
-	@Delete
-	public void delete(Faculty faculty) {
-		delete((Person)faculty);
-	}
+	// Delete is inherited from PersonDAO and
+	// doesn't need to be overridden here.
 
 	@Query("DELETE FROM Person WHERE personKey IN (SELECT personKey FROM Faculty)")
 	public abstract void deleteAll();

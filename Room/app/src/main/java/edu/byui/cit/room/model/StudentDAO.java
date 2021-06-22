@@ -15,9 +15,11 @@ public abstract class StudentDAO extends PersonDAO {
 	@Query("SELECT COUNT(*) FROM Student")
 	public abstract long count();
 
+	@Transaction
 	@Query("SELECT * FROM Person AS p JOIN Student AS s ON p.personKey = s.personKey")
 	public abstract List<Student> getAllStudents();
 
+	@Transaction
 	@Query("SELECT * FROM Person AS p JOIN Student AS s ON p.personKey = s.personKey WHERE s.personKey = :key")
 	public abstract Student getStudentByKey(long key);
 

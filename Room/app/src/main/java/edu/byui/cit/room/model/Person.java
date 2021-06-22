@@ -2,6 +2,7 @@ package edu.byui.cit.room.model;
 
 import java.util.Objects;
 
+import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
@@ -65,7 +66,8 @@ public class Person {
 	}
 
 	@Override
+	@NonNull
 	public String toString() {
-		return personKey + " " + " " + firstName + " " + lastName;
+		return personKey + " " + firstName + " " + lastName;
 	}
 }
