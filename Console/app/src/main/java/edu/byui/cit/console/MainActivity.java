@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
+
 /**
  * A simple activity that contains a single TextView and enables plain old
  * Java applications that write to the console to work in an Android app.
