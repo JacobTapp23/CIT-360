@@ -1,27 +1,29 @@
 package edu.byui.cit.collections;
 
 import java.io.PrintStream;
-
 import java.util.HashMap;
 import java.util.Map;
+
 
 public class MapDemo {
 	public static void main(String[] args) {
 		PrintStream out = System.out;
 		String[] iNumbers = {
-	"16-000-1000", "60-000-1000", "25-000-1000", "11-000-1000", "42-000-1000",
-	"99-000-1000", "20-000-1000", "38-000-1000", "77-000-1000", "95-000-1000"
+				"16-000-1000", "60-000-1000", "25-000-1000", "11-000-1000",
+				"42-000-1000", "99-000-1000", "20-000-1000", "38-000-1000",
+				"77-000-1000", "95-000-1000"
 		};
 		String[] names = {
-				"Agustin", "Benito", "Blaine", "Curt", "Ernie",
-				"Rosaura", "Shannan", "Sibyl", "Verona", "Yetta"
+				"Agustin", "Benito", "Blaine", "Curt",
+				"Ernie", "Rosaura", "Shannan", "Sibyl",
+				"Verona", "Yetta"
 		};
 
 		// Create a hash map to store I-Number name pairs.
 		Map<String, String> hashMap = new HashMap<>();
 
 		// Add all I-Numbers and names to the hash map.
-		for (int i = 0;  i < iNumbers.length;  ++i) {
+		for (int i = 0; i < iNumbers.length; ++i) {
 			hashMap.put(iNumbers[i], names[i]);
 		}
 
@@ -32,7 +34,7 @@ public class MapDemo {
 
 		// Pseudo randomly choose five of the I-Numbers and find their
 		// corresponding names.
-		for (int i = 0;  i < 5;  ++i) {
+		for (int i = 0; i < 5; ++i) {
 			String iNum = choose(iNumbers);
 			String name = hashMap.get(iNum);
 			out.println(iNum + " = " + name);
