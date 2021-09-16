@@ -6,7 +6,7 @@ import java.util.Comparator;
 
 public class Array {
 	public static void main(String[] args) {
-		PrintStream out = java.lang.System.out;
+		PrintStream out = System.out;
 
 		{
 			double[] data = new double[8];
@@ -173,7 +173,7 @@ class Student {
 	}
 
 	public static void main(String[] args) {
-		PrintStream out = java.lang.System.out;
+		PrintStream out = System.out;
 		Student[] students = {
 				new Student("Jane", 18),
 				new Student("Sam", 17),

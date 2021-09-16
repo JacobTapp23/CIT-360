@@ -4,7 +4,7 @@ import java.io.PrintStream;
 
 public class Selection {
 	public static void main(String[] args) {
-		PrintStream out = java.lang.System.out;
+		PrintStream out = System.out;
 
 		out.println("A simple if statement");
 		for (double balance : new double[]{700, 500}) {
