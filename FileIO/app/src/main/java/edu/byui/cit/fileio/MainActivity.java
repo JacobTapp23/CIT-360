@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -29,7 +27,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		try {
 			super.onCreate(savedInstanceState);
-			setContentView(R.layout.main_activity);
+			setContentView(R.layout.activity_main);
 
 			// Find the TextView and change System.out
 			// so that it will print to the TextView.
@@ -59,7 +57,7 @@ public class MainActivity extends Activity {
 
 		// Write an array of bytes to the console TextView.
 		@Override
-		public void write(@NotNull byte[] b, int offs, int len) {
+		public void write(byte[] b, int offs, int len) {
 			buffer.append(new String(b, offs, len));
 			console.setText(buffer);
 		}
