@@ -20,15 +20,14 @@ import edu.byui.cit.room.model.Student;
 import edu.byui.cit.room.model.StudentDAO;
 
 
-public final class MainFrag extends Fragment {
+public final class StartFrag extends Fragment {
 	@Override
 	public View onCreateView(@NonNull LayoutInflater inflater,
 			ViewGroup container, Bundle savedInstanceState) {
 		View view = null;
 		try {
 			super.onCreateView(inflater, container, savedInstanceState);
-			view = inflater.inflate(R.layout.frag_main, container, false);
-
+			view = inflater.inflate(R.layout.frag_start, container, false);
 
 			// Connect to the Room database and get the
 			// data access object for the Creature table.

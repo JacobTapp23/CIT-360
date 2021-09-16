@@ -10,19 +10,19 @@
 		android:layout_height="wrap_content"
 		android:orientation="horizontal">
 
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:labelFor="@+id/txtUsername"
-			android:text="@string/username"/>
-
 		<EditText
 			android:id="@+id/txtUsername"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
+			android:autofillHints="username"
 			android:ems="8"
-			android:inputType="textPersonName"
-			android:autofillHints="username" />
+			android:inputType="textPersonName" />
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:labelFor="@+id/txtUsername"
+			android:text="@string/username" />
 	</LinearLayout>
 
 
@@ -35,6 +35,6 @@
 			android:id="@+id/btnRoom"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/room"/>
+			android:text="@string/room" />
 	</LinearLayout>
 </LinearLayout>

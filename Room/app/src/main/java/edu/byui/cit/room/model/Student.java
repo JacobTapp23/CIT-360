@@ -94,7 +94,7 @@ public class Student {
 			// so we consider them to be equal.
 			eq = true;
 		}
-    else if (enan || fnan) {
+		else if (enan || fnan) {
 			// Either e or f but not both is not a
 			// number (NaN), so they aren't equal.
 			eq = false;
@@ -110,7 +110,7 @@ public class Student {
 				int fsig = (int)Math.signum(f);
 				eq = (esig == fsig);
 			}
-        else if (einf || finf) {
+			else if (einf || finf) {
 				// Either e or f but not both is
 				// infinite, so they aren't equal.
 				eq = false;

@@ -1,4 +1,4 @@
-package edu.byui.cit;
+package edu.byui.cit.room;
 
 import org.junit.Test;
 

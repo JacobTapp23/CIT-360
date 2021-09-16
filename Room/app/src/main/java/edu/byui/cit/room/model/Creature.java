@@ -1,10 +1,10 @@
 package edu.byui.cit.room.model;
 
+import java.util.Objects;
+
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
-
-import java.util.Objects;
 
 
 @Entity

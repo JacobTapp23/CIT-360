@@ -5,7 +5,6 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -35,7 +34,7 @@ public final class MainActivity extends AppCompatActivity {
 			if (savedInstState == null) {
 				// Create the main fragment and place it
 				// as the first fragment in this activity.
-				Fragment fragMain = new MainFrag();
+				Fragment fragMain = new StartFrag();
 				FragmentTransaction trans =
 						getSupportFragmentManager().beginTransaction();
 				trans.add(R.id.fragContainer, fragMain);

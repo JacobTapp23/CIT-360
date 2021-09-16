@@ -3,7 +3,6 @@ package edu.byui.cit.room.model;
 import java.util.List;
 
 import androidx.room.Dao;
-import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Transaction;
@@ -44,6 +43,7 @@ public abstract class FacultyDAO extends PersonDAO {
 	// Delete is inherited from PersonDAO and
 	// doesn't need to be overridden here.
 
-	@Query("DELETE FROM Person WHERE personKey IN (SELECT personKey FROM Faculty)")
+	@Query("DELETE FROM Person WHERE personKey IN (SELECT personKey FROM " +
+			"Faculty)")
 	public abstract void deleteAll();
 }
