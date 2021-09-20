@@ -5,11 +5,6 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical">
 
-	<TextView
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/main"/>
-
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
@@ -19,13 +14,13 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:labelFor="@+id/txtPhone"
-			android:text="@string/fromSecond"/>
+			android:text="@string/fromSecond" />
 
 		<TextView
 			android:id="@+id/txtPhone"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="10dp"/>
+			android:layout_marginStart="10dp" />
 	</LinearLayout>
 
 	<LinearLayout
@@ -36,12 +31,17 @@
 			android:id="@+id/btnSecond"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/second"/>
+			android:text="@string/second" />
 
 		<Button
 			android:id="@+id/btnThird"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:text="@string/third"/>
+			android:text="@string/third" />
 	</LinearLayout>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/first" />
 </LinearLayout>

@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
 	private DrawerLayout drawerLayout;
 	private ActionBarDrawerToggle drawerToggle;
-	private MainFrag fragMain;
+	private FirstFrag fragFirst;
 
 	private String phone;
 	private String response;
@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 			// Change the home icon on the action bar to
 			// the menu (hamburger) icon and make it visible.
 			ActionBar actBar = getSupportActionBar();
+			assert actBar != null;
 			actBar.setDisplayHomeAsUpEnabled(true);
 
 			// Set up the drawer and its navigation items.
@@ -55,10 +56,10 @@ public class MainActivity extends AppCompatActivity {
 			if (savedInstState == null) {
 				// Create the main fragment and place it
 				// as the first fragment in this activity.
-				fragMain = new MainFrag();
+				fragFirst = new FirstFrag();
 				FragmentTransaction trans =
 						getSupportFragmentManager().beginTransaction();
-				trans.add(R.id.fragContainer, fragMain);
+				trans.add(R.id.fragContainer, fragFirst);
 				trans.commit();
 			}
 			else {
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
 	/** Handles a click on one of the items in the action bar. */
 	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
+	public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 		boolean handled = false;
 		try {
 			// If the menu icon is displayed in the toolbar, the drawToggle
@@ -103,26 +104,25 @@ public class MainActivity extends AppCompatActivity {
 			handled = drawerToggle.onOptionsItemSelected(item);
 
 			if (! handled) {
-				switch (item.getItemId()) {
-					case android.R.id.home:
-						// Respond to the user pressing the "back/up" button
-						// on the action bar in the same way as if the user
-						// pressed the left-facing triangle icon on the main
-						// android toolbar.
-						onBackPressed();
-						break;
-					case R.id.actMain:
-						switchToFragment(fragMain, "main");
-						handled = true;
-						break;
-					case R.id.actSecond:
-						switchToFragment(new SecondFrag(), "second");
-						handled = true;
-						break;
-					case R.id.actThird:
-						switchToFragment(new ThirdFrag(), "third");
-						handled = true;
-						break;
+				int itemId = item.getItemId();
+				if (itemId == android.R.id.home) {
+					// Respond to the user pressing the "back/up" button
+					// on the action bar in the same way as if the user
+					// pressed the left-facing triangle icon on the main
+					// android toolbar.
+					onBackPressed();
+				}
+				else if (itemId == R.id.actFirst) {
+					switchToFragment(fragFirst, "main");
+					handled = true;
+				}
+				else if (itemId == R.id.actSecond) {
+					switchToFragment(new SecondFrag(), "second");
+					handled = true;
+				}
+				else if (itemId == R.id.actThird) {
+					switchToFragment(new ThirdFrag(), "third");
+					handled = true;
 				}
 
 				if (! handled) {
@@ -144,19 +144,18 @@ public class MainActivity extends AppCompatActivity {
 		public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 			boolean handled = false;
 			try {
-				switch (menuItem.getItemId()) {
-					case R.id.navMain:
-						switchToFragment(fragMain, "main");
-						handled = true;
-						break;
-					case R.id.navSecond:
-						switchToFragment(new SecondFrag(), "second");
-						handled = true;
-						break;
-					case R.id.navThird:
-						switchToFragment(new ThirdFrag(), "third");
-						handled = true;
-						break;
+				int itemId = menuItem.getItemId();
+				if (itemId == R.id.navFirst) {
+					switchToFragment(fragFirst, "main");
+					handled = true;
+				}
+				else if (itemId == R.id.navSecond) {
+					switchToFragment(new SecondFrag(), "second");
+					handled = true;
+				}
+				else if (itemId == R.id.navThird) {
+					switchToFragment(new ThirdFrag(), "third");
+					handled = true;
 				}
 				drawerLayout.closeDrawers();
 			}

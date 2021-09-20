@@ -1,7 +1,6 @@
 package edu.byui.cit.fragments;
 
 import android.os.Bundle;
-import androidx.annotation.NonNull;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +8,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 
-public class MainFrag extends Fragment {
+
+public class FirstFrag extends Fragment {
 	private TextView txtPhone;
 
 	@Override
@@ -19,7 +20,7 @@ public class MainFrag extends Fragment {
 		View view = null;
 		try {
 			super.onCreateView(inflater, container, savedInstanceState);
-			view = inflater.inflate(R.layout.frag_main, container, false);
+			view = inflater.inflate(R.layout.frag_first, container, false);
 
 			// Change the button that appears at the start of the
 			// toolbar from the home as up indicator to the menu icon.
@@ -86,7 +87,7 @@ public class MainFrag extends Fragment {
 				// Create and populate an arguments
 				// bundle for the third fragment.
 				Bundle args = new Bundle();
-				args.putString("message", "From Main");
+				args.putString("message", "From first");
 				third.setArguments(args);
 
 				// Switch to the third fragment.

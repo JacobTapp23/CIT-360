@@ -5,21 +5,16 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical">
 
-	<TextView
+	<Button
+		android:id="@+id/btnThird"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/second"/>
+		android:text="@string/third" />
 
 	<LinearLayout
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:orientation="horizontal">
-
-		<TextView
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:labelFor="@+id/txtPhone"
-			android:text="@string/phone"/>
 
 		<EditText
 			android:id="@+id/txtPhone"
@@ -27,14 +22,14 @@
 			android:layout_height="wrap_content"
 			android:autofillHints="phone"
 			android:ems="8"
-			android:inputType="phone"/>
-	</LinearLayout>
+			android:inputType="phone" />
 
-	<Button
-		android:id="@+id/btnThird"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:text="@string/third"/>
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:labelFor="@+id/txtPhone"
+			android:text="@string/phone" />
+	</LinearLayout>
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -45,12 +40,17 @@
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:labelFor="@+id/txtResponse"
-			android:text="@string/response"/>
+			android:text="@string/response" />
 
 		<TextView
 			android:id="@+id/txtResponse"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_marginStart="10dp"/>
+			android:layout_marginStart="10dp" />
 	</LinearLayout>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/second" />
 </LinearLayout>
