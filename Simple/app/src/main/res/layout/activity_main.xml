@@ -10,14 +10,21 @@
 	tools:context=".MainActivity"
 	tools:showIn="@layout/activity_main">
 
-	<TextView
-		android:id="@+id/textView"
+	<Button
+		android:id="@+id/btnCompute"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:labelFor="@+id/editText"
-		android:text="@string/prompt"
-		app:layout_constraintBaseline_toBaselineOf="@+id/editText"
-		app:layout_constraintStart_toStartOf="parent"/>
+		android:text="@string/compute"
+		app:layout_constraintStart_toStartOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/editText2" />
+
+	<Button
+		android:id="@+id/btnClear"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="@string/clear"
+		app:layout_constraintEnd_toEndOf="parent"
+		app:layout_constraintTop_toBottomOf="@+id/editText2" />
 
 	<EditText
 		android:id="@+id/editText"
@@ -30,16 +37,8 @@
 		app:layout_constraintStart_toEndOf="@+id/textView"
 		app:layout_constraintTop_toTopOf="parent">
 
-		<requestFocus/>
+		<requestFocus />
 	</EditText>
-
-	<TextView
-		android:id="@+id/textView2"
-		android:layout_width="wrap_content"
-		android:layout_height="wrap_content"
-		android:labelFor="@+id/editText2"
-		android:text="@string/prompt2"
-		app:layout_constraintBaseline_toBaselineOf="@+id/editText2"/>
 
 	<EditText
 		android:id="@+id/editText2"
@@ -50,21 +49,23 @@
 		android:inputType="numberSigned|numberDecimal"
 		android:textAlignment="textEnd"
 		app:layout_constraintStart_toEndOf="@+id/textView2"
-		app:layout_constraintTop_toBottomOf="@+id/editText"/>
+		app:layout_constraintTop_toBottomOf="@+id/editText" />
 
-	<Button
-		android:id="@+id/btnCompute"
+	<TextView
+		android:id="@+id/textView2"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/compute"
-		app:layout_constraintStart_toStartOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/editText2"/>
+		android:labelFor="@+id/editText2"
+		android:text="@string/prompt2"
+		app:layout_constraintBaseline_toBaselineOf="@+id/editText2"
+		app:layout_constraintStart_toStartOf="parent" />
 
-	<Button
-		android:id="@+id/btnClear"
+	<TextView
+		android:id="@+id/textView"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:text="@string/clear"
-		app:layout_constraintEnd_toEndOf="parent"
-		app:layout_constraintTop_toBottomOf="@+id/editText2"/>
+		android:labelFor="@+id/editText"
+		android:text="@string/prompt"
+		app:layout_constraintBaseline_toBaselineOf="@+id/editText"
+		app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
