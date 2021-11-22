@@ -1,12 +1,14 @@
 package edu.byui.cit.creatures.controller;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.util.Log;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.google.firebase.FirebaseApp;
+
 import edu.byui.cit.creatures.R;
 
 
@@ -18,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     	try {
 			super.onCreate(savedInstState);
 			setContentView(R.layout.activity_main);
+//			FirebaseApp.initializeApp(this);
 
 			if (savedInstState == null) {
 				// Create the main fragment and place it
