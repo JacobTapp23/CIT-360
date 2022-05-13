@@ -11,14 +11,20 @@ import java.util.Date;
 
 
 public class AlarmReceiver extends BroadcastReceiver {
-    private static final String TAG = AlarmReceiver.class.getSimpleName();
+	private static final String TAG = AlarmReceiver.class.getSimpleName();
 
-    @Override
-    public void onReceive(Context context, Intent intent) {
-        Date now = new Date();
-        DateFormat formatter = DateFormat.getDateTimeInstance();
-        String text = "Received an alarm at " + formatter.format(now);
-        Log.i(TAG, text);
-        Toast.makeText(context, text, Toast.LENGTH_LONG).show();
-    }
+	@Override
+	public void onReceive(Context context, Intent intent) {
+		try {
+			Date now = new Date();
+			DateFormat formatter = DateFormat.getDateTimeInstance();
+			String text = "Received an alarm at " + formatter.format(now);
+			Log.i(TAG, text);
+			Toast.makeText(context, text, Toast.LENGTH_LONG).show();
+			System.out.println(text);
+		}
+		catch (Exception ex) {
+			Log.e(TAG, ex.getMessage(), ex);
+		}
+	}
 }

@@ -1,8 +1,15 @@
 package edu.byui.cit.fileio;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintStream;
 
-/** Demonstrates several exceptions that may happen while trying to
+
+/**
+ * Demonstrates several exceptions that may happen while trying to
  * write to and read from files.
  */
 public class IOExceptions {
@@ -71,7 +78,7 @@ public class IOExceptions {
 		out.println("Opened " + count + " files.");
 
 		// Delete the files.
-		for (int i = 0;  i < count;  ++i) {
+		for (int i = 0; i < count; ++i) {
 			String filename = "file" + i + ".txt";
 			File file = new File(filename);
 

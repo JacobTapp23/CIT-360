@@ -1,5 +1,7 @@
 package edu.byui.cit.room.controller;
 
+import android.app.Activity;
+
 import androidx.annotation.NonNull;
 
 
@@ -10,6 +12,8 @@ import androidx.annotation.NonNull;
 public class Fragment extends androidx.fragment.app.Fragment {
 	@NonNull
 	public MainActivity getMainActivity() {
-		return (MainActivity)getActivity();
+		Activity activity = getActivity();
+		assert activity != null;
+		return (MainActivity)activity;
 	}
 }

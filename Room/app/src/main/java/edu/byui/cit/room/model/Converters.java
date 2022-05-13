@@ -1,8 +1,8 @@
 package edu.byui.cit.room.model;
 
-import androidx.room.TypeConverter;
-
 import java.util.Date;
+
+import androidx.room.TypeConverter;
 
 
 public final class Converters {

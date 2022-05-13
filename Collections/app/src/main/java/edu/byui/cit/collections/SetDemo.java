@@ -1,11 +1,11 @@
 package edu.byui.cit.collections;
 
 import java.io.PrintStream;
-
 import java.util.HashSet;
 import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
+
 
 public class SetDemo {
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class SetDemo {
 		Set<String> hashSet = new HashSet<>();
 
 		// Pseudo randomly choose names to add to the set.
-		for (int i = 0;  i < 15;  ++i) {
+		for (int i = 0; i < 15; ++i) {
 			hashSet.add(choose(names));
 		}
 
@@ -49,7 +49,7 @@ public class SetDemo {
 		SortedSet<String> treeSet = new TreeSet<>();
 
 		// Pseudo randomly choose names to add to the set.
-		for (int i = 0;  i < 15;  ++i) {
+		for (int i = 0; i < 15; ++i) {
 			treeSet.add(choose(names));
 		}
 

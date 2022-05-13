@@ -1,9 +1,10 @@
 package edu.byui.cit.console;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -13,7 +14,7 @@ import java.io.PrintStream;
  * A simple activity that contains a single TextView and enables plain old
  * Java applications that write to the console to work in an Android app.
  */
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 	public static final String TAG = "Console";
 
 	@Override

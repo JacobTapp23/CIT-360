@@ -5,7 +5,7 @@ import java.io.PrintStream;
 public class Arithmetic {
 	public static void main(String[] args) {
 		// Make it possible to type out.println instead of System.out.println
-		PrintStream out = java.lang.System.out;
+		PrintStream out = System.out;
 
 		{
 			out.println("Declaring and assigning variables.");

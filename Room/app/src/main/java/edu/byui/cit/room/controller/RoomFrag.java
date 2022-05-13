@@ -14,8 +14,8 @@ import android.widget.TextView;
 import java.util.List;
 
 import androidx.annotation.NonNull;
-import edu.byui.cit.room.model.AppDatabase;
 import edu.byui.cit.room.R;
+import edu.byui.cit.room.model.AppDatabase;
 import edu.byui.cit.room.model.Creature;
 import edu.byui.cit.room.model.CreatureDAO;
 
@@ -30,6 +30,7 @@ public final class RoomFrag extends Fragment {
 	/** A list of all creatures that are stored in the Room Creature table. */
 	private List<Creature> creatureList;
 	private int index = -1;
+
 	private enum State {Browsing, Inputting}
 	private State state;
 

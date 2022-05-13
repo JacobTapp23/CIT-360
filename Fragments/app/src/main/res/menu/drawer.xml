@@ -3,17 +3,17 @@
 	xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<item
-		android:id="@+id/navMain"
+		android:id="@+id/navFirst"
 		android:icon="@android:drawable/btn_star"
-		android:title="@string/main"/>
+		android:title="@string/first" />
 
 	<item
 		android:id="@+id/navSecond"
 		android:icon="@android:drawable/btn_plus"
-		android:title="@string/second"/>
+		android:title="@string/second" />
 
 	<item
 		android:id="@+id/navThird"
 		android:icon="@android:drawable/btn_plus"
-		android:title="@string/third"/>
+		android:title="@string/third" />
 </menu>

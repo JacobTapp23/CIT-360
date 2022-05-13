@@ -21,7 +21,7 @@
 		<item>Humid</item>
 	</string-array>
 
-	<string name="main">Main</string>
+	<string name="first">First</string>
 	<string name="fromSecond">Phone from Second:</string>
 
 	<string name="second">Second</string>

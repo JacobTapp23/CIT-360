@@ -73,7 +73,8 @@ public class MainActivity extends Activity {
 		System.out.println("Spaceships are expensive.");
 
 		Context ctx = this;
-		AlarmManager alarmMgr = (AlarmManager)ctx.getSystemService(Context.ALARM_SERVICE);
+		AlarmManager alarmMgr = (AlarmManager)ctx.getSystemService(
+				Context.ALARM_SERVICE);
 
 		Intent intent = new Intent(ctx, AlarmReceiver.class);
 		intent.setAction("edu.byui.cit.alarms");
@@ -88,9 +89,10 @@ public class MainActivity extends Activity {
 //				SystemClock.elapsedRealtime() + INTERVAL_30_SECONDS, pending);
 //		System.out.println("Set an alarm to fire in 30 seconds.");
 
-		// Set an alarm that will fire in 30 seconds and then again every minute.
+		// Set an alarm that will fire in 30 seconds and then again every
+		// minute.
 		alarmMgr.setInexactRepeating(AlarmManager.ELAPSED_REALTIME_WAKEUP,
-						SystemClock.elapsedRealtime() + INTERVAL_30_SECONDS,
+				SystemClock.elapsedRealtime() + INTERVAL_30_SECONDS,
 				INTERVAL_ONE_MINUTE, pending);
 		System.out.println("Set a repeating alarm to fire every minute.");
 	}

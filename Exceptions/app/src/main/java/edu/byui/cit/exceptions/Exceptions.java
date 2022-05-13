@@ -2,7 +2,9 @@ package edu.byui.cit.exceptions;
 
 import java.io.PrintStream;
 
-/** Demonstrates Java exceptions. Exceptions are
+
+/**
+ * Demonstrates Java exceptions. Exceptions are
  * used to handle errors in an organized way.
  */
 public class Exceptions {
@@ -78,7 +80,8 @@ public class Exceptions {
 			throw new IllegalArgumentException("invalid first name: " + given);
 		}
 		if (family == null || family.length() == 0) {
-			throw new IllegalArgumentException("invalid family name: " + family);
+			throw new IllegalArgumentException(
+					"invalid family name: " + family);
 		}
 		return family + ", " + given;
 	}

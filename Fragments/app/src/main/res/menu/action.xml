@@ -4,17 +4,17 @@
 	xmlns:app="http://schemas.android.com/apk/res-auto">
 
 	<item
-		android:id="@+id/actMain"
-		android:title="@string/main"
-		app:showAsAction="ifRoom"/>
+		android:id="@+id/actFirst"
+		android:title="@string/first"
+		app:showAsAction="ifRoom" />
 
 	<item
 		android:id="@+id/actSecond"
 		android:title="@string/second"
-		app:showAsAction="ifRoom"/>
+		app:showAsAction="ifRoom" />
 
 	<item
 		android:id="@+id/actThird"
 		android:title="@string/third"
-		app:showAsAction="ifRoom"/>
+		app:showAsAction="ifRoom" />
 </menu>

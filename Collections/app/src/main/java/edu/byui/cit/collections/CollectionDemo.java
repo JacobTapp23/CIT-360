@@ -1,7 +1,22 @@
 package edu.byui.cit.collections;
 
 import java.io.PrintStream;
-import java.util.*;
+import java.util.ArrayDeque;
+import java.util.ArrayList;
+import java.util.Deque;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.PriorityQueue;
+import java.util.Queue;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.SortedSet;
+import java.util.TreeMap;
+import java.util.TreeSet;
+
 
 /* A Short Introduction to Java Collections
  *
@@ -61,6 +76,7 @@ public class CollectionDemo {
 		arrList.add("63-408-6001");
 		arrList.add("70-550-5505");
 		arrList.add("42-112-1338");
+		arrList.add("70-550-5505");
 		arrList.add("22-556-4424");
 		out.println("ArrayList allows duplicate objects and stores" +
 				" objects in the order that they were added.");
@@ -76,6 +92,7 @@ public class CollectionDemo {
 		linkList.add("Monica");
 		linkList.add("Jeff");
 		linkList.add("Suyeon");
+		linkList.add("Monica");
 		linkList.add("Jeff");
 		out.println("LinkedList allows duplicate objects and stores" +
 				" objects in the order that they were added.");

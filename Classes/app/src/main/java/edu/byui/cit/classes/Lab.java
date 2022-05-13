@@ -8,9 +8,9 @@ package edu.byui.cit.classes;
 public class Lab {
 	public static void main(String[] args) {
 		Molecule water = new Molecule("water", 3);
-		water.addAtom(0, new Atom("hydrogen", 1, 1,1));
-		water.addAtom(1, new Atom("oxygen", 8, 8,8));
-		water.addAtom(2, new Atom("hydrogen", 1, 1,1));
+		water.addAtom(0, new Atom("hydrogen", 1, 1, 1));
+		water.addAtom(1, new Atom("oxygen", 8, 8, 8));
+		water.addAtom(2, new Atom("hydrogen", 1, 1, 1));
 		System.out.println(water);
 	}
 }
@@ -111,19 +111,19 @@ class Atom {
 
 		// Create the array of protons for this atom.
 		this.protons = new Proton[protons];
-		for (int i = 0;  i < this.protons.length;  ++i) {
+		for (int i = 0; i < this.protons.length; ++i) {
 			this.protons[i] = new Proton();
 		}
 
 		// Create the array of neutrons for this atom.
 		this.neutrons = new Neutron[neutrons];
-		for (int i = 0;  i < this.neutrons.length;  ++i) {
+		for (int i = 0; i < this.neutrons.length; ++i) {
 			this.neutrons[i] = new Neutron();
 		}
 
 		// Create the array of electrons for this atom.
 		this.electrons = new Electron[electrons];
-		for (int i = 0;  i < this.electrons.length;  ++i) {
+		for (int i = 0; i < this.electrons.length; ++i) {
 			this.electrons[i] = new Electron();
 		}
 	}

@@ -1,16 +1,17 @@
 package edu.byui.cit.basicjava;
 
-import static java.lang.System.out;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
+import static java.lang.System.out;
+
 
 public class Repetition {
 	public static void main(String[] args) {
-		PrintStream out = java.lang.System.out;
+		PrintStream out = System.out;
 		Scanner scanner = new Scanner(System.in);
 
 		{	// While Loop

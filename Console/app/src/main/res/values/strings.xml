@@ -1,7 +1,3 @@
 <resources>
-	<string name="app_name">Console</string>
-
-	<string name="blank">   </string>
-	<string name="x"> X </string>
-	<string name="o"> O </string>
+    <string name="app_name">Console</string>
 </resources>

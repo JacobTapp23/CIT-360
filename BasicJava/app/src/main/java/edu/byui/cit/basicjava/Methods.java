@@ -1,11 +1,12 @@
 package edu.byui.cit.basicjava;
 
-import static java.lang.System.out;
 import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
+
+import static java.lang.System.out;
 
 public class Methods {
 	public static void main(String[] args) {
